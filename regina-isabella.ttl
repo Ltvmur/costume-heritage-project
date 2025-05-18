@@ -1,0 +1,13 @@
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704575>
+    arco:material "red velvet" ;
+    arco:technique "gold embroidery" ;
+    a-cd:hasSubject ex:QueenAuthority .
+
+ex:QueenAuthority
+    a a-cd:Subject ;
+    rdfs:label "Symbol of royal authority and female power" .
