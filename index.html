@@ -69,12 +69,14 @@ My enrichment file is available here:
     Download RDF File
   </a>
 </section>
-<section id="arlecchino-600-analysis">
+<section class="contribution">
   <h2>Arina – Arlecchino '600 Costume Analysis</h2>
+
   <h3>Topic</h3>
   <p>My contribution focused on analyzing the theatrical costume “Arlecchino '600”, a costume sketch attributed to Dario Fo, Nobel laureate in literature. This costume is cataloged in the ArCo Knowledge Graph as a Historic or Artistic Property and represents the traditional character Arlecchino from Commedia dell’Arte.</p>
 
-  <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/refs/heads/main/arlecchino.jpg" alt="Arlecchino '600 Costume Sketch" style="max-width: 100%; height: auto; margin: 20px 0;" />
+  <!-- Image -->
+  <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino.jpg" alt="Arlecchino Costume Sketch" style="max-width: 400px; display: block; margin: 20px 0;">
 
   <h3>SPARQL Analysis</h3>
   <p>Using SPARQL, I queried the ArCo endpoint to explore the metadata for object 0500704151. The retrieved information includes:</p>
@@ -87,26 +89,25 @@ My enrichment file is available here:
   <p>However, additional symbolic, contextual, and linkage data (e.g., performance, theatrical company) were missing and could be enriched using LLMs and external sources.</p>
 
   <h3>LLM Prompts and Answers</h3>
-  <p><strong>Prompt 1:</strong> Why is Arlecchino’s costume traditionally multicolored and made of diamonds?<br />
+  <p><strong>Prompt 1:</strong> Why is Arlecchino’s costume traditionally multicolored and made of diamonds?<br>
   <strong>Answer:</strong> The multicolored diamond pattern reflects Arlecchino’s lively and chaotic persona. Historically, it symbolized poverty and improvisation, as servants like Arlecchino were thought to wear patched clothing made from fabric scraps. Over time, it became a defining visual code for his comedic and cunning role.</p>
 
-  <p><strong>Prompt 2:</strong> How does the costume’s color palette affect the perception of the character?<br />
+  <p><strong>Prompt 2:</strong> How does the costume’s color palette affect the perception of the character?<br>
   <strong>Answer:</strong> The bright and contrasting colors emphasize Arlecchino’s mischievous energy and help distinguish him visually as a comic figure. The vivid palette enhances his role as a dynamic trickster and draws audience attention during physical performances.</p>
 
-  <p><strong>Prompt 3:</strong> What does the use of a mask represent in Arlecchino’s character?<br />
+  <p><strong>Prompt 3:</strong> What does the use of a mask represent in Arlecchino’s character?<br>
   <strong>Answer:</strong> The mask reinforces Arlecchino’s identity as an archetype rather than an individual. It supports exaggerated expression through movement and gesture while highlighting his anonymity, subversiveness, and theatrical function as a clever servant.</p>
 
-  <p><strong>Prompt 4:</strong> What role do the hat and other accessories play in his visual identity?<br />
+  <p><strong>Prompt 4:</strong> What role do the hat and other accessories play in his visual identity?<br>
   <strong>Answer:</strong> Accessories like a soft cap with a feather contribute to Arlecchino’s playful, agile image. These elements support his clown-like appearance while also adding stylized cues that reflect his social role and physical humor.</p>
 
-  <p><strong>Prompt 5:</strong> How has the image of Arlecchino evolved from the 17th to the 20th century?<br />
+  <p><strong>Prompt 5:</strong> How has the image of Arlecchino evolved from the 17th to the 20th century?<br>
   <strong>Answer:</strong> Arlecchino originated as a comic servant in 17th-century commedia dell’arte, known for slapstick humor and acrobatics. In the 20th century, especially through Dario Fo, he evolved into a politically charged figure — a vehicle for satire and critique of power structures, while retaining his core attributes of wit and agility.</p>
 
   <h3>Enrichment</h3>
   <p>Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:</p>
 
-  <pre>
-@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
+<pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
 @prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
 @prefix ex: &lt;http://example.org/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
@@ -119,10 +120,13 @@ My enrichment file is available here:
 ex:ArlecchinoSymbolism
     a a-cd:Subject ;
     rdfs:label "Symbol of theatrical cleverness, social satire, and comic disorder" .
-  </pre>
+</code></pre>
 
   <h3>File</h3>
-  <p>My enrichment file is available here: <a href="arlecchino-600.ttl" download>arlecchino-600.ttl</a></p>
-  <p><a href="arlecchino-600.ttl" download>Download RDF File</a><br />
-  <a href="arlecchino-600.ttl" download>Download TTL File</a></p>
+  <p>My enrichment file is available here: 
+    <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/arlecchino-600.ttl" target="_blank">Download RDF File</a>
+  </p>
+
+  <!-- Optional: Direct download version -->
+  <!-- <p><a href="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino-600.ttl" download>Download TTL File</a></p> -->
 </section>
