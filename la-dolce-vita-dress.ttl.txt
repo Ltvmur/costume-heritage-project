@@ -1,0 +1,13 @@
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/arco/resource/HistoricOrArtisticProperty/0900287181>
+    arco:material "black silk" ;
+    arco:technique "cinched waist and draping" ;
+    a-cd:hasSubject ex:LaDolceVitaGlamour .
+
+ex:LaDolceVitaGlamour
+    a a-cd:Subject ;
+    rdfs:label "Visual style and glamour of Italian cinema in the 1960s, inspired by La Dolce Vita" .
