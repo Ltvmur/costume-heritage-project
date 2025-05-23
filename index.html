@@ -8,7 +8,7 @@
 
   .container {
   max-width: 900px;
-  margin: 0 auto; /* Центрирует по горизонтали */
+  margin: 0 auto;
   background-color: white;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
@@ -305,12 +305,12 @@ In summary, the costume based on Dario Fo's 1963 "figurini" represents a theatri
 <h3>Enrichment</h3>
 <p>I created RDF triples describing the cultural and stylistic context of the costume:</p>
 <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
-@prefix arco: <https://w3id.org/arco/ontology/arco/> .
-@prefix a-cd: <https://w3id.org/arco/ontology/context-description/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix ex: <http://example.org/> .
+@prefix arco: &lt;https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/> .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: &lt;http://example.org/> .
 
-<https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524>
+&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524>
     a-cd:hasSubject ex:LateRenaissanceStyle ;
     a-cd:hasSubject ex:IsabellaPerformance .
 
@@ -320,8 +320,7 @@ ex:LateRenaissanceStyle
 
 ex:IsabellaPerformance
     a a-cd:Subject ;
-    rdfs:label "Isabella, tre caravelle e un cacciaballe by Dario Fo" .
-</pre>
+    rdfs:label "Isabella, tre caravelle e un cacciaballe by Dario Fo" .</pre>
 
 <h3>File</h3>
 <p>My file is available for downloading:
