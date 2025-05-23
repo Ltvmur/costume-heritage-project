@@ -1,128 +1,81 @@
-<h2>Anna – Regina Isabella Costume Analysis</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+  body {
+    background-color: #f9f9f9; 
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
 
-<h3>Topic</h3>
-<p>
-My contribution focused on analyzing the theatrical costume <strong>“Regina Isabella”</strong>, created in 1992 by <strong>Dario Fo</strong> and <strong>Miguel Carbonell</strong>. This costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>.
-</p>
+  h1, h2, h3 {
+    color: #002060; 
+  }
 
-<img src="regina-isabella.png" alt="Costume sketch of Regina Isabella" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-<h3>SPARQL Analysis</h3>
-<p>
-Using SPARQL, I explored the ArCo endpoint and retrieved the properties of the object 
-<a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704575" target="_blank">0500704575</a>. I found that the object already includes metadata such as title, authorship, and description. However, it lacked symbolic, material, and contextual information.
-</p>
+  th, td {
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-align: left;
+  }
 
-<h3>LLM Prompts and Answers</h3>
+  th {
+    background-color: #e6e6e6;
+  }
+</style>
+  <meta charset="UTF-8">
+  <title>Costume Heritage Project</title>
+</head>
+<body>
 
-<p><strong>Prompt 1:</strong> What does the theatrical costume “Regina Isabella” designed by Dario Fo and Miguel Carbonell in 1992 represent? What character is it meant for?</p>
-<p><em>Answer:</em> The costume “Regina Isabella” represents a female royal character, most likely inspired by Queen Isabella of Spain or a generic Renaissance queen. It was created as a theatrical costume sketch and was likely intended for a noble, authoritative female figure on stage. The design reflects the status, power, and elegance associated with aristocratic women of the 16th century.</p>
+  <h1>Costume Heritage Project</h1>
+  <p><strong>Topic:</strong> Italian Cinema and Cultural Heritage: Costumes as Cultural Artifacts</p>
 
-<p><strong>Prompt 2:</strong> What is the historical and symbolic significance of the character “Regina Isabella” in Italian theater or literature?</p>
-<p><em>Answer:</em> "Regina Isabella" evokes the image of royal authority and female power. In Italian theater, such characters are often used to represent the intersection of history and drama. They may symbolize monarchy, tradition, or critique of power structures, especially in political or satirical plays like those by Dario Fo. The symbolism often combines femininity with leadership and influence.</p>
+  <h2>About the Project</h2>
+  <p>This project explores how theatrical costumes can be understood as part of Italy’s cultural heritage. Using the ArCo knowledge graph and Large Language Models, I investigated a specific historical costume sketch by Dario Fo from 1963.</p>
 
-<p><strong>Prompt 3:</strong> Was the costume “Regina Isabella” created for a specific theater production or film? If yes, which one?</p>
-<p><em>Answer:</em> The costume was likely created for a theatrical production, possibly connected to a satirical or historical drama by Dario Fo. While specific records of its stage use are limited, the designers' backgrounds in political and avant-garde theater suggest it was intended for a performance emphasizing historical themes or social commentary.</p>
+<h2>Selected Costume</h2>
+<img src="costume-dario-fo.jpg" alt="Costume sketch by Dario Fo" width="400">
 
-<p><strong>Prompt 4:</strong> Describe the typical materials, colors, and style used in 16th-century costumes for female royalty in Italian theater.</p>
-<p><em>Answer:</em> Typical 16th-century theatrical costumes for royal women included materials like velvet, silk, and brocade, often in deep colors such as red, burgundy, or gold. Embroidery in gold or silver thread was common, along with elaborate sleeves, corsets, and floor-length skirts. These costumes were designed to reflect wealth, nobility, and dramatic presence on stage.</p>
+  <h2>Mariam - Costume by Dario Fo (1963)</h2>
+  <p><a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524" target="_blank">
+    Costume by Dario Fo (1963)</a></p>
 
-<p><strong>Prompt 5:</strong> What does a red velvet stage costume typically symbolize in Italian cultural heritage?</p>
-<p><em>Answer:</em> A red velvet costume typically symbolizes power, authority, passion, and prestige. In Italian cultural heritage, red is a color historically linked to both religious and royal figures. On stage, red velvet enhances visual impact and immediately signals that the character is of high importance or status.</p>
+  <h2>RDF Triples</h2>
+  <p>I created RDF triples describing the cultural and stylistic context of the costume:</p>
+  <p><a href="https://marikvel.github.io/costume-heritage-project/rdf/costume_0500704524.ttl" target="_blank">
+    View RDF data (.ttl)</a></p>
 
-<h3>Enrichment</h3>
-<p>
-Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:
-</p>
+  <h2>Language Model Results</h2>
+  <p>I used ChatGPT, Gemini, and LlaMa 2 Family to analyze this costume. All three models agreed that the costume was designed for the play <em>Isabella, tre caravelle e un cacciaballe</em> and reflected a stylized version of late 15th to early 16th-century Spanish court fashion.</p>
 
-<pre>
-@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
-@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
-@prefix ex: &lt;http://example.org/&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+  <h2>SPARQL Query</h2>
+  <pre>
+SELECT DISTINCT ?item ?label ?material ?subject
+WHERE {
+  {
+    ?item rdfs:label ?label .
+    FILTER(REGEX(LCASE(STR(?label)), "costume"))
+  }
+  UNION
+  {
+    ?item a-dd:hasType ?type .
+    FILTER(REGEX(STR(?type), "costume", "i"))
+  }
+  OPTIONAL { ?item a-dd:hasMaterial ?material . }
+  OPTIONAL { ?item a-cd:hasSubject ?subject . }
+}
+ORDER BY ASC(?label)
+LIMIT 10
+  </pre>
 
-&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704575&gt;
-    arco:material "red velvet" ;
-    arco:technique "gold embroidery" ;
-    a-cd:hasSubject ex:QueenAuthority .
+  <h2>Conclusion</h2>
+  <p>This project demonstrates how knowledge graphs and language models can work together to enrich cultural heritage data. The costume is not only a visual artifact, but also a narrative element linked to Italian theater and political satire.</p>
 
-ex:QueenAuthority
-    a a-cd:Subject ;
-    rdfs:label "Symbol of royal authority and female power" .
-</pre>
-
-<h3>File</h3>
-<p>
-My enrichment file is available here:  
-<a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/regina-isabella.ttl" target="_blank">regina-isabella.ttl</a>
-</p>
-<h3>Download RDF File</h3>
-<p>
-  <a href="https://github.com/ltvmur/costume-heritage-project/blob/main/data/la-dolce-vita-dress.ttl" target="_blank">
-    Download TTL file
-  </a>
-</p>
-
-<section class="contribution">
-  <h2>Arina – Arlecchino '600 Costume Analysis</h2>
-
-  <h3>Topic</h3>
-  <p>My contribution focused on analyzing the theatrical costume “Arlecchino '600”, a costume sketch attributed to Dario Fo, Nobel laureate in literature. This costume is cataloged in the ArCo Knowledge Graph as a Historic or Artistic Property and represents the traditional character Arlecchino from Commedia dell’Arte.</p>
-
-  <!-- Image -->
-  <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino.jpg" alt="Arlecchino Costume Sketch" style="max-width: 400px; display: block; margin: 20px 0;">
-
-  <h3>SPARQL Analysis</h3>
-  <p>Using SPARQL, I queried the ArCo endpoint to explore the metadata for object 0500704151. The retrieved information includes:</p>
-  <ul>
-    <li><strong>Title:</strong> Arlecchino '600, figurino per costume di scena, maschile</li>
-    <li><strong>Author:</strong> Dario Fo</li>
-    <li><strong>Materials:</strong> Carta (paper), inchiostro (ink)</li>
-    <li><strong>Description:</strong> A costume sketch for the character Arlecchino, rooted in the 17th-century tradition of Italian theatre.</li>
-  </ul>
-  <p>However, additional symbolic, contextual, and linkage data (e.g., performance, theatrical company) were missing and could be enriched using LLMs and external sources.</p>
-
-  <h3>LLM Prompts and Answers</h3>
-  <p><strong>Prompt 1:</strong> Why is Arlecchino’s costume traditionally multicolored and made of diamonds?<br>
-  <strong>Answer:</strong> The multicolored diamond pattern reflects Arlecchino’s lively and chaotic persona. Historically, it symbolized poverty and improvisation, as servants like Arlecchino were thought to wear patched clothing made from fabric scraps. Over time, it became a defining visual code for his comedic and cunning role.</p>
-
-  <p><strong>Prompt 2:</strong> How does the costume’s color palette affect the perception of the character?<br>
-  <strong>Answer:</strong> The bright and contrasting colors emphasize Arlecchino’s mischievous energy and help distinguish him visually as a comic figure. The vivid palette enhances his role as a dynamic trickster and draws audience attention during physical performances.</p>
-
-  <p><strong>Prompt 3:</strong> What does the use of a mask represent in Arlecchino’s character?<br>
-  <strong>Answer:</strong> The mask reinforces Arlecchino’s identity as an archetype rather than an individual. It supports exaggerated expression through movement and gesture while highlighting his anonymity, subversiveness, and theatrical function as a clever servant.</p>
-
-  <p><strong>Prompt 4:</strong> What role do the hat and other accessories play in his visual identity?<br>
-  <strong>Answer:</strong> Accessories like a soft cap with a feather contribute to Arlecchino’s playful, agile image. These elements support his clown-like appearance while also adding stylized cues that reflect his social role and physical humor.</p>
-
-  <p><strong>Prompt 5:</strong> How has the image of Arlecchino evolved from the 17th to the 20th century?<br>
-  <strong>Answer:</strong> Arlecchino originated as a comic servant in 17th-century commedia dell’arte, known for slapstick humor and acrobatics. In the 20th century, especially through Dario Fo, he evolved into a politically charged figure — a vehicle for satire and critique of power structures, while retaining his core attributes of wit and agility.</p>
-
-  <h3>Enrichment</h3>
-  <p>Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:</p>
-
-<pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
-@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
-@prefix ex: &lt;http://example.org/&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-
-&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704151&gt;
-    arco:material "paper" ;
-    arco:technique "ink drawing" ;
-    a-cd:hasSubject ex:ArlecchinoSymbolism .
-
-ex:ArlecchinoSymbolism
-    a a-cd:Subject ;
-    rdfs:label "Symbol of theatrical cleverness, social satire, and comic disorder" .
-</code></pre>
-
-  <h3>File</h3>
-<p>
-  My enrichment file is available here: 
-  <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/arlecchino-600.ttl" target="_blank">arlecchino-600.ttl</a>
-</p>
-<p>
-  <strong>Download RDF File</strong><br>
-  <a href="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino-600.ttl" download>Download TTL File</a>
-</p>
-
+</body>
+</html>
