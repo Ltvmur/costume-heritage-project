@@ -302,10 +302,30 @@ Functionality for Performance: The costumes needed to allow for the dynamic, oft
 Aesthetic Cohesion with Set Design: The costume would also integrate with the overall visual aesthetic of the stage design, contributing to a cohesive theatrical world that was both historically evocative and boldly satirical.
 In summary, the costume based on Dario Fo's 1963 "figurini" represents a theatrical reinterpretation of Late 15th-Early 16th Century European (specifically Spanish) court fashion, designed to visually anchor his satirical narrative while allowing for the expressive and often exaggerated performance style of his theatre.</p>
     
-<h3>RDF Triples</h3>
+<h3>Enrichment</h3>
 <p>I created RDF triples describing the cultural and stylistic context of the costume:</p>
-<p><a href="https://marikvel.github.io/costume-heritage-project/rdf/costume_0500704524.ttl" target="_blank">
-View RDF data (.ttl)</a></p>
+<pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: <https://w3id.org/arco/ontology/context-description/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/> .
+
+<https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524>
+    a-cd:hasSubject ex:LateRenaissanceStyle ;
+    a-cd:hasSubject ex:IsabellaPerformance .
+
+ex:LateRenaissanceStyle
+    a a-cd:Subject ;
+    rdfs:label "Late Renaissance clothing style" .
+
+ex:IsabellaPerformance
+    a a-cd:Subject ;
+    rdfs:label "Isabella, tre caravelle e un cacciaballe by Dario Fo" .
+</pre>
+
+<h3>File</h3>
+<p>My file is available for downloading:
+<a href="https://marikvel.github.io/costume-heritage-project/rdf/costume_0500704524.ttl" target="_blank">costume_0500704524.ttl</a></p>
 
 <h2>Conclusion</h2>
 <p>This project demonstrates how knowledge graphs and language models can work together to enrich cultural heritage data. The costume is not only a visual artifact, but also a narrative element linked to Italian theater and political satire.</p>
