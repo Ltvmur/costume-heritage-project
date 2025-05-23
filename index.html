@@ -115,6 +115,16 @@ My contribution is focused on analyzing the theatrical costume created in 1963 b
 
 <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/costume_0500704524.jpeg" alt="Costume by Dario Fo (1963)" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
 
+<pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
+SELECT DISTINCT ?cp 
+WHERE {
+?cp a arco:HistoricOrArtisticProperty ; 
+rdfs:label ?l .
+FILTER(REGEX(?l, "vestito|teatro|cinema|costume|disegno", "i"))
+}
+LIMIT 50
+</pre>
+    
 <h3>SPARQL Analysis</h3>
 <p>
 Using SPARQL, I queried the ArCo endpoint to explore the metadata for object <a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524" target="_blank">0500704524</a> The retrieved information includes:
@@ -134,13 +144,10 @@ Using SPARQL, I queried the ArCo endpoint to explore the metadata for object <a 
   </ul>
   
 <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
-SELECT DISTINCT ?cp 
+SELECT DISTINCT ?property ?value
 WHERE {
-  ?cp a arco:HistoricOrArtisticProperty ; 
-       rdfs:label ?l .
-  FILTER(REGEX(?l, "vestito|teatro|cinema|costume|disegno", "i"))
+  <https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524> ?property ?value .
 }
-LIMIT 50
 </pre>
 
 <p>To address these gaps, I used Large Language Models (LLMs) to infer missing connections and generate RDF triples that enrich the knowledge graph with contextual and stylistic information.
