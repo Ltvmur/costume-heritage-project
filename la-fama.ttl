@@ -1,0 +1,23 @@
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23>
+    arco:technique "ink and watercolor on ivory paper" ;
+    a-cd:hasSubject ex:SymbolicFame, ex:EagleSymbol, ex:LaurelSymbol, ex:CaduceusSymbol, ex:ItalianStageIdeals .
+
+ex:SymbolicFame a a-cd:Subject ;
+    rdfs:label "Allegorical female figure symbolizing cultural immortality and artistic renown" .
+
+ex:EagleSymbol a a-cd:Subject ;
+    rdfs:label "Symbol of power, victory, and national grandeur" .
+
+ex:LaurelSymbol a a-cd:Subject ;
+    rdfs:label "Symbol of honor, poetic achievement, and artistic excellence" .
+
+ex:CaduceusSymbol a a-cd:Subject ;
+    rdfs:label "Symbol of eloquence, communication, and intellectual diplomacy" .
+
+ex:ItalianStageIdeals a a-cd:Subject ;
+    rdfs:label "Representation of Italy’s early 20th-century cultural identity through classical theatrical allegory" .
