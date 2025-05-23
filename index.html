@@ -116,7 +116,7 @@ My enrichment file is available here:
 </p>
 
 
-<h2>Mariam - Costume by Dario Fo (1963)</h2>
+<h2 id="mariam">Mariam - Costume by Dario Fo (1963)</h2>
 
 <h3>Topic</h3>
 <p>
@@ -166,96 +166,42 @@ WHERE {
 <h3>LLM Prompts and Answers</h3>
 <p>I used ChatGPT, Gemini, and LlaMa 2 Family to analyze this costume. All three models agreed that the costume was designed for the play <em>Isabella, tre caravelle e un cacciaballe</em> and reflected a stylized version of late 15th to early 16th-century Spanish court fashion.</p>
 
-<h2>LLM Answers Comparison</h2>
+<table>
+  <thead>
+    <tr>
+      <th>LLM model</th>
+      <th>Question 1:<br>
+        Which theater production or film featured a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?</th>
+      <th>Question 2:<br>
+        What historical clothing style is represented by the costume?</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ChatGPT</strong></td>
+      <td>4 different outputs, no clear conclusion</td>
+      <td>very good</td>
+      <td>Good, but not specific</td>
+    </tr>
 
-<table border="1">
-  <tr>
-    <th>Prompt Type</th>
-    <th>ChatGPT</th>
-    <th>LLaMa 2</th>
-    <th>Gemini</th>
-  </tr>
+    <tr>
+      <td><strong>LLaMa 2</strong></td>
+      <td>Unstable, broken chain of thought</td>
+      <td>Not enough data</td>
+      <td>❌ Weaker</td>
+    </tr>
 
-  <tr>
-    <td>Zero-shot</td>
-    <td>The costume design titled "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, is associated with the theatrical production of "Isabella, tre caravelle e un cacciaballe" (translated as "Isabella, Three Sailing Ships and a Con Man"). This satirical play was written and performed by Dario Fo, a Nobel Prize-winning Italian playwright, actor, and director, known for his political theater and use of commedia dell’arte elements.
-
-In this production, Dario Fo not only wrote and acted but also created costume and set designs. The figurines (design drawings) represent his vision for the female stage costumes, reflecting the theatrical and exaggerated style typical of his work during that period.
-</td>
-    <td>I couldn't find any information that directly links a theater production or film to a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963.
-However, Dario Fo was an Italian playwright, actor, and director, known for his satirical and socially conscious works. It is possible that one of his own productions or a production inspired by his work may have featured a costume based on his 1963 design.
-Can you provide more context or clarify which production or film you are thinking of? I'll do my best to help.
-</td>
-    <td>The costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, was designed for his play "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man).
-This comedy, written by Dario Fo and Franca Rame, premiered in 1963. The costumes for this production were inspired by the 16th century setting of the play. The drawings, including the "figurini per costumi di scena, femminili (disegno)," were used for the costume department and actors during the creation of the theatrical pieces.
-The play "Isabella, tre caravelle e un cacciaballe" was later adapted for television by RAI TV in 1977 as part of the series "Il teatro di Dario Fo."
-</td>
-  </tr>
-
-  <tr>
-    <td>Few-shot</td>
-    <td>Design: "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963)
-Q: In which theatre performance or film was the costume used?
-A: It was used in the theatre performance "La signora è da buttare" (1967).
-</td>
-    <td>Based on the design "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963), the costume was used in the theatre performance of "Isabella, tre caravelle e un cacciaballe" (also known as "Isabella, Three Sailing Ships and a Con Man") which is a play written by Dario Fo in 1963.
-</td>
-    <td>A: The costume was used in the theatre performance "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man), written by Dario Fo and Franca Rame, which premiered in 1963.
-</td>
-  </tr>
-
-  <tr>
-    <td>Chain-of-thought</td>
-    <td>Given the title "figurini per costumi di scena, femminili (disegno)" by Dario Fo, dated 1963, and considering Dario Fo’s theatrical work in that period, it is highly likely that this costume design was created for the play:
-"Gli archangeli non giocano a flipper" ("Archangels Don’t Play Pinball")
-Reasoning:
-Date Match: The play premiered in 1962, and Dario Fo was deeply involved in all aspects of production—including writing, directing, set, and costume design—making it a strong candidate for a 1963 costume design.
-Satirical Style: This play is emblematic of Fo’s early satirical and absurdist style, with surreal and highly theatrical staging. Costume design played a crucial role in conveying the whimsical and critical tone.
-Female Roles: The play features several prominent female characters in exaggerated, stylized roles, which would have warranted specific and distinctive costume designs—matching the description of the "figurini per costumi di scena, femminili."
-Dario Fo and Franca Rame Collaboration: This period marked close collaboration between Fo and his wife, actress Franca Rame, who frequently played leading female roles in his plays and would have worn these costumes.
-Conclusion:
-A: The costume design "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963) was likely used in the theatre performance "Gli archangeli non giocano a flipper" ("Archangels Don’t Play Pinball", 1962).
-</td>
-    <td>Given the time period and Dario Fo's theatrical work, I would suggest that the costume based on "figurini per costumi di scena, femminili (disegno)" (1963) might have been used in his satirical play "Settimo: ruba un po' meno" ( Seventh Commandment: Steal a Little Less), which premiered in 1964.
-However, considering the exact year of the design (1963), it is more likely that the costume was used in his play "Isabella, tre caravelle e un cacciaballe" is not confirmed but "Settimo: ruba un po' meno" is not either but another play is confirmed " Chi ruba un piede è fortunato in amore" is not confirmed but ... actually the play " Chi ruba un piede è fortunato in amore" is not confirmed but his most notable work in 1963 was "Isabella" no but "Il diavolo con le zinne" "Il diavolo con le zinne" no actually "Settimo" no but actually... actually... actually Fo's play "Il diavolo con le zinne" no actually it was "Settimo" no but "Chi ruba un piede" is not confirmed "Settimo" no nor actually actually actually " Chi ruba" is not confirmed actually Fo another satirical play in two acts "Il diavolo con le zinne" does not fit nor but another does... Fo's another most notable work that it might have been used for, in that exact year is actually actually actually " Chi ruba" no actually "Settimo" no actually " Chi ruba un piede" is not confirmed but a confirmed one is actually "Il diavolo con le zinne" is not but " Chi ruba un piede" is not "Settimo" is not actually " Chi ruba" is not confirmed but another confirmed notable play by Dario Fo is actually " Chi ruba" is not confirmed actually but actually another most notable Fo play confirmed is "Il diavolo con le zinne" is not actually "Settimo" is not "Il diavolo con le zinne" is not actually actually actually actually Fo play confirmed actually in the same year (1963) is "Settimo" no actually "Chi ruba" is not confirmed but "Settimo" is
-</td>
-    <td>You are absolutely on the right track! Dario Fo was indeed a master of satirical theater, and his costume designs were an integral part of his productions.
-The costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, was almost certainly used in his satirical play "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man).
-Here's why this is the most likely origin:
-Year of Creation: The design is from 1963, and "Isabella, tre caravelle e un cacciaballe" premiered in that very year. This direct correlation in timing makes it highly probable.
-Dario Fo's Style: Fo was renowned for his political and social satire, often using historical events and figures to comment on contemporary issues. "Isabella, tre caravelle e un cacciaballe" is a prime example of this, offering a comedic and critical look at the "discovery" of America by Christopher Columbus and the role of Queen Isabella. His costumes would have been designed to enhance this satirical tone, perhaps with exaggerated or anachronistic elements.
-His Role as Costume Designer: As a true "uomo di teatro" (man of the theater), Dario Fo was involved in all aspects of his productions, including writing, directing, acting, and often, costume and set design. It was common for him to create his own "figurini" (sketches) for the costumes.
-Historical Context: The play's setting in the late 15th century (the time of Columbus) would necessitate costumes that evoke that period, even if satirically. Fo's "figurini per costumi di scena, femminili" would have been a direct blueprint for the female characters' attire in this historical-satirical context.
-In summary, given the date and Fo's prominent theatrical output in 1963, "Isabella, tre caravelle e un cacciaballe" stands out as the definitive production for which this costume design would have been created.
-</td>
-  </tr>
-
-  <tr>
-    <td>Instruction-based</td>
-    <td>As a cultural heritage expert examining the costume drawing series "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, we must place it in the context of Dario Fo’s theatrical output and collaborations during the early 1960s.
-Contextual Analysis:
-Dario Fo was at the peak of his satirical and politically engaged theater during this period, working closely with his wife Franca Rame, who played prominent female roles.
-In the early 1960s, Fo's work transitioned from more absurdist farce to a sharper political satire, though it still maintained visual theatricality and stylized costumes.
-He was directly involved in every aspect of production — writing, directing, set, and costume design, making any costume sketch directly tied to a stage performance.
-His 1963 production "La signora è da buttare" ("The Lady Is to Be Thrown Away") is particularly relevant — it was performed in the same year as the dated drawing and prominently featured female characters, including Franca Rame, in roles that challenged social norms, a common theme in Fo’s work.
-Most Plausible Attribution:
-A: The costume drawing series "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963) was most likely used in the theatrical production "La signora è da buttare" (1963).
-This play matches the timeline, thematic content, and known collaborations and is the most plausible context for these costume designs.
-</td>
-    <td>No answer</td>
-    <td>As a cultural heritage expert, I can confidently state that the costume based on the drawing series "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963) was almost certainly used in his play "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man).
-Here's a breakdown of the reasoning, considering Dario Fo's theatrical works and collaborations in the 1960s:
-Precise Dating: The key piece of information is the creation date of the drawing: 1963. This immediately narrows down the possibilities to productions from that specific year or slightly thereafter.
-Dario Fo's 1963 Production: Dario Fo and Franca Rame premiered "Isabella, tre caravelle e un cacciaballe" in 1963. This satirical comedy, which reinterprets the story of Christopher Columbus and Queen Isabella, was a significant work in their repertoire.
-Fo's Involvement in all Aspects of Production: Dario Fo was not just a playwright; he was a true "uomo di teatro" – deeply involved in directing, acting, and often the visual aspects, including costume and set design. It was common for him to create his own "figurini" (sketches) for the costumes used in his plays.
-Nature of the Play: "Isabella, tre caravelle e un cacciaballe" is a historical satire, which would naturally require period-inspired costumes. The "figurini per costumi di scena, femminili" (sketches for female stage costumes) would be precisely what was needed for the female characters in such a production.
-Lack of Other Contenders: While Fo had other notable works in the 1960s (such as "Archangels Don't Play Pinball" from 1960, or "Mistero Buffo" which evolved over time but became prominent later in the decade), "Isabella, tre caravelle e un cacciaballe" is the most direct and chronologically fitting major theatrical production by Fo and Rame from 1963. There is no known film from 1963 that heavily featured his costume designs in this manner; his filmography shows "Follie d'estate" where he acted as a gangster, which is unlikely to align with these historical costume drawings.
-Therefore, given the year of creation of the drawings and the specific theatrical output of Dario Fo and Franca Rame during that period, "Isabella, tre caravelle e un cacciaballe" is the overwhelmingly plausible theatrical production where these costume designs were utilized.
-</td>
-  </tr>
+    <tr>
+      <td><strong>Gemini</strong></td>
+      <td>Clear and confident: "Isabella"</td>
+      <td>Detailed, stylish, theatrical</td>
+      <td>✅ Best result</td>
+    </tr>
+  </tbody>
 </table>
     
-<h2>RDF Triples</h2>
+<h3>RDF Triples</h3>
 <p>I created RDF triples describing the cultural and stylistic context of the costume:</p>
 <p><a href="https://marikvel.github.io/costume-heritage-project/rdf/costume_0500704524.ttl" target="_blank">
 View RDF data (.ttl)</a></p>
