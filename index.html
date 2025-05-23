@@ -123,15 +123,15 @@ Using SPARQL, I queried the ArCo endpoint to explore the metadata for object <a 
     <li><strong>👗 What historical period or clothing style does it represent?</strong></li>
   </ul>
   
-<pre>
+<pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
 SELECT DISTINCT ?cp 
 WHERE {
-?cp a arco:HistoricOrArtisticProperty ; 
-rdfs:label ?l .
-FILTER(REGEX(?l, "vestito|teatro|cinema|costume|disegno", "i"))
+  ?cp a arco:HistoricOrArtisticProperty ; 
+       rdfs:label ?l .
+  FILTER(REGEX(?l, "vestito|teatro|cinema|costume|disegno", "i"))
 }
 LIMIT 50
-  </pre>
+</pre>
 
 <p>To address these gaps, I used Large Language Models (LLMs) to infer missing connections and generate RDF triples that enrich the knowledge graph with contextual and stylistic information.
 <p>
