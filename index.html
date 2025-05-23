@@ -104,6 +104,31 @@ My contribution is focused on analyzing the theatrical costume created in 1963 b
 </p>
 
 <img src="costume_0500704524" alt="Costume by Dario Fo (1963)" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
+
+<h2>SPARQL Analysis</h2>
+<p>Using SPARQL, I queried the ArCo endpoint to explore the metadata for object 0500704524. The retrieved information includes:</p>
+<p>* Title: Costume teatrale
+* Type: Theatrical costume
+* Dimensions: Height 150 cm, Width 60 cm
+* Materials: Fabric, wood, metal
+* Techniques: Sewing, wood carving, metalworking
+* Color: Red, gold, black</p>
+<p>However, ArCo lacks contextual and semantic enrichment that could connect this object to broader cultural knowledge. Specifically, the following key aspects are missing:<p>
+<p>* 🎬 Which theatrical performance or film was this costume used in?
+* 👗 What historical period or clothing style does it represent?<p>
+
+<pre>
+SELECT DISTINCT ?cp 
+WHERE {
+?cp a arco:HistoricOrArtisticProperty ; 
+rdfs:label ?l .
+FILTER(REGEX(?l, "vestito|teatro|cinema|costume|disegno", "i"))
+}
+LIMIT 50
+  </pre>
+
+<p>To address these gaps, I used Large Language Models (LLMs) to infer missing connections and generate RDF triples that enrich the knowledge graph with contextual and stylistic information.
+<p>
   
   <h2>RDF Triples</h2>
   <p>I created RDF triples describing the cultural and stylistic context of the costume:</p>
@@ -113,16 +138,7 @@ My contribution is focused on analyzing the theatrical costume created in 1963 b
   <h2>Language Model Results</h2>
   <p>I used ChatGPT, Gemini, and LlaMa 2 Family to analyze this costume. All three models agreed that the costume was designed for the play <em>Isabella, tre caravelle e un cacciaballe</em> and reflected a stylized version of late 15th to early 16th-century Spanish court fashion.</p>
 
-  <h2>SPARQL Query</h2>
-  <pre>
-SELECT DISTINCT ?cp 
-WHERE {
-?cp a arco:HistoricOrArtisticProperty ; 
-rdfs:label ?l .
-FILTER(REGEX(?l, "vestito|teatro|cinema|costume|disegno", "i"))
-}
-LIMIT 50
-  </pre>
+  
 
   <h2>Conclusion</h2>
   <p>This project demonstrates how knowledge graphs and language models can work together to enrich cultural heritage data. The costume is not only a visual artifact, but also a narrative element linked to Italian theater and political satire.</p>
