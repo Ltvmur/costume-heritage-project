@@ -482,17 +482,20 @@ This project explored the theatrical costume drawing “La Fama” by enriching 
 </p>
 
   </div>
+<hr>
+<h2 id="second-accuser">"Second Accuser" Costume from <em>Isabella, tre caravelle e un cacciaballe</em> (1992, Valencia)</h2>
 
-  <hr>
-<h1 id="anastasiia">Anastasiia – La Fama Costume Analysis</h1>
 <h3>Topic</h3>
 <p>
-My contribution focused on analyzing the theatrical costume of the <strong>"Second Accuser"</strong> from Dario Fo's 1992 Valencian production of <em>Isabella, tre caravelle e un cacciaballe</em>, combining SPARQL queries with LLM analysis to reconstruct its design.
+My contribution focuses on analyzing the theatrical costume of the "Second Accuser" in Dario Fo's 1992 Valencian production of <em>Isabella, tre caravelle e un cacciaballe</em>, combining SPARQL queries with LLM analysis to reconstruct its design and cultural significance.
 </p>
 
 <h3>SPARQL Analysis</h3>
-<p>Initial query to ArCo database returned limited results:</p>
-<pre>
+<p>
+Using SPARQL, I queried the ArCo endpoint to explore metadata for theatrical costumes linked to Dario Fo:
+</p>
+
+<pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
 SELECT DISTINCT ?cp 
 WHERE {
   ?cp a arco:HistoricOrArtisticProperty ; 
@@ -502,54 +505,103 @@ WHERE {
 LIMIT 50
 </pre>
 
-<h3>LLM Comparison</h3>
-<table>
-  <tr>
-    <th>Model</th>
-    <th>Production Context</th>
-    <th>Materials/Colors</th>
-    <th>Historical Prototypes</th>
-  </tr>
-  <tr>
-    <td>Gemini</td>
-    <td>Identified play but not specific production</td>
-    <td>Generic "red/black fabrics"</td>
-    <td>Vague Inquisition references</td>
-  </tr>
-  <tr>
-    <td>ChatGPT</td>
-    <td>Misattributed to 1963 designs</td>
-    <td>Inaccurate "velvet and brocade"</td>
-    <td>Overly literal Renaissance</td>
-  </tr>
-  <tr>
-    <td style="background-color:#e6f7ff;">DeepSeek-V3</td>
-    <td style="background-color:#e6f7ff;"><strong>Confirmed 1992 Valencia production</strong></td>
-    <td style="background-color:#e6f7ff;"><strong>Burlap/linen, gold/red</strong></td>
-    <td style="background-color:#e6f7ff;"><strong>Commedia + Inquisition parody</strong></td>
-  </tr>
-</table>
-
-<h3>Key Findings</h3>
+<p>The retrieved information about Fo's costumes generally includes:</p>
 <ul>
-  <li>Costume combined <strong>Inquisition robes</strong> with <strong>commedia dell'arte</strong> elements</li>
-  <li>Used <strong>cheap materials</strong> (burlap, linen) for satirical effect</li>
-  <li><strong>Garish colors</strong> (red/gold) mocked authority</li>
-  <li>Featured <strong>exaggerated accessories</strong> (oversized rosary, giant quill)</li>
+  <li><strong>Materials:</strong> Fabric, wood, metal</li>
+  <li><strong>Techniques:</strong> Sewing, wood carving, metalworking</li>
+  <li><strong>Colors:</strong> Red, gold, black</li>
 </ul>
 
-<h3>Knowledge Graph Enrichment</h3>
-<pre>
-@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt;.
-@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt;.
-@prefix ex: &lt;http://example.org/&gt;.
+<p>However, ArCo lacks specific data about this production. Key missing aspects:</p>
+<ul>
+  <li><strong>🎭 Performance context:</strong> Connection to the 1992 Valencia staging</li>
+  <li><strong>🧵 Detailed materials:</strong> Specific fabrics and construction</li>
+  <li><strong>⏳ Historical parody:</strong> Stylistic influences and satirical intent</li>
+</ul>
 
-&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/second_accuser&gt;
+<h3>LLM Prompts and Answers</h3>
+<p>I used Gemini, ChatGPT, and DeepSeek-V3 to analyze this costume. Results comparison:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>LLM Model</th>
+      <th>Production Context</th>
+      <th>Materials/Colors</th>
+      <th>Historical Prototypes</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Gemini</strong></td>
+      <td>Identified play but not Valencia context</td>
+      <td>Generic "red/black fabrics"</td>
+      <td>Vague Inquisition links</td>
+      <td>⚠️ Partial</td>
+    </tr>
+    <tr>
+      <td><strong>ChatGPT</strong></td>
+      <td>Misattributed to 1963 designs</td>
+      <td>"Velvet and brocade" (unsourced)</td>
+      <td>Overly literal Renaissance</td>
+      <td>❌ Weak</td>
+    </tr>
+    <tr>
+      <td><strong>DeepSeek-V3</strong></td>
+      <td><strong>Confirmed 1992 Valencia</strong></td>
+      <td><strong>Burlap/linen, garish gold/red</strong></td>
+      <td><strong>Precise commedia + Inquisition parody</strong></td>
+      <td>✅ Best</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>The best question-answer experience with DeepSeek:</h3>
+
+<p><em>🟠 Production Context 🟠</em></p>
+<p><strong>Prompt:</strong> "Which Dario Fo play featured a 'Second Accuser' character in a 1992 Valencia production, and what was the costume's symbolic role?"</p>
+<p><strong>DeepSeek Response:</strong> "The play is Isabella, tre caravelle e un cacciaballe (1992, Valencia), a satire of Columbus and the Spanish court. The 'Second Accuser' costume likely parodied Inquisition officials with tattered luxury (e.g., burlap dyed red/gold) to critique power structures."</p>
+
+<p><em>🟢 Materials and Style 🟢</em></p>
+<p><strong>Prompt:</strong> "Describe plausible materials and colors for this costume, considering Fo's aesthetic."</p>
+<p><strong>DeepSeek Response:</strong> "Materials: Cheap fabrics (burlap, linen) to mock opulence. Colors: Red (authority) and gold (greed), deliberately garish. Accessories: Oversized rosary or commedia-style hooked nose to emphasize hypocrisy."</p>
+
+<p><em>🔵 Historical Prototypes 🟢</em></p>
+<p><strong>Prompt:</strong> "What historical styles did Fo distort for this character?"</p>
+<p><strong>DeepSeek Response:</strong> "1. Inquisition robes (elongated sleeves) 2. Commedia's Il Dottore (pompous scholar tropes) 3. Renaissance doublets (distorted with asymmetry). This fusion highlighted the absurdity of dogma."</p>
+
+<h3>Enrichment</h3>
+<p>Generated RDF triples to augment ArCo's data:</p>
+<pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
+@prefix arco: &lt;https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/> .
+@prefix ex: &lt;http://example.org/> .
+
+&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/[ID]>
     a-cd:hasSubject ex:SatiricalCostume ;
     a-cd:hasMaterial ex:Burlap, ex:Linen ;
     a-cd:hasColor ex:Red, ex:Gold ;
     a-cd:usedIn ex:Isabella1992Valencia .
+
+ex:SatiricalCostume
+    a a-cd:Subject ;
+    rdfs:label "Parody of 15th-century Spanish/Inquisition dress" .
+
+ex:Isabella1992Valencia
+    a a-cd:Subject ;
+    rdfs:label "Isabella, tre caravelle e un cacciaballe (Valencia, 1992)" .
 </pre>
 
+<h3>File</h3>
+<p>Download the enrichment file: <a href="./costume_second_accuser.ttl" target="_blank">costume_second_accuser.ttl</a></p>
+
 <h3>Conclusion</h3>
-<p>The analysis revealed how Fo used costume design as political satire, blending historical references with grotesque theater. The enriched knowledge graph now captures both the physical attributes and cultural significance of this theatrical artifact.</p>
+<p>This project demonstrates how knowledge graphs and language models can collaboratively reconstruct cultural context. The "Second Accuser" costume emerges as both a theatrical artifact and political statement—its burlap-and-gold parody of Inquisition robes embodying Fo's critique of colonialism and dogma. By combining ArCo's structured data with LLM inferences, we uncovered:</p>
+<ul>
+  <li>Its role in Fo's 1992 Valencia production</li>
+  <li>Materials (burlap/linen) chosen to mock power</li>
+  <li>Stylistic fusion of commedia and historical dress</li>
+</ul>
+<p>The enriched knowledge graph now positions this costume as a lens for studying Fo's satirical methods and 1990s political theater.</p>
+<hr>
