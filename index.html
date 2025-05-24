@@ -483,3 +483,79 @@ This project explored the theatrical costume drawing “La Fama” by enriching 
 
   </div>
 </body>
+
+<h1 id="danil">Danil – Theatrical Costume of the "Second Accuser" in Dario Fo's Isabella, tre caravelle e un cacciaballe (1992, Valencia)</h1>
+</head>
+<body>
+    <h1>Analysis of "Second Accuser" Costume from Dario Fo's Play (1992)</h1>
+
+    <div class="section">
+        <h2>SPARQL Analysis</h2>
+        <pre>SELECT DISTINCT ?cp 
+WHERE {
+  ?cp a arco:HistoricOrArtisticProperty ; 
+      rdfs:label ?l .
+  FILTER(REGEX(?l, "vestito|teatro|costume|Fo", "i"))
+}
+LIMIT 50</pre>
+        <p><strong>Gaps Identified:</strong> Missing production context, material details, and historical references.</p>
+    </div>
+
+    <div class="section">
+        <h2>LLM Comparison</h2>
+        <table>
+            <tr>
+                <th>LLM Model</th>
+                <th>Production Context</th>
+                <th>Materials/Colors</th>
+                <th>Historical Prototypes</th>
+            </tr>
+            <tr>
+                <td>Gemini</td>
+                <td>Partial identification</td>
+                <td>Generic colors</td>
+                <td>Vague references</td>
+            </tr>
+            <tr>
+                <td>ChatGPT</td>
+                <td>Misattributed</td>
+                <td>Unreliable materials</td>
+                <td>Literal interpretation</td>
+            </tr>
+            <tr style="background-color: #e8ffe8;">
+                <td>DeepSeek-V3</td>
+                <td>Accurate production ID</td>
+                <td>Burlap/linen, gold/red</td>
+                <td>Commedia + Inquisition</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>DeepSeek Responses</h2>
+        <h3>Prompt 1: Production Context</h3>
+        <p><em>Response:</em> "The play is Isabella, tre caravelle e un cacciaballe (1992, Valencia)... costume likely parodied Inquisition officials..."</p>
+        
+        <h3>Prompt 2: Materials/Colors</h3>
+        <p><em>Response:</em> "Cheap fabrics (burlap, linen)... Red (blood/authority) and gold (greed)..."</p>
+    </div>
+
+    <div class="section">
+        <h2>Knowledge Graph Enrichment</h2>
+        <pre>
+@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt;.
+&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/[ID]&gt;
+    a-cd:hasSubject ex:SatiricalCostume;
+    a-cd:hasMaterial ex:Burlap, ex:Linen;
+    a-cd:hasColor ex:Red, ex:Gold;</pre>
+        <div class="download">
+            Download: <a href="costume_second_accuser.ttl">costume_second_accuser.ttl</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Conclusion</h2>
+        <p>This analysis combines cultural heritage data with LLM insights to reconstruct Fo's satirical costume design. The "Second Accuser" costume emerges as a political statement blending commedia dell'arte with Inquisition parody.</p>
+    </div>
+</body>
+</html>
