@@ -1,0 +1,50 @@
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: <https://w3id.org/arco/ontology/context-description/> .
+@prefix ex: <http://example.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Costume Entity
+<https://w3id.org/arco/resource/HistoricOrArtisticProperty/second-accuser>
+    a arco:Costume ;
+    dct:title "Second Accuser costume from 'Isabella, tre caravelle e un cacciaballe'"@en ;
+    dct:creator <http://viaf.org/viaf/2467372> ;  # Dario Fo
+    dct:created "1992"^^xsd:gYear ;
+    arco:productionLocation <http://sws.geonames.org/2509954/> ;  # Valencia
+    arco:material "burlap" ;
+    arco:material "linen" ;
+    arco:technique "exaggerated tailoring" ;
+    arco:color "red" ;
+    arco:color "gold" ;
+    a-cd:hasSubject ex:PowerSatire ;
+    a-cd:hasSubject ex:InquisitionParody ;
+    a-cd:usedIn ex:Isabella1992Production ;
+    dct:description "Satirical costume parodying Spanish Inquisition officials through grotesque exaggeration of Renaissance/Commedia dell'arte elements"@en .
+
+# Subjects
+ex:PowerSatire
+    a a-cd:Subject ;
+    rdfs:label "Satire of political and religious authority"@en ;
+    skos:broader <http://vocab.getty.edu/aat/300417483> .  # Satire (Artistic Concept)
+
+ex:InquisitionParody
+    a a-cd:Subject ;
+    rdfs:label "Parody of Spanish Inquisition aesthetics"@en ;
+    skos:related <http://vocab.getty.edu/aat/300025943> .  # Inquisition
+
+# Production Context
+ex:Isabella1992Production
+    a a-cd:TheatricalProduction ;
+    rdfs:label "Isabella, tre caravelle e un cacciaballe (Valencia, 1992)"@en ;
+    dct:creator <http://viaf.org/viaf/2467372> ;  # Dario Fo
+    dct:date "1992"^^xsd:gYear ;
+    dct:spatial <http://sws.geonames.org/2509954/> ;  # Valencia
+    dct:subject <http://vocab.getty.edu/aat/300417483> ;  # Satire
+    dct:subject <http://vocab.getty.edu/aat/300054078> .  # Renaissance
+
+# Additional Links
+<http://viaf.org/viaf/2467372>
+    a foaf:Person ;
+    foaf:name "Dario Fo" ;
+    dct:description "Italian playwright, Nobel laureate"@en .
