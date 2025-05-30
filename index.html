@@ -121,22 +121,29 @@ Using SPARQL, I explored the ArCo endpoint and retrieved the properties of the o
 <a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704575" target="_blank">0500704575</a>. I found that the object already includes metadata such as title, authorship, and description. However, it lacked symbolic, material, and contextual information.
 </p>
 
-<h3>LLM Prompts and Answers</h3>
+<h3>LLM Prompting Techniques</h3>
 
-<p><strong>Prompt 1:</strong> What does the theatrical costume “Regina Isabella” designed by Dario Fo and Miguel Carbonell in 1992 represent? What character is it meant for?</p>
-<p><em>Answer:</em> The costume “Regina Isabella” represents a female royal character, most likely inspired by Queen Isabella of Spain or a generic Renaissance queen. It was created as a theatrical costume sketch and was likely intended for a noble, authoritative female figure on stage. The design reflects the status, power, and elegance associated with aristocratic women of the 16th century.</p>
+<h4>1. Zero-shot Prompt</h4>
+<p><strong>Prompt:</strong> What does the theatrical costume “Regina Isabella” represent in terms of cultural or symbolic meaning?</p>
+<p><strong>Answer:</strong> It represents royal authority, feminine power, and Renaissance nobility, reflecting the image of a queen from the 16th century.</p>
 
-<p><strong>Prompt 2:</strong> What is the historical and symbolic significance of the character “Regina Isabella” in Italian theater or literature?</p>
-<p><em>Answer:</em> "Regina Isabella" evokes the image of royal authority and female power. In Italian theater, such characters are often used to represent the intersection of history and drama. They may symbolize monarchy, tradition, or critique of power structures, especially in political or satirical plays like those by Dario Fo. The symbolism often combines femininity with leadership and influence.</p>
+<h4>2. Few-shot Prompt</h4>
+<p><strong>Prompt:</strong></p>
+<p>Example 1: Napoleon Bonaparte — Symbolizes power and nationalism.<br>
+Example 2: Cleopatra — Represents feminine authority and exoticism.<br>
+Now describe “Regina Isabella”.</p>
+<p><strong>Answer:</strong> Regina Isabella symbolizes dignity, regal presence, and traditional Italian theatrical depictions of female power and historical prestige.</p>
 
-<p><strong>Prompt 3:</strong> Was the costume “Regina Isabella” created for a specific theater production or film? If yes, which one?</p>
-<p><em>Answer:</em> The costume was likely created for a theatrical production, possibly connected to a satirical or historical drama by Dario Fo. While specific records of its stage use are limited, the designers' backgrounds in political and avant-garde theater suggest it was intended for a performance emphasizing historical themes or social commentary.</p>
+<h4>3. Chain-of-thought Prompt</h4>
+<p><strong>Prompt:</strong></p>
+<ol>
+  <li>What historical context does the name “Regina Isabella” refer to?</li>
+  <li>What do the materials — red velvet and gold embroidery — traditionally symbolize?</li>
+  <li>How are queens typically portrayed in Italian theater and cultural heritage?</li>
+</ol>
+<p><strong>Based on this reasoning, what does the costume most likely represent?</strong></p>
+<p><strong>Answer:</strong> The name refers to a Renaissance queen, evoking images of female monarchy and historical authority. Red velvet and gold embroidery symbolize luxury, power, and theatrical grandeur. Queens in Italian culture are often portrayed as dignified, commanding, and elegant. Therefore, the costume most likely represents royal status, feminine strength, and the cultural ideal of noble womanhood on stage.</p>
 
-<p><strong>Prompt 4:</strong> Describe the typical materials, colors, and style used in 16th-century costumes for female royalty in Italian theater.</p>
-<p><em>Answer:</em> Typical 16th-century theatrical costumes for royal women included materials like velvet, silk, and brocade, often in deep colors such as red, burgundy, or gold. Embroidery in gold or silver thread was common, along with elaborate sleeves, corsets, and floor-length skirts. These costumes were designed to reflect wealth, nobility, and dramatic presence on stage.</p>
-
-<p><strong>Prompt 5:</strong> What does a red velvet stage costume typically symbolize in Italian cultural heritage?</p>
-<p><em>Answer:</em> A red velvet costume typically symbolizes power, authority, passion, and prestige. In Italian cultural heritage, red is a color historically linked to both religious and royal figures. On stage, red velvet enhances visual impact and immediately signals that the character is of high importance or status.</p>
 
 <h3>Enrichment</h3>
 <p>
