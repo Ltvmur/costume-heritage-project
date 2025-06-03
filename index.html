@@ -572,6 +572,44 @@ LIMIT 100
   <h4>🐉 DeepSeek Response</h4>
   <img src="cot-deepseek.png" width="600" />
 </section>
+
+<h3>🧾 Comparison of Model Outputs</h3>
+
+<p>Below is a summary of how each language model responded to the three prompting strategies, evaluating clarity, cultural relevance, and interpretive depth:</p>
+
+<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead style="background-color: #f9f9f9;">
+    <tr>
+      <th>Prompt Type</th>
+      <th>GPT-4</th>
+      <th>Gemini</th>
+      <th>DeepSeek</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Zero-shot</strong></td>
+      <td>Most accurate; connected all symbols to Italian theatrical identity effectively.</td>
+      <td>Clear but general; cultural depth was limited.</td>
+      <td>Verbose, abstract; lacked theatrical references.</td>
+    </tr>
+    <tr>
+      <td><strong>Few-shot</strong></td>
+      <td>Excellent analogies; insightful cultural framing using the examples.</td>
+      <td>Improved structure; moderate cultural link.</td>
+      <td>More coherent than before, but still generic.</td>
+    </tr>
+    <tr>
+      <td><strong>Chain-of-Thought</strong></td>
+      <td>Detailed breakdown; ideal structure for RDF enrichment.</td>
+      <td>Well-structured but slightly repetitive.</td>
+      <td>Better flow, but lacked iconographic accuracy.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Selected Model:</strong> Based on this comparison, <strong>GPT-4's Chain-of-Thought</strong> output was chosen for generating the RDF triples, due to its precise symbolic interpretation and cultural relevance.</p>
+
     <hr>
 <h1 id="danil">Danil – Second Accuser Costume Analysis</h1>
 
