@@ -464,79 +464,113 @@ ex:ArlecchinoSymbolism
   <hr>
 <h1 id="anastasiia">Anastasiia – La Fama Costume Analysis</h1>
 
-<h2>Topic</h2>
-<p>
-My contribution focused on the theatrical costume <strong>“La Fama”</strong>, represented as a female winged figure, carrying an eagle and a caduceus, with a red drape decorated with laurel wreaths and a corset featuring the figure of Fame. This costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>, and was used as a stage design drawing.
-</p>
-<p>
-The allegorical figure of Fame (La Fama) is deeply rooted in classical and Renaissance iconography and remains a recurring character in Italian visual and performing arts. The drawing, likely part of a theatrical set or costume collection, captures symbolic elements such as victory (laurel), power (eagle), and communication (caduceus), which are strongly associated with both theater and political representation.
-</p>
-<img src="la-fama.jpg" alt="La Fama Costume" width="400">
-<h2>SPARQL Analysis</h2>
-<p>
-To explore the metadata associated with the “La Fama” costume, I queried the ArCo SPARQL endpoint using the resource ID <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23">0100408590-23</a>.
-</p>
-<p>
-The object is defined as a <strong>HistoricOrArtisticProperty</strong>, with the cultural property type <strong>SculptureDrawing</strong>. It includes a short descriptive label, title, inventory number, and cultural context. However, the metadata lacks explicit information about <strong>the symbolic meaning</strong> of the elements depicted and the <strong>artistic role of the costume on stage</strong>.
-</p>
-<p>
-This gap provides a perfect opportunity for enrichment using LLMs to generate contextual knowledge that could enhance the understanding of the costume’s cultural and artistic value.
-</p>
+<h2>🎭 Topic</h2>
+  <p>
+    My contribution focused on the theatrical costume <strong>“La Fama”</strong>, represented as a female winged figure,
+    carrying an eagle and a caduceus, with a red drape decorated with laurel wreaths.
+    This costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>
+    and was used as a stage design drawing.
+  </p>
+  <p>
+    The allegorical figure of Fame (<em>La Fama</em>) is deeply rooted in classical and Renaissance iconography
+    and remains a recurring character in Italian visual and performing arts. The drawing, likely part of
+    a theatrical set or costume collection, captures symbolic elements such as <strong>victory</strong> (laurel),
+    <strong>power</strong> (eagle), and <strong>communication</strong> (caduceus), which are strongly associated with
+    both theater and political representation.
+  </p>
+  <img src="la-fama.jpg" alt="La Fama Costume Drawing" width="300" />
+</section>
 
-<h2>LLM Prompts and Answers</h2>
+<hr/>
 
-<p><strong>Prompt 1:</strong> What is the symbolic meaning of the female figure depicted in the 1908 costume drawing “La Fama”? How is this figure of Fame represented in Italian cultural history?<br>
-<strong>Answer:</strong> The figure “La Fama” symbolizes the spread of renown, honor, and cultural immortality. In Italian tradition, she is often portrayed as a winged female messenger, tied to classical mythology. By the early 20th century, “La Fama” was used in theater and civic iconography to evoke prestige, intellectual achievement, and the celebration of artistic legacy.</p>
+<section id="sparql-analysis">
+  <h2>🔎 SPARQL Analysis</h2>
+  <p>
+    To explore the metadata associated with the <em>“La Fama”</em> costume, I queried the ArCo SPARQL endpoint
+    using the resource ID <code>0100408590-23</code>. The following query was used:
+  </p>
+  <pre><code>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
-<p><strong>Prompt 2:</strong> The drawing includes an eagle, laurel wreaths, and a caduceus. What do these symbols represent in Italian theatrical or artistic contexts?<br>
-<strong>Answer:</strong> The eagle represents authority and victory; the laurel wreaths signify honor and poetic excellence; the caduceus represents eloquence and communication. Together, they frame “La Fama” as a symbol of cultural greatness.</p>
-
-<p><strong>Prompt 3:</strong> How were allegorical female figures like “La Fama” used in early 20th-century Italian stage productions, especially in scenographic or costume elements?<br>
-<strong>Answer:</strong> They were key elements in patriotic performances and modern reinterpretations of classical themes, used to embody abstract ideals and convey messages through visual symbolism.</p>
-
-<p><strong>Prompt 4:</strong> Why would the artist use ivory paper, ink, and watercolor for a costume drawing like this? What effect do these materials produce for theater design?<br>
-<strong>Answer:</strong> These materials allow for precise lines and delicate tonal washes, helping designers visualize how the costume will appear under stage lighting and in motion.</p>
-
-<p><strong>Prompt 5:</strong> How does the visual language of the “La Fama” costume drawing reflect ideas of cultural prestige, national identity, or artistic ideals in Italy at the beginning of the 20th century?<br>
-<strong>Answer:</strong> The costume expresses national pride through classical references and symbols of artistic excellence. It reflects Italy’s cultural identity rooted in grandeur, eloquence, and visual beauty.</p>
-
-<h2>Enrichment</h2>
-<p>
-Based on the insights provided by language models, I created RDF triples to enrich the knowledge graph entry for the theatrical costume drawing “La Fama” (ArCo ID: 0100408590-23). These triples capture symbolic, cultural, and artistic information that was not present in the original metadata.
-</p>
-
-<pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
-@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
-@prefix ex: &lt;http://example.org/&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-
-&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23&gt;
-    arco:technique "ink and watercolor on ivory paper" ;
-    a-cd:hasSubject ex:SymbolicFame, ex:EagleSymbol, ex:LaurelSymbol, ex:CaduceusSymbol, ex:ItalianStageIdeals .
-
-ex:SymbolicFame a a-cd:Subject ;
-    rdfs:label "Allegorical female figure symbolizing cultural immortality and artistic renown" .
-
-ex:EagleSymbol a a-cd:Subject ;
-    rdfs:label "Symbol of power, victory, and national grandeur" .
-
-ex:LaurelSymbol a a-cd:Subject ;
-    rdfs:label "Symbol of honor, poetic achievement, and artistic excellence" .
-
-ex:CaduceusSymbol a a-cd:Subject ;
-    rdfs:label "Symbol of eloquence, communication, and intellectual diplomacy" .
-
-ex:ItalianStageIdeals a a-cd:Subject ;
-    rdfs:label "Representation of Italy’s early 20th-century cultural identity through classical theatrical allegory" .
+SELECT DISTINCT ?p ?o
+WHERE {
+  &lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23&gt; ?p ?o .
+}
+LIMIT 100
 </code></pre>
+  <p>
+    🔗 <strong>View the result:</strong> <a href="https://surl.li/jhdouk" target="_blank">https://surl.li/jhdouk</a>
+  </p>
+  <p>
+    This query confirmed that the costume is described in ArCo as a <strong>HistoricOrArtisticProperty</strong>,
+    with the type <strong>SculptureDrawing</strong>, and provides standard metadata such as:
+  </p>
+  <ul>
+    <li>Descriptive label and title</li>
+    <li>Author (Sapelli Luigi), date (1908)</li>
+    <li>Material: ink and watercolor on ivory paper</li>
+    <li>Classification and catalogue reference</li>
+  </ul>
+  <p>
+    However, it does <strong>not</strong> contain contextual or symbolic information (e.g. the meaning of the eagle, laurel,
+    or caduceus), nor does it explain the <strong>cultural or theatrical function</strong> of the drawing. This provided
+    a gap for semantic enrichment using language models.
+  </p>
+</section>
 
-<h2>File</h2>
-<p>My enrichment file is available here: <a href="la-fama.ttl">la-fama.ttl</a></p>
+<hr/>
 
-  <h2>Conclusion</h2>
-<p>
-This project explored the theatrical costume drawing “La Fama” by enriching its ArCo record with symbolic, historical, and artistic interpretations that were not included in the original metadata. Thanks to the use of language models, it was possible to better understand the meaning of key visual elements like the eagle, laurel wreaths, and caduceus, and to place the costume in the broader context of Italian stage culture. The enrichment shows how even a single costume sketch can reveal important aspects of national identity, visual storytelling, and early 20th-century performance practices.
-</p>
+<section id="llm-prompts">
+  <h2>🤖 LLM Prompts and Answers</h2>
+  <p>
+    To enrich the metadata, I used three types of prompting strategies and compared answers from <strong>GPT-4</strong>,
+    <strong>Gemini</strong>, and <strong>DeepSeek</strong>. Each strategy focused on the symbolic meanings in "La Fama"
+    and their relevance to Italian culture.
+  </p>
+
+  <h3>🧠 Zero-shot Prompt</h3>
+  <p><strong>Prompt:</strong></p>
+  <blockquote>
+    What symbolic meanings are represented in the costume drawing "La Fama" (1908), featuring a winged female figure with an eagle,
+    laurel wreaths, and a caduceus? How do these symbols connect to Italian theatrical or cultural identity?
+  </blockquote>
+  <h4>✨ GPT-4 Response</h4>
+  <img src="zero-gpt.png" width="600" />
+  <h4>🔷 Gemini Response</h4>
+  <img src="zero-gemini.png" width="600" />
+  <h4>🐉 DeepSeek Response</h4>
+  <img src="zero-deepseek.png" width="600" />
+
+  <h3>🧠 Few-shot Prompt</h3>
+  <p><strong>Prompt with examples:</strong></p>
+  <blockquote>
+    Example 1: The theatrical costume "Justice" is often depicted holding scales and a sword. These symbols represent moral authority.
+    In Italian tradition, such figures reflect social critique and governance. <br/>
+    Example 2: The allegorical figure "Victory" is shown with a laurel wreath and palm branch. These evoke military triumph. In opera,
+    they glorify national superiority. <br/>
+    Now analyze the costume "La Fama" (1908), which shows a winged female figure with a red drape decorated with laurel wreaths,
+    a caduceus, and an eagle. What symbolic meanings are conveyed here? How do they relate to Italian theatrical or cultural values?
+  </blockquote>
+  <h4>✨ GPT-4 Response</h4>
+  <img src="few-gpt.png" width="600" />
+  <h4>🔷 Gemini Response</h4>
+  <img src="few-gemini.png" width="600" />
+  <h4>🐉 DeepSeek Response</h4>
+  <img src="few-deepseek.png" width="600" />
+
+  <h3>🧠 Chain-of-Thought Prompt</h3>
+  <p><strong>Prompt:</strong></p>
+  <blockquote>
+    I want you to analyze the costume drawing “La Fama” (1908) in a step-by-step way. First, list and describe the visual elements.
+    Then explain their meaning in Italian and classical iconography. Then show how they form the allegory of "Fame". Finally, explain
+    how this symbolism reflects Italian theatrical values.
+  </blockquote>
+  <h4>✨ GPT-4 Response</h4>
+  <img src="cot-gpt.png" width="600" />
+  <h4>🔷 Gemini Response</h4>
+  <img src="cot-gemini.png" width="600" />
+  <h4>🐉 DeepSeek Response</h4>
+  <img src="cot-deepseek.png" width="600" />
 </section>
     <hr>
 <h1 id="danil">Danil – Second Accuser Costume Analysis</h1>
