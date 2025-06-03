@@ -610,6 +610,51 @@ LIMIT 100
 
 <p><strong>Selected Model:</strong> Based on this comparison, <strong>GPT-4's Chain-of-Thought</strong> output was chosen for generating the RDF triples, due to its precise symbolic interpretation and cultural relevance.</p>
 
+<h2>🧩 RDF Enrichment</h2>
+
+<p>Based on the Chain-of-Thought response by <strong>GPT-4</strong>, I enriched the ArCo resource <code>0100408590-23</code> with additional symbolic and cultural semantics that were not present in the original metadata.</p>
+
+<pre><code class="ttl">
+@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
+@prefix clv: &lt;https://w3id.org/italia/onto/CLV/&gt; .
+@prefix l0: &lt;https://w3id.org/italia/onto/l0/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix : &lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23/&gt; .
+
+:0100408590-23
+    a arco:HistoricOrArtisticProperty ;
+    l0:name "La Fama" ;
+    arco:hasCulturalMeaning "Fame as victory, power and communication in Italian theatre"@en ;
+    arco:hasSymbolicElement :Laurel, :Eagle, :Caduceus ;
+    arco:hasRepresentation :AllegoryOfFame ;
+    skos:note "The drawing represents an allegorical female figure associated with classical ideals of triumph and communication."@en .
+
+:Laurel a arco:SymbolicElement ;
+    l0:name "Laurel Wreath" ;
+    arco:hasSymbolicMeaning "Victory and honor"@en .
+
+:Eagle a arco:SymbolicElement ;
+    l0:name "Eagle" ;
+    arco:hasSymbolicMeaning "Power and authority"@en .
+
+:Caduceus a arco:SymbolicElement ;
+    l0:name "Caduceus" ;
+    arco:hasSymbolicMeaning "Communication and diplomacy"@en .
+
+:AllegoryOfFame a arco:Representation ;
+    l0:name "Allegory of Fame" ;
+    arco:representsConcept "Fame as a theatrical character based on classical iconography"@en .
+</code></pre>
+
+<p>This RDF enrichment integrates symbolic interpretation directly into the ArCo model using existing ontology classes such as <code>arco:hasSymbolicElement</code> and <code>arco:hasRepresentation</code>. Each element — the laurel, eagle, and caduceus — is individually described and linked to cultural concepts that were missing from the SPARQL-extracted data. This enhanced representation allows machines (and scholars) to better understand the <em>semantic depth</em> of the costume’s iconography.</p>
+
+<h2>🏁 Conclusion</h2>
+
+<p>This project shows how symbolic artworks like <strong>“La Fama”</strong> can benefit from semantic enrichment using large language models and RDF technologies. The original metadata described only physical and catalog data, but through <strong>prompting strategies and model comparison</strong>, I was able to reconstruct the cultural and iconographic meaning embedded in the drawing.</p>
+
+<p>By integrating new triples into the ArCo ontology, this enrichment enhances both <strong>machine readability</strong> and <strong>cultural interpretation</strong>. This case highlights the potential of LLMs as tools for bridging gaps in heritage knowledge graphs, especially in the arts and humanities domain.</p>
+
     <hr>
 <h1 id="danil">Danil – Second Accuser Costume Analysis</h1>
 
