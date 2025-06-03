@@ -1,23 +1,41 @@
+
 @prefix arco: <https://w3id.org/arco/ontology/arco/> .
 @prefix a-cd: <https://w3id.org/arco/ontology/context-description/> .
-@prefix ex: <http://example.org/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix : <https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23/> .
 
-<https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23>
-    arco:technique "ink and watercolor on ivory paper" ;
-    a-cd:hasSubject ex:SymbolicFame, ex:EagleSymbol, ex:LaurelSymbol, ex:CaduceusSymbol, ex:ItalianStageIdeals .
+: a arco:HistoricOrArtisticProperty ;
+   l0:name "La Fama" ;
+   arco:hasCulturalMeaning "This theatrical costume represents Fame as a powerful allegorical figure rooted in classical heritage, combining artistic triumph, eloquence, and imperial symbolism in early 20th-century Italian theater."@en ;
+   arco:hasRepresentation :Representation_Fame ;
+   a-cd:hasSubject :Wings, :RedDrape, :LaurelWreaths, :Caduceus, :Eagle, :ItalianCulturalValues ;
+   rdfs:comment "The drawing embodies symbolic communication of fame through mythological and national iconography."@en .
 
-ex:SymbolicFame a a-cd:Subject ;
-    rdfs:label "Allegorical female figure symbolizing cultural immortality and artistic renown" .
+:Wings a a-cd:Subject ;
+   rdfs:label "Wings"@en ;
+   rdfs:comment "Symbolize swiftness, transcendence, and the rapid dissemination of fame (linked to Hermes/Mercury)."@en .
 
-ex:EagleSymbol a a-cd:Subject ;
-    rdfs:label "Symbol of power, victory, and national grandeur" .
+:RedDrape a a-cd:Subject ;
+   rdfs:label "Red Drape"@en ;
+   rdfs:comment "Represents power, dramatic presence, and theatrical grandeur in Italian stage aesthetics."@en .
 
-ex:LaurelSymbol a a-cd:Subject ;
-    rdfs:label "Symbol of honor, poetic achievement, and artistic excellence" .
+:LaurelWreaths a a-cd:Subject ;
+   rdfs:label "Laurel Wreaths"@en ;
+   rdfs:comment "Indicate poetic excellence, artistic achievement, and triumph rooted in Roman traditions."@en .
 
-ex:CaduceusSymbol a a-cd:Subject ;
-    rdfs:label "Symbol of eloquence, communication, and intellectual diplomacy" .
+:Caduceus a a-cd:Subject ;
+   rdfs:label "Caduceus"@en ;
+   rdfs:comment "Symbol of eloquence, communication, and cultural diplomacy (linked to Mercury/Hermes)."@en .
 
-ex:ItalianStageIdeals a a-cd:Subject ;
-    rdfs:label "Representation of Italy’s early 20th-century cultural identity through classical theatrical allegory" .
+:Eagle a a-cd:Subject ;
+   rdfs:label "Eagle"@en ;
+   rdfs:comment "Represents imperial power, victory, and the Roman legacy in nationalist symbolism."@en .
+
+:ItalianCulturalValues a a-cd:Subject ;
+   rdfs:label "Italian Cultural Values"@en ;
+   rdfs:comment "Reflects Italy’s emphasis on theatrical spectacle, classical heritage, and global artistic influence through allegory."@en .
+
+:Representation_Fame a arco:Representation ;
+   l0:name "Allegory of Fame"@en ;
+   arco:representsConcept "Fame as a theatrical construct celebrating artistic renown and national identity."@en .
