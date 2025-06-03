@@ -619,36 +619,46 @@ LIMIT 100
 <p>Based on the Chain-of-Thought response by <strong>GPT-4</strong>, I enriched the ArCo resource <code>0100408590-23</code> with additional symbolic and cultural semantics that were not present in the original metadata.</p>
 
 <pre><code class="ttl">
-@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
-@prefix clv: &lt;https://w3id.org/italia/onto/CLV/&gt; .
-@prefix l0: &lt;https://w3id.org/italia/onto/l0/&gt; .
-@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-@prefix : &lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23/&gt; .
+@prefix arco: <https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: <https://w3id.org/arco/ontology/context-description/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix l0: <https://w3id.org/italia/onto/l0/> .
+@prefix : <https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23/> .
 
-:0100408590-23
-    a arco:HistoricOrArtisticProperty ;
-    l0:name "La Fama" ;
-    arco:hasCulturalMeaning "Fame as victory, power and communication in Italian theatre"@en ;
-    arco:hasSymbolicElement :Laurel, :Eagle, :Caduceus ;
-    arco:hasRepresentation :AllegoryOfFame ;
-    skos:note "The drawing represents an allegorical female figure associated with classical ideals of triumph and communication."@en .
+: a arco:HistoricOrArtisticProperty ;
+   l0:name "La Fama" ;
+   arco:hasCulturalMeaning "This theatrical costume represents Fame as a powerful allegorical figure rooted in classical heritage, combining artistic triumph, eloquence, and imperial symbolism in early 20th-century Italian theater."@en ;
+   arco:hasRepresentation :Representation_Fame ;
+   a-cd:hasSubject :Wings, :RedDrape, :LaurelWreaths, :Caduceus, :Eagle, :ItalianCulturalValues ;
+   rdfs:comment "The drawing embodies symbolic communication of fame through mythological and national iconography."@en .
 
-:Laurel a arco:SymbolicElement ;
-    l0:name "Laurel Wreath" ;
-    arco:hasSymbolicMeaning "Victory and honor"@en .
+:Wings a a-cd:Subject ;
+   rdfs:label "Wings"@en ;
+   rdfs:comment "Symbolize swiftness, transcendence, and the rapid dissemination of fame (linked to Hermes/Mercury)."@en .
 
-:Eagle a arco:SymbolicElement ;
-    l0:name "Eagle" ;
-    arco:hasSymbolicMeaning "Power and authority"@en .
+:RedDrape a a-cd:Subject ;
+   rdfs:label "Red Drape"@en ;
+   rdfs:comment "Represents power, dramatic presence, and theatrical grandeur in Italian stage aesthetics."@en .
 
-:Caduceus a arco:SymbolicElement ;
-    l0:name "Caduceus" ;
-    arco:hasSymbolicMeaning "Communication and diplomacy"@en .
+:LaurelWreaths a a-cd:Subject ;
+   rdfs:label "Laurel Wreaths"@en ;
+   rdfs:comment "Indicate poetic excellence, artistic achievement, and triumph rooted in Roman traditions."@en .
 
-:AllegoryOfFame a arco:Representation ;
-    l0:name "Allegory of Fame" ;
-    arco:representsConcept "Fame as a theatrical character based on classical iconography"@en .
+:Caduceus a a-cd:Subject ;
+   rdfs:label "Caduceus"@en ;
+   rdfs:comment "Symbol of eloquence, communication, and cultural diplomacy (linked to Mercury/Hermes)."@en .
+
+:Eagle a a-cd:Subject ;
+   rdfs:label "Eagle"@en ;
+   rdfs:comment "Represents imperial power, victory, and the Roman legacy in nationalist symbolism."@en .
+
+:ItalianCulturalValues a a-cd:Subject ;
+   rdfs:label "Italian Cultural Values"@en ;
+   rdfs:comment "Reflects Italy’s emphasis on theatrical spectacle, classical heritage, and global artistic influence through allegory."@en .
+
+:Representation_Fame a arco:Representation ;
+   l0:name "Allegory of Fame"@en ;
+   arco:representsConcept "Fame as a theatrical construct celebrating artistic renown and national identity."@en .
 </code></pre>
 
 <p>This RDF enrichment integrates symbolic interpretation directly into the ArCo model using existing ontology classes such as <code>arco:hasSymbolicElement</code> and <code>arco:hasRepresentation</code>. Each element — the laurel, eagle, and caduceus — is individually described and linked to cultural concepts that were missing from the SPARQL-extracted data. This enhanced representation allows machines (and scholars) to better understand the <em>semantic depth</em> of the costume’s iconography.</p>
