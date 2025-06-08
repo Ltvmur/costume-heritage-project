@@ -399,32 +399,72 @@ In particular, this case highlights how Dario Fo’s figurini are not merely des
   <!-- Image -->
   <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino.jpg" alt="Arlecchino Costume Sketch" style="max-width: 400px; display: block; margin: 20px 0;">
 
-  <h3>SPARQL Analysis</h3>
-  <p>Using SPARQL, I queried the ArCo endpoint to explore the metadata for object 0500704151. The retrieved information includes:</p>
-  <ul>
-    <li><strong>Title:</strong> Arlecchino '600, figurino per costume di scena, maschile</li>
-    <li><strong>Author:</strong> Dario Fo</li>
-    <li><strong>Materials:</strong> Carta (paper), inchiostro (ink)</li>
-    <li><strong>Description:</strong> A costume sketch for the character Arlecchino, rooted in the 17th-century tradition of Italian theatre.</li>
-  </ul>
-  <p>However, additional symbolic, contextual, and linkage data (e.g., performance, theatrical company) were missing and could be enriched using LLMs and external sources.</p>
+    <h3>SPARQL Analysis</h3>
+    <p>
+      Using SPARQL, I queried the ArCo endpoint to explore the metadata for object 
+      <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0500704151.html?utm_source=chatgpt.com" target="_blank">
+        0500704151
+      </a>.
+      The retrieved information includes:
+    </p>
+    <ul>
+      <li><strong>Title:</strong> Arlecchino '600, figurino per costume di scena, maschile</li>
+      <li><strong>Author:</strong> Dario Fo</li>
+      <li><strong>Materials:</strong> Carta (paper), inchiostro (ink)</li>
+      <li><strong>Description:</strong> A costume sketch for the character Arlecchino, rooted in the 17th-century tradition of Italian theatre.</li>
+    </ul>
+    <p>
+      However, symbolic, contextual, and performance-related metadata (such as theatrical company, role in performance, or cultural interpretation) were missing. These gaps were addressed using LLMs and external research tools.
+    </p>
 
-  <h3>LLM Prompts and Answers</h3>
-  <p><strong>Prompt 1:</strong> Why is Arlecchino’s costume traditionally multicolored and made of diamonds?<br>
-  <strong>Answer:</strong> The multicolored diamond pattern reflects Arlecchino’s lively and chaotic persona. Historically, it symbolized poverty and improvisation, as servants like Arlecchino were thought to wear patched clothing made from fabric scraps. Over time, it became a defining visual code for his comedic and cunning role.</p>
+    <section id="llm-prompts" style="padding: 2em;">
+      <h3>LLM Prompts and Responses</h3>
+      <p>To enrich the cultural meaning of the Arlecchino costume, I used three different language models (ChatGPT, Gemini, DeepSeek) and applied various prompting techniques.</p>
 
-  <p><strong>Prompt 2:</strong> How does the costume’s color palette affect the perception of the character?<br>
-  <strong>Answer:</strong> The bright and contrasting colors emphasize Arlecchino’s mischievous energy and help distinguish him visually as a comic figure. The vivid palette enhances his role as a dynamic trickster and draws audience attention during physical performances.</p>
+      <h4>1. Zero-shot Prompt</h4>
+      <p><strong>Prompt:</strong> Why is Arlecchino’s costume traditionally multicolored and made of diamonds?</p>
+      <p><strong>Technique:</strong> Zero-shot — the model is asked a question without any examples or context.</p>
 
-  <p><strong>Prompt 3:</strong> What does the use of a mask represent in Arlecchino’s character?<br>
-  <strong>Answer:</strong> The mask reinforces Arlecchino’s identity as an archetype rather than an individual. It supports exaggerated expression through movement and gesture while highlighting his anonymity, subversiveness, and theatrical function as a clever servant.</p>
+      <h4>2. Few-shot Prompt</h4>
+      <p><strong>Prompt:</strong> Arlecchino is known for wearing a colorful costume. For example, Pulcinella often wears white, symbolizing servitude. Based on this, what does Arlecchino’s diamond-patterned costume symbolize?</p>
+      <p><strong>Technique:</strong> Few-shot — includes a mini-example (Pulcinella) to guide the answer.</p>
 
-  <p><strong>Prompt 4:</strong> What role do the hat and other accessories play in his visual identity?<br>
-  <strong>Answer:</strong> Accessories like a soft cap with a feather contribute to Arlecchino’s playful, agile image. These elements support his clown-like appearance while also adding stylized cues that reflect his social role and physical humor.</p>
+      <h4>3. Chain-of-thought Prompt</h4>
+      <p><strong>Prompt:</strong> What does Arlecchino’s use of a mask mean in theatre? Think step by step about his role, symbolism, and function in performances.</p>
+      <p><strong>Technique:</strong> Chain-of-thought — explicitly asks the model to reason step by step.</p>
 
-  <p><strong>Prompt 5:</strong> How has the image of Arlecchino evolved from the 17th to the 20th century?<br>
-  <strong>Answer:</strong> Arlecchino originated as a comic servant in 17th-century commedia dell’arte, known for slapstick humor and acrobatics. In the 20th century, especially through Dario Fo, he evolved into a politically charged figure — a vehicle for satire and critique of power structures, while retaining his core attributes of wit and agility.</p>
-
+      <h4>Responses Comparison</h4>
+      <table style="width:100%; border-collapse: collapse; margin-top: 1em; font-size: 0.95em;">
+        <thead style="background-color: #eee;">
+          <tr>
+            <th style="border: 1px solid #ccc; padding: 8px;">Prompt</th>
+            <th style="border: 1px solid #ccc; padding: 8px;">ChatGPT</th>
+            <th style="border: 1px solid #ccc; padding: 8px;">Gemini</th>
+            <th style="border: 1px solid #ccc; padding: 8px;">DeepSeek</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ccc; padding: 8px;">Zero-shot (Color & Diamonds)</td>
+            <td style="border: 1px solid #ccc; padding: 8px;">Symbol of energy and poverty; patchwork tradition.</td>
+            <td style="border: 1px solid #ccc; padding: 8px;">Emphasizes improvisation and visual identity in commedia dell’arte.</td>
+            <td style="border: 1px solid #ccc; padding: 8px;">Represents comedic chaos, originally made from scraps.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ccc; padding: 8px;">Few-shot (Symbolism via comparison)</td>
+            <td style="border: 1px solid #ccc; padding: 8px;">Contrast with Pulcinella helps explain Arlecchino’s vibrant wit.</td>
+            <td style="border: 1px solid #ccc; padding: 8px;">Refers to character contrast and social status via color.</td>
+            <td style="border: 1px solid #ccc; padding: 8px;">Adds historical context and compares servants’ roles.</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ccc; padding: 8px;">Chain-of-thought (Mask)</td>
+            <td style="border: 1px solid #ccc; padding: 8px;">Helps audience focus on movement; archetypal anonymity.</td>
+            <td style="border: 1px solid #ccc; padding: 8px;">Symbol of theatrical exaggeration; used to depersonalize role.</td>
+            <td style="border: 1px solid #ccc; padding: 8px;">Used for expression without identity; reflects social satire.</td>
+          </tr>
+        </tbody>
+      </table>
+ 
   <h3>Enrichment</h3>
   <p>Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:</p>
 
