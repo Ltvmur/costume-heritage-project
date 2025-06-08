@@ -537,7 +537,88 @@ In particular, this case highlights how Dario Fo’s figurini are not merely des
     </tbody>
   </table>
 </section>
- 
+ <style>
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    border: 1px solid #aaa;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .comparison-table th {
+    background-color: #e6e6e6;
+    color: #002060;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .model {
+    font-weight: bold;
+    color: #002060;
+  }
+</style>
+
+<h2>Comparison of LLM Responses</h2>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th><span class="model">ChatGPT</span></th>
+      <th><span class="model">Gemini</span></th>
+      <th><span class="model">DeepSeek</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Accuracy</strong></td>
+      <td>Detailed and historically grounded; structured reasoning based on cultural and historical cues.</td>
+      <td>Accurate but less detailed; responses sometimes lack temporal context.</td>
+      <td>Focused and correct, though with less supporting explanation or historical depth.</td>
+    </tr>
+    <tr>
+      <td><strong>Depth of Analysis</strong></td>
+      <td>Includes layered interpretation and symbolic analysis with contextual references.</td>
+      <td>Covers main ideas but not deeply developed.</td>
+      <td>Captures symbolic significance but lacks layered reasoning.</td>
+    </tr>
+    <tr>
+      <td><strong>Answer Style</strong></td>
+      <td>Clear, formal, and well-organized prose; easy to read and structured.</td>
+      <td>Simpler, factual style with shorter explanations.</td>
+      <td>Concise and impactful phrasing; direct and to the point.</td>
+    </tr>
+    <tr>
+      <td><strong>Creativity</strong></td>
+      <td>Balanced creativity within a logical framework; uses interpretive prompts well.</td>
+      <td>Some imaginative ideas but less bold in interpretation.</td>
+      <td>Very imaginative in symbolic interpretation and movement metaphors.</td>
+    </tr>
+    <tr>
+      <td><strong>Topic Coverage</strong></td>
+      <td>Covers history, symbolism, theatrical function, and movement.</td>
+      <td>Focuses on symbolism and general function; light on historical detail.</td>
+      <td>Prioritizes symbolic meaning and movement; less historical breadth.</td>
+    </tr>
+    <tr>
+      <td><strong>Weaknesses</strong></td>
+      <td>Can be overly verbose or too academic at times.</td>
+      <td>Sometimes lacks depth or interpretive richness.</td>
+      <td>Omissions in broader context; limited elaboration.</td>
+    </tr>
+  </tbody>
+</table>
+
   <h3>Enrichment</h3>
   <p>Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:</p>
 
