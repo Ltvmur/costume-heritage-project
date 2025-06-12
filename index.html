@@ -211,16 +211,34 @@ Using <a href="https://en.wikipedia.org/wiki/SPARQL" target="_blank">SPARQL</a>,
   </ul>
   
 <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
+PREFIX arco: <https://w3id.org/arco/ontology/arco/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
 SELECT DISTINCT ?property ?value
 WHERE {
-  <https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524> ?property ?value .
+  {
+    <https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524> ?property ?value .
+    OPTIONAL {
+      <https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524> rdfs:label ?label .
+      FILTER(REGEX(?label, "costume|disegno", "i"))
+    }
+  }
+  UNION
+  {
+    ?item a arco:HistoricOrArtisticProperty ;
+          rdfs:label ?label2 ;
+          ?property ?value .
+    FILTER(REGEX(?label2, "dario fo|costume teatrale", "i"))
+  }
 }
-</pre>
-
-<p>To address these gaps, I used <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">Large Language Models</a> (LLMs) to infer missing connections and generate <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RDF</a> triples that enrich the knowledge graph with contextual and stylistic information.
+ORDER BY ?property
+LIMIT 100
+</pre>        
+    
+<p>To address these gaps, I used <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">Large Language Models</a> (LLMs) to infer missing connections and generate <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RD triplesF</a> that enrich the knowledge graph with contextual and stylistic information.
 <p>
 
-<h3>LLM Prompts and Answers</h3>
+<h3><a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">LLM</a> Prompts and Answers</h3>
 <p>I used <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank">ChatGPT</a>, <a href="https://en.wikipedia.org/wiki/Gemini_(language_model)" target="_blank">Gemini</a>, and <a href="https://en.wikipedia.org/wiki/Llama_(language_model)" target="_blank">LlaMa 2 Family</a> to analyze this costume. All three models agreed that the costume was designed for the play <em>Isabella, tre caravelle e un cacciaballe</em> and reflected a stylized version of late 15th to early 16th-century Spanish court fashion.</p>
 
 <table>
@@ -360,7 +378,7 @@ Aesthetic Cohesion with Set Design: The costume would also integrate with the ov
 In summary, the costume based on Dario Fo's 1963 "figurini" represents a theatrical reinterpretation of Late 15th-Early 16th Century European (specifically Spanish) court fashion, designed to visually anchor his satirical narrative while allowing for the expressive and often exaggerated performance style of his theatre.</p>
     
 <h3>Enrichment</h3>
-<p>I created RDF triples describing the cultural and stylistic context of the costume:</p>
+<p>I created <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RD triplesF</a> describing the cultural and stylistic context of the costume:</p>
 <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
 @prefix arco: &lt;https://w3id.org/arco/ontology/arco/> .
 @prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/> .
@@ -384,8 +402,8 @@ ex:IsabellaPerformance
 <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/costume_0500704524.ttl" target="_blank">costume_0500704524.ttl</a></p>
     
 <h3>Conclusion</h3>
-<p>This project demonstrates how knowledge graphs and language models can work together to enrich cultural heritage data. The costume is not only a visual artifact, but also a narrative element linked to Italian theater and political satire.By combining structured data from ArCo with insights generated through prompting large language models, we were able to uncover its theatrical origin, stylistic influences, and cultural significance.
-In particular, this case highlights how Dario Fo’s figurini are not merely design sketches, but entry points into broader stories of performance, history, and ideology. The costume becomes a lens through which we can view not only a play, but an entire period of social commentary and artistic experimentation.</p>
+<p>This project demonstrates how knowledge graphs and language models can work together to enrich cultural heritage data. The costume is not only a visual artifact, but also a narrative element linked to Italian theater and political satire.By combining structured data from ArCo with insights generated through prompting <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">Large Language Models</a>, we were able to uncover its theatrical origin, stylistic influences, and cultural significance.
+In particular, this case highlights how <a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo's</a> figurini are not merely design sketches, but entry points into broader stories of performance, history, and ideology. The costume becomes a lens through which we can view not only a play, but an entire period of social commentary and artistic experimentation.</p>
   <hr>
 
 </body>
