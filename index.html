@@ -183,12 +183,23 @@ My contribution is focused on analyzing the theatrical costume created in 1963 b
 <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/costume_0500704524.jpeg" alt="Costume by Dario Fo (1963)" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
 
 <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
-SELECT DISTINCT ?cp 
+SELECT DISTINCT ?cp ?label ?date
 WHERE {
-?cp a arco:HistoricOrArtisticProperty ; 
-rdfs:label ?l .
-FILTER(REGEX(?l, "vestito|teatro|cinema|costume|disegno", "i"))
+  {
+    ?cp rdfs:label ?label .
+    FILTER(REGEX(?label, "costume|vestito", "i"))
+  }
+  UNION
+  {
+    ?cp rdfs:label ?label .
+    FILTER(REGEX(?label, "teatro|cinema|disegno", "i"))
+  }
+
+  OPTIONAL { ?cp dc:date ?date }
+
+  FILTER(LANG(?label) = "en" || LANG(?label) = "")
 }
+ORDER BY ASC(?label)
 LIMIT 50
 </pre>
     
@@ -211,9 +222,6 @@ Using <a href="https://en.wikipedia.org/wiki/SPARQL" target="_blank">SPARQL</a>,
   </ul>
   
 <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
-PREFIX arco: <https://w3id.org/arco/ontology/arco/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
 SELECT DISTINCT ?property ?value
 WHERE {
   {
