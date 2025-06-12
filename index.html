@@ -173,11 +173,11 @@ My enrichment file is available here:
 </p>
 
   <hr>
-<h2 id="mariam">Mariam - Costume by Dario Fo (1963)</h2>
+<h2 id="mariam">Mariam - Costume by <a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo</a> (1963)</h2>
 
 <h3>Topic</h3>
 <p>
-My contribution is focused on analyzing the theatrical costume created in 1963 by <strong>Dario Fo</strong>.
+My contribution is focused on analyzing the theatrical costume created in 1963 by <strong><a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo</a></strong>.
 </p>
 
 <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/costume_0500704524.jpeg" alt="Costume by Dario Fo (1963)" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
@@ -192,13 +192,13 @@ FILTER(REGEX(?l, "vestito|teatro|cinema|costume|disegno", "i"))
 LIMIT 50
 </pre>
     
-<h3>SPARQL Analysis</h3>
+<h3><a href="https://en.wikipedia.org/wiki/SPARQL" target="_blank">SPARQL</a> Analysis</h3>
 <p>
 Using <a href="https://en.wikipedia.org/wiki/SPARQL" target="_blank">SPARQL</a>, I queried the ArCo endpoint to explore the metadata for object <a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524" target="_blank">0500704524</a> The retrieved information includes:
 </p>
   <ul>
     <li><strong>Title:</strong> Costume teatrale</li>
-    <li><strong>Author:</strong> Dario Fo</li>
+    <li><strong>Author:</strong> <a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo</a></li>
     <li><strong>Materials:</strong> Fabric, wood, metal</li>
     <li><strong>Techniques:</strong> Sewing, wood carving, metalworking</li>
     <li><strong>Color:</strong> Red, gold, black</li>
@@ -235,7 +235,7 @@ ORDER BY ?property
 LIMIT 100
 </pre>        
     
-<p>To address these gaps, I used <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">Large Language Models</a> (LLMs) to infer missing connections and generate <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RD triplesF</a> that enrich the knowledge graph with contextual and stylistic information.
+<p>To address these gaps, I used <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">Large Language Models</a> (LLMs) to infer missing connections and generate <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RDF triples</a> that enrich the knowledge graph with contextual and stylistic information.
 <p>
 
 <h3><a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">LLM</a> Prompts and Answers</h3>
@@ -378,7 +378,7 @@ Aesthetic Cohesion with Set Design: The costume would also integrate with the ov
 In summary, the costume based on Dario Fo's 1963 "figurini" represents a theatrical reinterpretation of Late 15th-Early 16th Century European (specifically Spanish) court fashion, designed to visually anchor his satirical narrative while allowing for the expressive and often exaggerated performance style of his theatre.</p>
     
 <h3>Enrichment</h3>
-<p>I created <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RD triplesF</a> describing the cultural and stylistic context of the costume:</p>
+<p>I created <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RDF triples</a> describing the cultural and stylistic context of the costume:</p>
 <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
 @prefix arco: &lt;https://w3id.org/arco/ontology/arco/> .
 @prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/> .
