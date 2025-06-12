@@ -225,9 +225,9 @@ Using <a href="https://en.wikipedia.org/wiki/SPARQL" target="_blank">SPARQL</a>,
 SELECT DISTINCT ?property ?value
 WHERE {
   {
-    <https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524> ?property ?value .
+    &lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524&gt; ?property ?value .
     OPTIONAL {
-      <https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524> rdfs:label ?label .
+      &lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524&gt; rdfs:label ?label .
       FILTER(REGEX(?label, "costume|disegno", "i"))
     }
   }
