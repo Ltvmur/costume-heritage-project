@@ -105,10 +105,12 @@ nav .logo {
   font-weight: bold;
 }
 
-/* Hambyurger button */
+/* Hamburger button */
 .hamburger {
   display: block;
   cursor: pointer;
+  position: relative; /* чтобы оставался в рамках nav */
+  z-index: 10100; 
 }
 
 .hamburger div {
