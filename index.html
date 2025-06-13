@@ -249,42 +249,6 @@ LIMIT 100
 <h3>LLM Prompts and Answers</h3>
 <p>I used <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank">ChatGPT</a>, <a href="https://en.wikipedia.org/wiki/Gemini_(language_model)" target="_blank">Gemini</a>, and <a href="https://en.wikipedia.org/wiki/Llama_(language_model)" target="_blank">LlaMa 2 Family</a> to analyze this costume. All three models agreed that the costume was designed for the play <em><a href="https://en.wikipedia.org/wiki/Isabella,_Three_Sailing_Ships_and_a_Con_Man" target="_blank">Isabella, tre caravelle e un cacciaballe</a></em> and reflected a stylized version of late 15th to early 16th-century Spanish court fashion.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>LLM model</th>
-      <th>Question 1:<br>
-        Which theater production or film featured a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?</th>
-      <th>Question 2:<br>
-        What historical clothing style is represented by the costume?</th>
-      <th>Result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>ChatGPT</strong></td>
-      <td>4 different outputs, no clear conclusion</td>
-      <td>very good</td>
-      <td>Good, but not specific</td>
-    </tr>
-
-    <tr>
-      <td><strong>LLaMa 2</strong></td>
-      <td>Unstable, broken chain of thought</td>
-      <td>Not enough data</td>
-      <td>❌ Weaker</td>
-    </tr>
-
-    <tr>
-      <td><strong>Gemini</strong></td>
-      <td>Clear and confident: "Isabella"</td>
-      <td>Detailed</td>
-      <td>✅ Best result</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>The best question-answer experience with Gemini:</h3>
 <p><em> 🟠 Where the costume was used 🟠 </em></p> 
   
 <p><strong> 🔶 Zero-shot prompt:</strong> Which theater production or film featured a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?
@@ -423,22 +387,41 @@ In summary:
 
 The fashion period most likely reflected in Dario Fo's 1963 costume sketches for "figurini per costumi di scena, femminili (disegno)" is Commedia dell'Arte, drawing from the established theatrical costume traditions of 16th-18th century Italian theatre, but reinterpreted with Fo's characteristic satirical exaggeration and symbolic intent. He would not be aiming for museum-level historical accuracy, but rather for costumes that instantly communicate character and contribute to the comedic and critical tone of his plays.
 </p>
-<p><strong> 🔷 Instruction-based prompt:</strong> You are a historian of theatrical costume design. Please analyze the clothing style of a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963). Indicate the historical era or stylistic movement it reflects (e.g., Renaissance, Baroque, 19th-century bourgeoisie, etc.). If the design is theatrical reinterpretation of a historical style, please mention that as well.</p>
-<p><strong>Answer:</strong> As a historian of theatrical costume design, I can analyze the clothing style of a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963) as a theatrical reinterpretation of the Late Gothic to Early Renaissance period, specifically the late 15th to early 16th century European fashion, with a distinct emphasis on Spanish court attire.
-Here's a breakdown of the analysis:
-Primary Historical Era: The core inspiration for the costume clearly originates from the Late 15th Century to Early 16th Century. This aligns precisely with the historical setting of Dario Fo's play "Isabella, tre caravelle e un cacciaballe" (1963), which satirizes the figures of Queen Isabella of Castile and Christopher Columbus. The fashion of this period, particularly in the Spanish court, was characterized by distinct silhouettes for women.
-Key Characteristics of the Referenced Historical Style:
-Silhouette: Women's fashion moved towards a more structured and imposing silhouette. Gowns often featured fitted bodices, sometimes with a pointed waistline, and very full, voluminous skirts.
-Necklines: Square or wide, rounded necklines were common, often revealing the chemise beneath.
-Sleeves: Varied widely, from close-fitting to extremely wide and sometimes slashed to reveal contrasting linings or undersleeves. The "bag sleeve" or "hanging sleeve" with an opening to allow the arm to pass through was also prevalent.
-Headwear: Elaborate and often structured headwear was crucial, such as the gabled hood in England, or various forms of Spanish headdresses that could be stiffened and draped with veils, reflecting status and modesty.
-Fabrics: Rich brocades, velvets, and silks were used for courtly dress, often in deep, vibrant colors, reflecting the opulence of the era.
-Theatrical Reinterpretation by Dario Fo: It is crucial to emphasize that this is a theatrical reinterpretation rather than a precise historical reconstruction. Dario Fo, as a master of commedia dell'arte and political satire, would not have aimed for museum-level historical accuracy. Instead, his designs would have served several functions:
-Immediate Recognition: The costume would need to be immediately recognizable by the audience as belonging to the specific historical period being satirized (i.e., Queen Isabella's era).
-Exaggeration for Satire: Fo frequently employed exaggeration, caricature, and simplification in his costume designs to enhance comedic effect and underscore his critical commentary. Elements like sleeves, headwear, or the overall volume of the skirt might be slightly overblown or stylized for dramatic impact and comedic timing.
-Functionality for Performance: The costumes needed to allow for the dynamic, often physical, performances characteristic of Fo's plays. This might involve practical considerations that diverge from strict historical accuracy, such as ease of movement or quick changes.
-Aesthetic Cohesion with Set Design: The costume would also integrate with the overall visual aesthetic of the stage design, contributing to a cohesive theatrical world that was both historically evocative and boldly satirical.
-In summary, the costume based on Dario Fo's 1963 "figurini" represents a theatrical reinterpretation of Late 15th-Early 16th Century European (specifically Spanish) court fashion, designed to visually anchor his satirical narrative while allowing for the expressive and often exaggerated performance style of his theatre.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>LLM model</th>
+      <th>Question 1:<br>
+        Which theater production or film featured a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?</th>
+      <th>Question 2:<br>
+        What historical clothing style is represented by the costume?</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>ChatGPT</strong></td>
+      <td>4 different outputs, no clear conclusion</td>
+      <td>very good</td>
+      <td>Good, but not specific</td>
+    </tr>
+
+    <tr>
+      <td><strong>LLaMa 2</strong></td>
+      <td>Unstable, broken chain of thought</td>
+      <td>Not enough data</td>
+      <td>❌ Weaker</td>
+    </tr>
+
+    <tr>
+      <td><strong>Gemini</strong></td>
+      <td>Clear and confident: "Isabella"</td>
+      <td>Detailed</td>
+      <td>✅ Best result</td>
+    </tr>
+  </tbody>
+</table>
     
 <h3>Enrichment</h3>
 <p>I created <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RDF triples</a> describing the cultural and stylistic context of the costume:</p>
