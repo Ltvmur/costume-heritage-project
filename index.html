@@ -1350,3 +1350,22 @@ ex:Isabella1992Valencia
     <p>The costume becomes a lens through which we can view Fo's critique of dogma and colonialism—blending historical reference with grotesque theater. This case also underscores the challenges of documenting ephemeral stage designs and the value of LLMs in reconstructing lost context.</p>
   </section>
 </section>
+
+<script>
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      // Scroll Down
+      navbar.classList.add("hidden");
+    } else {
+      // Scroll Up
+      navbar.classList.remove("hidden");
+    }
+    lastScrollTop = scrollTop;
+  });
+</script>
+
+  </body>    
