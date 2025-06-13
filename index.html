@@ -82,90 +82,80 @@ body {
     background-color: #f9fafb;
   }
 
-/* Navbar */
-.navbar {
+/* navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(250, 244, 230, 0.95); /* bright-beige */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 1000;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fdfaf6;
-  padding: 12px 20px;
-  border-bottom: 1px solid #e2d6c2;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  transition: top 0.4s ease;
 }
 
-/* Logo */
-.logo {
+nav.hidden {
+  top: -100px; /* soft disappearing */
+}
+
+nav .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5em;
-  color: #89216b;
+  font-size: 1.2rem;
+  color: #5b3e2b;
   font-weight: bold;
 }
 
-/* Hamburger icon */
-.menu-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
+.hamburger {
+  display: block;
   cursor: pointer;
 }
 
-.menu-icon div {
-  background-color: #89216b;
+.hamburger div {
+  width: 25px;
   height: 3px;
-  border-radius: 2px;
+  background-color: #5b3e2b;
+  margin: 5px 0;
   transition: all 0.3s ease;
 }
 
-#menu-toggle {
-  display: none;
-}
-
-/* Hidden by default */
-.nav-links {
+nav ul {
   display: none;
   flex-direction: column;
   background-color: #fdfaf6;
   position: absolute;
   top: 60px;
   right: 20px;
-  width: 180px;
-  border: 1px solid #e4daca;
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  border-radius: 10px;
-  padding: 10px 0;
+  padding: 10px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-10px);
   transition: all 0.3s ease;
 }
 
-/* Nav list */
-.nav-links ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  padding: 10px 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #4a3c2f;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: #89216b;
-}
-
-/* Show menu when toggled */
-#menu-toggle:checked + .menu-icon + .nav-links {
+nav.open ul {
   display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+nav ul li a {
+  color: #5b3e2b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+body {
+  padding-top: 70px;
 }
 
   /* Adaptivity for phones */
@@ -184,25 +174,21 @@ body {
   }
 </style>
 
-<header class="navbar">
+<nav id="navbar">
   <div class="logo">Costume Project</div>
-  <input type="checkbox" id="menu-toggle" />
-  <label for="menu-toggle" class="menu-icon">
+  <div class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')">
     <div></div>
     <div></div>
     <div></div>
-  </label>
-
-  <nav class="nav-links">
-    <ul>
-      <li><a href="#anna">Anna</a></li>
-      <li><a href="#mariam">Mariam</a></li>
-      <li><a href="#arina">Arina</a></li>
-      <li><a href="#anastasiia">Anastasiia</a></li>
-      <li><a href="#danil">Danil</a></li>
-    </ul>
-  </nav>
-</header>
+  </div>
+  <ul>
+    <li><a href="#anna">Anna</a></li>
+    <li><a href="#mariam">Mariam</a></li>
+    <li><a href="#arina">Arina</a></li>
+    <li><a href="#anastasiia">Anastasiia</a></li>
+    <li><a href="#danil">Danil</a></li>
+  </ul>
+</nav>
 
   <div class="container">
 <h1>Italian Cinema and Cultural Heritage: Costumes as Cultural Artifacts</h1>
