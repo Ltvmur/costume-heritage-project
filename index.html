@@ -1,45 +1,92 @@
 <head>
 <style>
+  /* Main pages style */
   body {
-    background-color: #f9f9f9; 
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: #fdfaf6;
+    color: #1e1e1e;
+    margin: 0;
     padding: 20px;
   }
 
   .container {
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  border-radius: 8px;
-}
-  
-  h1, h2, h3 {
-    color: #002060; 
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
   }
 
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #4a4a4a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .header-gradient {
+    background: linear-gradient(to right, #89216b, #da4453);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  /* Tables */
   table {
-    border-collapse: collapse;
     width: 100%;
-    margin-bottom: 20px;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin: 1.5rem 0;
   }
 
   th, td {
-    border: 1px solid #aaa;
-    padding: 10px;
+    background: #fff;
+    padding: 14px 20px;
     text-align: left;
+    border-bottom: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
   }
 
   th {
-    background-color: #e6e6e6;
+    background: #f3f4f6;
+    font-weight: 600;
+    color: #333;
+  }
+
+  tr:hover td {
+    background-color: #f9fafb;
+  }
+
+  /* Adaptivity for phones */
+  @media (max-width: 640px) {
+    body {
+      padding: 15px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    th, td {
+      padding: 10px 12px;
+    }
   }
 </style>
-  <meta charset="UTF-8">
-  <title>Costume Heritage Project</title>
-</head>
 
 <body>
+  <div class="container">
+
 <nav>
   <ul>
     <li><a href="#anna">Anna</a></li>
@@ -1210,3 +1257,6 @@ ex:Isabella1992Valencia
     <p>The costume becomes a lens through which we can view Fo's critique of dogma and colonialism—blending historical reference with grotesque theater. This case also underscores the challenges of documenting ephemeral stage designs and the value of LLMs in reconstructing lost context.</p>
   </section>
 </section>
+    
+  </div>
+</body>
