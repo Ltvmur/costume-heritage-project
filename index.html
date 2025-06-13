@@ -83,78 +83,75 @@ body {
   }
 
 /* navigation */
-<style>
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fdfaf6;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    z-index: 1000;
-    transition: top 0.3s;
-  }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(250, 244, 230, 0.95); /* light beige, half-transparent */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 1000;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    max-width: 960px;
-    margin: 0 auto;
-  }
+/* Styles for headlines */
+nav .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #5b3e2b;
+  font-weight: bold;
+}
 
-  .menu-toggle {
-    font-size: 24px;
-    cursor: pointer;
-    color: #1e1e1e;
-    background: none;
-    border: none;
-  }
+/* Hambyurger button */
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
 
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    background-color: #fdfaf6;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-    position: absolute;
-    top: 100%;
-    right: 20px;
-    width: 200px;
-    overflow: hidden;
-  }
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #5b3e2b; /* warm-brown */
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
 
-  nav.open ul {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Hidden menu */
+nav ul {
+  display: none;
+  flex-direction: column;
+  background-color: #fdfaf6;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 10px;
+  z-index: 999;
+}
 
-  nav ul li {
-    border-bottom: 1px solid #e0d6c2;
-  }
+nav ul li {
+  margin: 10px 0;
+}
 
-  nav ul li a {
-    display: block;
-    padding: 10px 15px;
-    color: #1e1e1e;
-    text-decoration: none;
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
-  }
+nav ul li a {
+  color: #5b3e2b;
+  text-decoration: none;
+  font-weight: 600;
+}
 
-  nav ul li:last-child {
-    border-bottom: none;
-  }
+/* Show menu while activating */
+nav.open ul {
+  display: flex;
+}
 
-  @media (min-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
+/* Height for content while opening menu */
+body {
+  padding-top: 70px;
+}
 
   /* Adaptivity for phones */
   @media (max-width: 640px) {
@@ -172,23 +169,21 @@ body {
   }
 </style>
 
-<header id="mainHeader">
-  <div class="nav-container">
-    <h1 class="text-xl font-bold" style="font-family: 'Playfair Display', serif;">Costume Heritage</h1>
-    <button class="menu-toggle" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </button>
-    <nav id="navbar">
-      <ul>
-        <li><a href="#anna">Anna</a></li>
-        <li><a href="#mariam">Mariam</a></li>
-        <li><a href="#arina">Arina</a></li>
-        <li><a href="#anastasiia">Anastasiia</a></li>
-        <li><a href="#danil">Danil</a></li>
-      </ul>
-    </nav>
+<nav>
+  <div class="logo">Costume Project</div>
+  <div class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
-</header>
+  <ul>
+    <li><a href="#anna">Anna</a></li>
+    <li><a href="#mariam">Mariam</a></li>
+    <li><a href="#arina">Arina</a></li>
+    <li><a href="#anastasiia">Anastasiia</a></li>
+    <li><a href="#danil">Danil</a></li>
+  </ul>
+</nav>
 
   <div class="container">
 <h1>Italian Cinema and Cultural Heritage: Costumes as Cultural Artifacts</h1>
@@ -1350,26 +1345,6 @@ ex:Isabella1992Valencia
     <p>The costume becomes a lens through which we can view Fo's critique of dogma and colonialism—blending historical reference with grotesque theater. This case also underscores the challenges of documenting ephemeral stage designs and the value of LLMs in reconstructing lost context.</p>
   </section>
 </section>
-
-<script>
-  const navbar = document.getElementById('navbar');
-  const header = document.getElementById('mainHeader');
-  let lastScroll = 0;
-
-  function toggleMenu() {
-    navbar.classList.toggle('open');
-  }
-
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    if (currentScroll > lastScroll) {
-      header.style.top = '-80px'; // скрывается
-    } else {
-      header.style.top = '0'; // появляется
-    }
-    lastScroll = currentScroll;
-  });
-</script>
 
 
   </body>    
