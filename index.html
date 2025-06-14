@@ -1,77 +1,203 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Costume Project</title>
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #faf5e6, #e6dcc2);
-      margin: 0;
-      padding: 70px 20px 20px;
-    }
+<style>
+  /* Main pages style */
+  
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #faf5e6, #e6dcc2);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-color: #fdfaf6;
+  color: #1e1e1e;
+  margin: 0;
+  padding: 20px;
+}
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(250, 244, 230, 0.95);
-      padding: 10px 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+  }
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: #5b3e2b;
-      font-weight: bold;
-    }
-
-    .tab-button {
-      padding: 10px 20px;
-      margin: 5px;
-      cursor: pointer;
-      background: #e6dcc2;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .tab-button.active {
-      background: #da4453;
-      color: white;
-    }
-
-    .tab-content {
-      display: none;
-      padding: 20px;
+   .container {
+      max-width: 900px;
+      margin: 0 auto;
       background: white;
-      border-radius: 8px;
-      margin-top: 20px;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     }
 
-    .tab-content.active {
-      display: block;
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #4a4a4a;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .header-gradient {
+    background: linear-gradient(to right, #89216b, #da4453);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin: 1.5rem 0;
+  }
+
+  th, td {
+    background: #fff;
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+
+  th {
+    background: #f3f4f6;
+    font-weight: 600;
+    color: #333;
+  }
+
+  tr:hover td {
+    background-color: #f9fafb;
+  }
+
+/* navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: rgba(250, 244, 230, 0.95); /* light beige, half-transparent */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 1000;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for headlines */
+nav .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #5b3e2b;
+  font-weight: bold;
+}
+
+/* Hamburger button */
+.hamburger {
+  display: block;
+  cursor: pointer;
+  position: relative; /* чтобы оставался в рамках nav */
+  z-index: 10100; 
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #5b3e2b; /* warm-brown */
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Hidden menu */
+nav ul {
+  display: none;
+  flex-direction: column;
+  background-color: #fdfaf6;
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 10px;
+  z-index: 10001;
+  list-style-position: inside;
+  padding-left: 15px;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 10px 0;
+}
+
+nav ul li a {
+  color: #5b3e2b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Show menu while activating */
+nav.open ul {
+  display: flex;
+}
+
+/* Height for content while opening menu */
+body {
+  padding-top: 70px;
+}
+
+  /* Adaptivity for phones */
+  @media (max-width: 640px) {
+    body {
+      padding: 15px;
     }
 
     .container {
-      max-width: 900px;
-      margin: 0 auto;
+      padding: 20px;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-      margin: 10px 0;
+    th, td {
+      padding: 10px 12px;
     }
-  </style>
-</head>
-<body>
+  }
+  .tab-button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  background: #e6dcc2;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.tab-button.active {
+  background: #da4453;
+  color: white;
+}
+.tab-content {
+  display: none;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.tab-content.active {
+  display: block;
+}
+
+</style>
+
 <nav>
   <div class="logo">Costume Project</div>
 </nav>
@@ -85,44 +211,107 @@
 </div>
 
 <div class="container">
-  <div id="anna" class="tab-content active">
-    <h2>Anna – Regina Isabella Costume Analysis</h2>
-    <h3>Topic</h3>
-    <p>My contribution focused on analyzing the theatrical costume <strong>“Regina Isabella”</strong>, created in 1992 by <strong>Dario Fo</strong> and <strong>Miguel Carbonell</strong>. This costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>.</p>
+  <h1>Italian Cinema and Cultural Heritage: Costumes as Cultural Artifacts</h1>
 
-    <img src="regina-isabella.png" alt="Costume sketch of Regina Isabella" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
+  <h2>About the Project</h2>
+  <p>This project explores how theatrical costumes can be understood as part of Italy’s cultural heritage using the ArCo knowledge graph and Large Language Models.</p>
 
-    <h3>SPARQL Analysis</h3>
-    <p>Using SPARQL, I explored the ArCo endpoint and retrieved the properties of the object 
-      <a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704575" target="_blank">0500704575</a>. I found that the object already includes metadata such as title, authorship, and description. However, it lacked symbolic, material, and contextual information.
+  <section id="methodology" style="padding: 2em; background-color: #f9f9f9;">
+    <h2>Methodology</h2>
+    <p>This project explores how theatrical costumes function as cultural heritage objects, using structured data from the ArCo Knowledge Graph and insights from large language models (LLMs). Our goal was to combine semantic technologies, human interpretation, and visual presentation to enrich and represent costume artifacts from Italian cinema and theatre.</p>
+
+    <p>Each team member selected a specific costume or costume sketch and followed a shared methodology consisting of five main steps:</p>
+
+    <h3>1. Object Selection via SPARQL</h3>
+    <ul>
+      <li>Used the SPARQL endpoint of the ArCo Knowledge Graph</li>
+      <li>Searched for cultural heritage objects using keywords</li>
+      <li>Identified objects cataloged as Historic or Artistic Properties related to Italian theatre or cinema</li>
+    </ul>
+
+    <h3>2. Object-Specific Analysis</h3>
+    <p>Each participant selected one object and retrieved its metadata:</p>
+    <ul>
+      <li><strong>Anna:</strong> Regina Isabella Costume Enrichment</li>
+      <li><strong>Mariam:</strong> Theatrical Costume 1963 by Dario Fo</li>
+      <li><strong>Arina:</strong> Arlecchino '600 sketch by Dario Fo</li>
+      <li><strong>Anastasia:</strong> Theatrical Costume “La Fama”</li>
+      <li><strong>Daniil:</strong> "Second Accuser" by Dario Fo</li>
+    </ul>
+    <p>Each participant noted what metadata was available (e.g., material, author) and what was missing (e.g., symbolic meaning, historical context).</p>
+
+    <h3>3. Contextual Enrichment with LLMs</h3>
+    <p>
+      To bridge the gap between technical metadata and cultural meaning, participants used different language models: 
+      <a href="https://chat.openai.com/" target="_blank"><strong>ChatGPT</strong></a>, 
+      <a href="https://gemini.google.com/" target="_blank"><strong>Gemini</strong></a>, and 
+      <a href="https://huggingface.co/deepseek-ai/DeepSeek-V3" target="_blank"><strong>DeepSeek-V3</strong></a>.
     </p>
- <h3>LLM Prompting Techniques</h3>
 
-    <h4>1. Zero-shot Prompt</h4>
-    <p><strong>Prompt:</strong> What does the theatrical costume “Regina Isabella” represent in terms of cultural or symbolic meaning?</p>
-    <p><strong>Answer:</strong> It represents royal authority, feminine power, and Renaissance nobility, reflecting the image of a queen from the 16th century.</p>
+    <h3>4. RDF Triple Generation</h3>
+    <p>Using the ArCo ontology and newly enriched information, each member generated RDF triples describing material, technique, symbolism, or cultural references. These were saved in <code>.ttl</code> files and uploaded to GitHub.</p>
 
-    <h4>2. Few-shot Prompt</h4>
-    <p><strong>Prompt:</strong></p>
-    <p>Example 1: Napoleon Bonaparte — Symbolizes power and nationalism.<br>
-    Example 2: Cleopatra — Represents feminine authority and exoticism.<br>
-    Now describe “Regina Isabella”.</p>
-    <p><strong>Answer:</strong> Regina Isabella symbolizes dignity, regal presence, and traditional Italian theatrical depictions of female power and historical prestige.</p>
+    <h3>5. HTML Publication and GitHub Integration</h3>
+    <p>Each participant documented their contribution on a separate HTML page hosted via GitHub Pages. Each page includes:</p>
+    <ul>
+      <li>A summary of the selected object</li>
+      <li>SPARQL queries and results</li>
+      <li>Prompts and LLM answers</li>
+      <li>RDF triples</li>
+      <li>A downloadable TTL file</li>
+      <li>An image of the costume</li>
+    </ul>
+    <p>From the homepage, each name links to a dedicated page with this structured content.</p>
 
-    <h4>3. Chain-of-thought Prompt</h4>
-    <p><strong>Prompt:</strong></p>
-    <ol>
-      <li>What historical context does the name “Regina Isabella” refer to?</li>
-      <li>What do the materials — red velvet and gold embroidery — traditionally symbolize?</li>
-      <li>How are queens typically portrayed in Italian theater and cultural heritage?</li>
-    </ol>
-    <p><strong>Based on this reasoning, what does the costume most likely represent?</strong></p>
-    <p><strong>Answer:</strong> The name refers to a Renaissance queen, evoking images of female monarchy and historical authority. Red velvet and gold embroidery symbolize luxury, power, and theatrical grandeur. Queens in Italian culture are often portrayed as dignified, commanding, and elegant. Therefore, the costume most likely represents royal status, feminine strength, and the cultural ideal of noble womanhood on stage.</p>
+    <p>This methodology combines SPARQL-based data retrieval, AI-supported semantic enrichment, RDF modeling, and web publishing to build meaningful digital representations of theatrical costumes. The result is a project that merges cultural heritage and technology to bring Italy’s performance history into the linked data space.</p>
+  </section>
+</div>
 
-    <h3>Enrichment</h3>
-    <p>Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:</p>
+<div id="anna" class="tab-content active">
+  <h2>Anna – Regina Isabella Costume Analysis</h2>
 
-    <pre>
+  <h3>Topic</h3>
+  <p>
+    My contribution focused on analyzing the theatrical costume <strong>“Regina Isabella”</strong>, created in 1992 by <strong>Dario Fo</strong> and <strong>Miguel Carbonell</strong>. This costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>.
+  </p>
+
+  <img src="regina-isabella.png" alt="Costume sketch of Regina Isabella" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
+
+  <h3>SPARQL Analysis</h3>
+  <p>
+    Using SPARQL, I explored the ArCo endpoint and retrieved the properties of the object 
+    <a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704575" target="_blank">0500704575</a>. I found that the object already includes metadata such as title, authorship, and description. However, it lacked symbolic, material, and contextual information.
+  </p>
+
+  <h3>LLM Prompting Techniques</h3>
+
+  <h4>1. Zero-shot Prompt</h4>
+  <p><strong>Prompt:</strong> What does the theatrical costume “Regina Isabella” represent in terms of cultural or symbolic meaning?</p>
+  <p><strong>Answer:</strong> It represents royal authority, feminine power, and Renaissance nobility, reflecting the image of a queen from the 16th century.</p>
+
+  <h4>2. Few-shot Prompt</h4>
+  <p><strong>Prompt:</strong></p>
+  <p>Example 1: Napoleon Bonaparte — Symbolizes power and nationalism.<br>
+  Example 2: Cleopatra — Represents feminine authority and exoticism.<br>
+  Now describe “Regina Isabella”.</p>
+  <p><strong>Answer:</strong> Regina Isabella symbolizes dignity, regal presence, and traditional Italian theatrical depictions of female power and historical prestige.</p>
+
+  <h4>3. Chain-of-thought Prompt</h4>
+  <p><strong>Prompt:</strong></p>
+  <ol>
+    <li>What historical context does the name “Regina Isabella” refer to?</li>
+    <li>What do the materials — red velvet and gold embroidery — traditionally symbolize?</li>
+    <li>How are queens typically portrayed in Italian theater and cultural heritage?</li>
+  </ol>
+  <p><strong>Based on this reasoning, what does the costume most likely represent?</strong></p>
+  <p><strong>Answer:</strong> The name refers to a Renaissance queen, evoking images of female monarchy and historical authority. Red velvet and gold embroidery symbolize luxury, power, and theatrical grandeur. Queens in Italian culture are often portrayed as dignified, commanding, and elegant. Therefore, the costume most likely represents royal status, feminine strength, and the cultural ideal of noble womanhood on stage.</p>
+
+  <h3>Enrichment</h3>
+  <p>
+    Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:
+  </p>
+
+  <pre>
 @prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
 @prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
 @prefix ex: &lt;http://example.org/&gt; .
@@ -136,22 +325,28 @@
 ex:QueenAuthority
     a a-cd:Subject ;
     rdfs:label "Symbol of royal authority and female power" .
-    </pre>
+  </pre>
 
-    <h3>File</h3>
-    <p>
-      My enrichment file is available here:  
-      <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/regina-isabella.ttl" target="_blank">regina-isabella.ttl</a>
-    </p>
-  </div>
+  <h3>File</h3>
+  <p>
+    My enrichment file is available here:  
+    <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/regina-isabella.ttl" target="_blank">regina-isabella.ttl</a>
+  </p>
+</div>
 
-  <div id="mariam" class="tab-content">
-    <h2>Mariam – Costume by Dario Fo (1963)</h2>
-    <h3>Topic</h3>
-    <p>My contribution is focused on analyzing the theatrical costume created in 1963 by <strong><a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo</a></strong>.</p>
 
-    <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/costume_0500704524.jpeg" alt="Costume by Dario Fo (1963)" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
- <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
+  <hr>
+<div id="mariam" class="tab-content">
+  <h2>Mariam - Costume by Dario Fo (1963)</h2>
+
+<h3>Topic</h3>
+<p>
+My contribution is focused on analyzing the theatrical costume created in 1963 by <strong><a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo</a></strong>.
+</p>
+
+<img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/costume_0500704524.jpeg" alt="Costume by Dario Fo (1963)" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
+
+<pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
 SELECT DISTINCT ?cp ?label ?date
 WHERE {
   {
@@ -171,26 +366,26 @@ WHERE {
 ORDER BY ASC(?label)
 LIMIT 50
 </pre>
-
-    <h3>SPARQL Analysis</h3>
-    <p>
-      Using <a href="https://en.wikipedia.org/wiki/SPARQL" target="_blank">SPARQL</a>, I queried the ArCo endpoint to explore the metadata for object <a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524" target="_blank">0500704524</a>. The retrieved information includes:
-    </p>
-    <ul>
-      <li><strong>Title:</strong> Costume teatrale</li>
-      <li><strong>Author:</strong> <a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo</a></li>
-      <li><strong>Materials:</strong> Fabric, wood, metal</li>
-      <li><strong>Techniques:</strong> Sewing, wood carving, metalworking</li>
-      <li><strong>Color:</strong> Red, gold, black</li>
-    </ul>
-
-    <p>However, ArCo lacks contextual and semantic enrichment that could connect this object to broader cultural knowledge. Specifically, the following key aspects are missing:</p>
-    <ul>
-      <li><strong>🎬 Which theatrical performance or film was this costume used in?</strong></li>
-      <li><strong>👗 What historical period or clothing style does it represent?</strong></li>
-    </ul>
-
-    <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
+    
+<h3>SPARQL Analysis</h3>
+<p>
+Using <a href="https://en.wikipedia.org/wiki/SPARQL" target="_blank">SPARQL</a>, I queried the ArCo endpoint to explore the metadata for object <a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524" target="_blank">0500704524</a> The retrieved information includes:
+</p>
+  <ul>
+    <li><strong>Title:</strong> Costume teatrale</li>
+    <li><strong>Author:</strong> <a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo</a></li>
+    <li><strong>Materials:</strong> Fabric, wood, metal</li>
+    <li><strong>Techniques:</strong> Sewing, wood carving, metalworking</li>
+    <li><strong>Color:</strong> Red, gold, black</li>
+  </ul>
+  
+<p>However, ArCo lacks contextual and semantic enrichment that could connect this object to broader cultural knowledge. Specifically, the following key aspects are missing:<p>
+  <ul>
+    <li><strong>🎬 Which theatrical performance or film was this costume used in?</strong></li>
+    <li><strong>👗 What historical period or clothing style does it represent?</strong></li>
+  </ul>
+  
+<pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
 SELECT DISTINCT ?property ?value
 WHERE {
   {
@@ -210,242 +405,381 @@ WHERE {
 }
 ORDER BY ?property
 LIMIT 100
-</pre>
+</pre>        
+    
+<p>To address these gaps, I used <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">Large Language Models</a> (LLMs) to infer missing connections and generate <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RDF triples</a> that enrich the knowledge graph with contextual and stylistic information.
+<p>
 
-    <p>To address these gaps, I used <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">Large Language Models</a> (LLMs) to infer missing connections and generate <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RDF triples</a> that enrich the knowledge graph with contextual and stylistic information.</p>
+<h3>LLM Prompts and Answers</h3>
+<p>I used <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank">ChatGPT</a>, <a href="https://en.wikipedia.org/wiki/Gemini_(language_model)" target="_blank">Gemini</a>, and <a href="https://en.wikipedia.org/wiki/Llama_(language_model)" target="_blank">LlaMa 2 Family</a> to analyze this costume. All three models agreed that the costume was designed for the play <em><a href="https://en.wikipedia.org/wiki/Isabella,_Three_Sailing_Ships_and_a_Con_Man" target="_blank">Isabella, tre caravelle e un cacciaballe</a></em> and reflected a stylized version of late 15th to early 16th-century Spanish court fashion.</p>
 
-    <h3>LLM Prompts and Answers</h3>
-    <p>I used <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank">ChatGPT</a>, <a href="https://en.wikipedia.org/wiki/Gemini_(language_model)" target="_blank">Gemini</a>, and <a href="https://en.wikipedia.org/wiki/Llama_(language_model)" target="_blank">LlaMa 2 Family</a> to analyze this costume. All three models agreed that the costume was designed for the play <em><a href="https://en.wikipedia.org/wiki/Isabella,_Three_Sailing_Ships_and_a_Con_Man" target="_blank">Isabella, tre caravelle e un cacciaballe</a></em> and reflected a stylized version of late 15th to early 16th-century Spanish court fashion.</p>
+<p><em> 🟠 Where the costume was used 🟠 </em></p> 
+  
+<p><strong> 🔶 Zero-shot prompt:</strong> Which theater production or film featured a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?
+</p>
 
-    <p><em>🟠 Where the costume was used 🟠</em></p>
-    <p><strong>🔶 Zero-shot prompt:</strong> Which theater production or film featured a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Answer</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ChatGPT</td>
-          <td>The costume design titled "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, is associated with the theatrical production of "Isabella, tre caravelle e un cacciaballe" (translated as "Isabella, Three Sailing Ships and a Con Man"). This satirical play was written and performed by Dario Fo, a Nobel Prize-winning Italian playwright, actor, and director, known for his political theater and use of commedia dell’arte elements.
+<table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ChatGPT</td>
+        <td>The costume design titled "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, is associated with the theatrical production of "Isabella, tre caravelle e un cacciaballe" (translated as "Isabella, Three Sailing Ships and a Con Man"). This satirical play was written and performed by Dario Fo, a Nobel Prize-winning Italian playwright, actor, and director, known for his political theater and use of commedia dell’arte elements.
 
 In this production, Dario Fo not only wrote and acted but also created costume and set designs. The figurines (design drawings) represent his vision for the female stage costumes, reflecting the theatrical and exaggerated style typical of his work during that period.
 </td>
-        </tr>
-        <tr>
-          <td>LLaMa 2</td>
-          <td>I couldn't find any information that directly links a theater production or film to a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963.
+      </tr>
+      <tr>
+        <td>LLaMa 2</td>
+        <td>I couldn't find any information that directly links a theater production or film to a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963.
 However, Dario Fo was an Italian playwright, actor, and director, known for his satirical and socially conscious works. It is possible that one of his own productions or a production inspired by his work may have featured a costume based on his 1963 design.
-Can you provide more context or clarify which production or film you are thinking of? I'll do my best to help.</td>
-        </tr>
-        <tr>
-          <td>Gemini</td>
-          <td>The costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, was designed for his play "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man). This comedy, written by Dario Fo and Franca Rame, premiered in 1963. The costumes for this production were inspired by the 16th century setting of the play. The drawings, including the "figurini per costumi di scena, femminili (disegno)," were used for the costume department and actors during the creation of the theatrical pieces. The play "Isabella, tre caravelle e un cacciaballe" was later adapted for television by RAI TV in 1977 as part of the series "Il teatro di Dario Fo."</td>
-        </tr>
-      </tbody>
-    </table>
+Can you provide more context or clarify which production or film you are thinking of? I'll do my best to help.
+</td>
+      </tr>
+      <tr>
+        <td>Gemini</td>
+        <td>The costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, was designed for his play "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man). This comedy, written by Dario Fo and Franca Rame, premiered in 1963. The costumes for this production were inspired by the 16th century setting of the play. The drawings, including the "figurini per costumi di scena, femminili (disegno)," were used for the costume department and actors during the creation of the theatrical pieces. The play "Isabella, tre caravelle e un cacciaballe" was later adapted for television by RAI TV in 1977 as part of the series "Il teatro di Dario Fo."
+</td>
+      </tr>
+    </tbody>
+  </table>    
 
-    <p><strong>🔶 Few-shot prompt:</strong> Example: Design: "Historical armor costume sketch by Danilo Donati (1970)"<br>
-    Q: In which film was this used?<br>
-    A: It was used in the film "Fellini Satyricon" (1969).<br><br>
-    Now:<br>
-    Design: "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963)<br>
-    Q: In which theatre performance or film was the costume used?<br>
-    A:</p>
+<p><strong> 🔶 Few-shot prompt:</strong> Example:Design: "Historical armor costume sketch by Danilo Donati (1970)"
+Q: In which film was this used?
+A: It was used in the film "Fellini Satyricon" (1969).
 
-    <table>
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Answer</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ChatGPT</td>
-          <td>Design: "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963)
+Now:
+Design: "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963)
 Q: In which theatre performance or film was the costume used?
-A: It was used in the theatre performance "La signora è da buttare" (1967).</td>
-        </tr>
-        <tr>
-          <td>LLaMa 2</td>
-          <td>Based on the design "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963), the costume was used in the theatre performance of "Isabella, tre caravelle e un cacciaballe" (also known as "Isabella, Three Sailing Ships and a Con Man") which is a play written by Dario Fo in 1963.</td>
-        </tr>
-        <tr>
-          <td>Gemini</td>
-          <td>A: The costume was used in the theatre performance "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man), written by Dario Fo and Franca Rame, which premiered in 1963.</td>
-        </tr>
-      </tbody>
-    </table>
-<p><strong>🔶 Chain-of-thought prompt:</strong> Let's examine the origin of the costume step-by-step. It is based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963. Dario Fo was an influential Italian playwright and costume designer. Considering the year and his theatrical work, what performance might have featured this costume? Could it have been used in one of his satirical plays or a specific production from that period? Explain how you came up with answers step-by-step.</p>
+A:
+</p>
 
 <table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>Answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ChatGPT</td>
-      <td>
-        Step 1: Identify Dario Fo’s role and activities around 1963<br>
-        Dario Fo was a renowned Italian playwright, actor, director, and costume designer. By the early 1960s, he had already gained recognition for his satirical and politically charged theater. He often worked with his wife, Franca Rame, and used comedy, farce, and medieval theatrical traditions to critique society and politics.<br><br>
-        Step 2: Look into Dario Fo’s notable works around 1963<br>
-        In the early 1960s, Fo produced several plays. Some important ones include:<br>
-        – “Mistero Buffo” (1969) — This is a bit later, so unlikely for 1963.<br>
-        – “Morte accidentale di un anarchico” (1970) — Also later.<br>
-        Around 1963 specifically, Fo was active in smaller productions and developing his style. He might have been working on satirical or politically themed plays involving medieval forms and commedia dell’arte.<br><br>
-        Step 3: Consider the style and function of the costume<br>
-        The title "figurini per costumi di scena, femminili" means "sketches for stage costumes, female". Dario Fo’s female characters often represented strong, symbolic, or comic figures—sometimes peasants, saints, or caricatures of political figures. His costumes usually reflected historical or folk styles, sometimes exaggerated for satirical effect.<br><br>
-        Step 4: Linking costume to a play or type of production<br>
-        Given the year 1963, the costume was likely designed for a satirical play or a production influenced by medieval/folk theatre. One candidate is Fo’s early satirical works or short plays performed by his troupe. It could also be a costume for Franca Rame, who frequently played strong female roles in his plays. Considering Fo’s penchant for historical or allegorical subjects, the costume might reflect a character from a medieval fable, a peasant woman, or a symbolic figure.<br><br>
-        Step 5: Conclusion — most likely scenario<br>
-        The costume from 1963 was probably designed for one of Dario Fo’s early satirical plays or staged readings, performed by his theater company. Since there is no specific major play explicitly documented in that exact year with detailed costume records, the best guess is that it was for a female character in a politically satirical, socially critical production, typical of Fo’s style. It may also have been preparatory work for later, more famous plays like Mistero Buffo, where such medieval-inspired costumes became iconic.<br><br>
-        Summary:<br>
-        Dario Fo’s 1963 female costume sketch was likely for an early satirical or folk-inspired play. It fits the style of his politically charged, humorous theater featuring symbolic female roles. Exact production is unclear, but probably part of his evolving theatrical experiments in the early 60s before Mistero Buffo.
-      </td>
-    </tr>
-    <tr>
-      <td>LLaMa 2</td>
-      <td>Error: Failed to fetch the chat response.</td>
-    </tr>
-    <tr>
-      <td>Gemini</td>
-      <td>Let's examine the likely origin of the costume by Dario Fo from 1963, considering his body of work and the theatrical context. ... [сокращено для продолжения в следующей части]</td>
-    </tr>
-  </tbody>
-</table>
-<p><em>🟢 Period and style of the costume 🟢</em></p> 
-<p><strong>🔷 Zero-shot prompt:</strong> What historical clothing style is represented by a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?</p>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ChatGPT</td>
+        <td>Design: "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963)
+Q: In which theatre performance or film was the costume used?
+A: It was used in the theatre performance "La signora è da buttare" (1967).
+</td>
+      </tr>
+      <tr>
+        <td>LLaMa 2</td>
+        <td>Based on the design "figurini per costumi di scena, femminili (disegno)" by Dario Fo (1963), the costume was used in the theatre performance of "Isabella, tre caravelle e un cacciaballe" (also known as "Isabella, Three Sailing Ships and a Con Man") which is a play written by Dario Fo in 1963.
+</td>
+      </tr>
+      <tr>
+        <td>Gemini</td>
+        <td>A: The costume was used in the theatre performance "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man), written by Dario Fo and Franca Rame, which premiered in 1963.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<p><strong> 🔶 Chain-of-thought prompt:</strong> Let's examine the origin of the costume step-by-step. It is based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963. Dario Fo was an influential Italian playwright and costume designer. Considering the year and his theatrical work, what performance might have featured this costume? Could it have been used in one of his satirical plays or a specific production from that period? Explain how you came up with answers step-by-step.
+</p>
 
 <table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>Answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ChatGPT</td>
-      <td>
-        The costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, likely represents a Renaissance-inspired theatrical style, drawing heavily from commedia dell’arte and late medieval to early modern European fashion.
-        <br><br>
-        <strong>Key Characteristics of the Historical Style:</strong><br>
-        – <em>Exaggerated Silhouettes:</em> Fo often used voluminous skirts, cinched waists, and puffed sleeves to reflect Renaissance and Baroque fashion in a satirical, exaggerated manner.<br>
-        – <em>Decorative Elements:</em> Ornate patterns, ruffles, and contrasting fabrics were common—echoing courtly styles from the 16th and 17th centuries, stylized for stage impact.<br>
-        – <em>Commedia dell’Arte Influence:</em> As a central influence on Fo’s work, this tradition brought in archetypal costumes with symbolic colors and stylized shapes—especially for female stock characters like Colombina or the Innamorata.<br>
-        – <em>Carnivalesque Aesthetic:</em> True to Fo’s theatrical language, the costumes were often playful and distorted versions of historical garments, used to highlight satire, absurdity, or social critique.
-        <br><br>
-        <strong>Conclusion:</strong><br>
-        The historical clothing style represented in the 1963 costume design by Dario Fo is best described as a stylized Renaissance/commedia dell’arte hybrid, referencing late 15th to early 17th-century European fashion, adapted for theatrical and satirical purposes.
-      </td>
-    </tr>
-    <tr>
-      <td>LLaMa 2</td>
-      <td>Error: Failed to fetch the chat response.</td>
-    </tr>
-    <tr>
-      <td>Gemini</td>
-      <td>
-        Based on the context that the drawing series "figurini per costumi di scena, femminili (disegno)" by Dario Fo was created in 1963 for his play "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man), the costumes would have represented a 15th to early 16th-century historical clothing style, specifically influenced by the Spanish court and broader European fashion of that period.
-        <br><br>
-        <strong>Play's Setting:</strong> This comedy revolves around Christopher Columbus and Queen Isabella. The historical events it parodies took place at the very end of the 15th century and the beginning of the 16th century.<br><br>
-        <strong>Dario Fo's Approach:</strong> While known for satirical and often anachronistic use of history to comment on contemporary society, Fo would draw from actual historical clothing styles to create a recognizable base, which he would then manipulate, exaggerate, or simplify for comedic and political effect.
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ChatGPT</td>
+        <td>Great! Let’s break this down carefully and step-by-step to understand the possible origin and context of the costume from Dario Fo’s 1963 "figurini per costumi di scena, femminili (disegno)":
 
-<p><strong>🔷 Few-shot prompt:</strong> Example: Sketch: "18th century aristocratic dress design by Luchino Visconti"<br>
-Q: What style does it represent?<br>
-A: Rococo, mid-18th century European fashion.<br><br>
-Now:<br>
-Sketch: "figurini per costumi di scena, femminili (disegno)" by Dario Fo, 1963<br>
-Q: What historical style or fashion period does this costume represent?</p>
+Step 1: Identify Dario Fo’s role and activities around 1963
+Dario Fo was a renowned Italian playwright, actor, director, and costume designer.
+By the early 1960s, he had already gained recognition for his satirical and politically charged theater.
+He often worked with his wife, Franca Rame, and used comedy, farce, and medieval theatrical traditions to critique society and politics.
+Step 2: Look into Dario Fo’s notable works around 1963
+In the early 1960s, Fo produced several plays. Some important ones include:
+“Mistero Buffo” (1969) — This is a bit later, so unlikely for 1963.
+“Morte accidentale di un anarchico” (1970) — Also later.
+Around 1963 specifically, Fo was active in smaller productions and developing his style. He might have been working on satirical or politically themed plays involving medieval forms and commedia dell’arte.
+Step 3: Consider the style and function of the costume
+The title "figurini per costumi di scena, femminili" means "sketches for stage costumes, female".
+Dario Fo’s female characters often represented strong, symbolic, or comic figures—sometimes peasants, saints, or caricatures of political figures.
+His costumes usually reflected historical or folk styles, sometimes exaggerated for satirical effect.
+Step 4: Linking costume to a play or type of production
+Given the year 1963, the costume was likely designed for a satirical play or a production influenced by medieval/folk theatre.
+One candidate is Fo’s early satirical works or short plays performed by his troupe.
+It could also be a costume for Franca Rame, who frequently played strong female roles in his plays.
+Considering Fo’s penchant for historical or allegorical subjects, the costume might reflect a character from a medieval fable, a peasant woman, or a symbolic figure.
+Step 5: Conclusion — most likely scenario
+The costume from 1963 was probably designed for one of Dario Fo’s early satirical plays or staged readings, performed by his theater company.
+Since there is no specific major play explicitly documented in that exact year with detailed costume records, the best guess is that it was for a female character in a politically satirical, socially critical production, typical of Fo’s style.
+It may also have been preparatory work for later, more famous plays like Mistero Buffo, where such medieval-inspired costumes became iconic.
+Summary:
+Dario Fo’s 1963 female costume sketch was likely for an early satirical or folk-inspired play.
+It fits the style of his politically charged, humorous theater featuring symbolic female roles.
+Exact production is unclear, but probably part of his evolving theatrical experiments in the early 60s before Mistero Buffo.
+</td>
+      </tr>
+      <tr>
+        <td>LLaMa 2</td>
+        <td>Error: Failed to fetch the chat response.</td>
+      </tr>
+      <tr>
+        <td>Gemini</td>
+        <td>Let's examine the likely origin of the costume by Dario Fo from 1963, considering his body of work and the theatrical context.
+
+Step 1: Identify Key Information and Constraints
+
+Artist/Designer: Dario Fo
+Item: "Figurini per costumi di scena, femminili (disegno)" (Costume sketches for the stage, female - drawing)
+Date: 1963
+Artist's Style/Work: Influential Italian playwright, satirist, and costume designer. Known for his politically charged, satirical plays, often drawing on commedia dell'arte and popular theatre traditions.
+Step 2: Research Dario Fo's Major Works in or around 1963
+
+This is the most crucial step. To pinpoint a potential production, we need to look at what plays Dario Fo was writing, directing, and performing in during that specific year or the immediate surrounding years.
+
+Initial Search Strategy: My primary strategy here would be to search for "Dario Fo plays 1963," "Dario Fo theatrical productions 1963," or "Dario Fo's work in the early 1960s."
+
+Key Findings (from a quick mental check or actual search if needed):
+
+By 1963, Dario Fo and Franca Rame were well-established and had founded their own theatrical company, "Compagnia Dario Fo–Franca Rame."
+The early to mid-1960s were a highly prolific period for Fo.
+A significant play from this period is Settimo: ruba un po' meno (Seventh: Steal a Little Less), which premiered in 1964. While the sketch is from 1963, design work often precedes a premiere.
+Another relevant play is Rame and Fo's Isabella, tre caravelle e un cacciaballe (Isabella, Three Caravels and a Charlatan), which premiered in 1963. This is a strong candidate given the exact year.
+His work around this time also included Chi ruba un piede è fortunato in amore (He Who Steals a Foot is Lucky in Love), which premiered in 1961.
+Step 3: Analyze Potential Matches Based on Themes and Style
+
+Now, let's consider the nature of these plays in relation to costume design. Dario Fo's costumes were almost always integral to the satirical and often anachronistic nature of his plays.
+
+Isabella, tre caravelle e un cacciaballe (1963):
+
+Plot: This play is a satirical take on the discovery of America, particularly focusing on Christopher Columbus (the "charlatan") and Queen Isabella. It uses historical figures to comment on contemporary issues.
+Costume Relevance: The historical setting (late 15th century) combined with Fo's satirical approach would necessitate costumes that reference historical periods but are likely exaggerated, simplified, or even anachronistic for comedic and critical effect. Female characters would include Queen Isabella, possibly court ladies, or women encountered in the New World. This play is a very strong contender.
+Settimo: ruba un po' meno (1964):
+
+Plot: This play deals with social justice, corruption, and the struggles of ordinary people, often with elements of farce and a contemporary setting, though it could incorporate historical or allegorical elements.
+Costume Relevance: While slightly after 1963, costume design often begins a year or more in advance. The themes of social critique could involve various character types, including women from different social strata, potentially with elements of caricature in their attire.
+Chi ruba un piede è fortunato in amore (1961):
+
+Plot: A farce about a man who fakes an injury to avoid work, leading to various chaotic situations.
+Costume Relevance: While a possibility, the subject matter might lend itself less to elaborate "figurini per costumi di scena, femminili" that might evoke historical styles, compared to Isabella. Costumes here would likely be more everyday or farcical.
+Step 4: Formulate the Most Likely Answer
+
+Given the precise year (1963) and the nature of Fo's historical-satirical works, Isabella, tre caravelle e un cacciaballe stands out as the most probable production for which these "figurini per costumi di scena, femminili" were created.
+
+Explanation: The play directly engages with a historical period (the late 15th century) through a satirical lens. This would have required costumes for female characters that could be either historically suggestive or deliberately anachronistic/exaggerated for comedic and critical effect, perfectly aligning with Fo's style and the typical needs of his productions. Designing for a major production like this in 1963, for a premiere in the same year, is perfectly plausible.
+Conclusion:
+
+The costume sketch "figurini per costumi di scena, femminili (disegno)" by Dario Fo from 1963 most likely featured in the performance of his satirical play Isabella, tre caravelle e un cacciaballe, which premiered in 1963. This conclusion is reached by:
+
+Identifying the exact year of the sketch.
+Researching Dario Fo's major theatrical productions around that specific year.
+Analyzing the themes and historical/satirical nature of those plays to determine which would most logically require "female stage costume sketches" that might reference historical styles for comedic or critical purposes, a hallmark of Fo's work.
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+<p><em> 🟢 Period and style of the cosutme 🟢 </em></p> 
+<p><strong> 🔷 Zero-shot prompt:</strong> What historical clothing style is represented by a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?</p>
+
 <table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>Answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ChatGPT</td>
-      <td>
-        Sketch: "figurini per costumi di scena, femminili (disegno)" by Dario Fo, 1963<br>
-        Q: What historical style or fashion period does this costume represent?<br>
-        A: Renaissance and commedia dell’arte, late 16th to early 17th century European theatrical fashion.
-      </td>
-    </tr>
-    <tr>
-      <td>LLaMa 2</td>
-      <td>Error: Failed to fetch the chat response.</td>
-    </tr>
-    <tr>
-      <td>Gemini</td>
-      <td>
-        A: Late Gothic to Early Renaissance period, specifically the late 15th to early 16th century European fashion, influenced by Spanish court attire.
-      </td>
-    </tr>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ChatGPT</td>
+        <td>The costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963, likely represents a Renaissance-inspired theatrical style, drawing heavily from commedia dell’arte and late medieval to early modern European fashion.
+Key Characteristics of the Historical Style:
+Exaggerated Silhouettes: Fo often used voluminous skirts, cinched waists, and puffed sleeves to reflect Renaissance and Baroque fashion in a satirical, exaggerated manner.
+Decorative Elements: Ornate patterns, ruffles, and contrasting fabrics were common—echoing courtly styles from the 16th and 17th centuries, stylized for stage impact.
+Commedia dell’Arte Influence: As a central influence on Fo’s work, this tradition brought in archetypal costumes with symbolic colors and stylized shapes—especially for female stock characters like Colombina or the Innamorata.
+Carnivalesque Aesthetic: True to Fo’s theatrical language, the costumes were often playful and distorted versions of historical garments, used to highlight satire, absurdity, or social critique.
+Conclusion:
+The historical clothing style represented in the 1963 costume design by Dario Fo is best described as a stylized Renaissance/commedia dell’arte hybrid, referencing late 15th to early 17th-century European fashion, adapted for theatrical and satirical purposes.
+</td>
+      </tr>
+      <tr>
+        <td>LLaMa 2</td>
+        <td>Error: Failed to fetch the chat response.</td>
+      </tr>
+      <tr>
+        <td>Gemini</td>
+        <td>Based on the context that the drawing series "figurini per costumi di scena, femminili (disegno)" by Dario Fo was created in 1963 for his play "Isabella, tre caravelle e un cacciaballe" (Isabella, Three Sailing Ships and a Con Man), the costumes would have represented a 15th to early 16th-century historical clothing style, specifically influenced by the Spanish court and broader European fashion of that period.
+Here's why:
+Play's Setting: "Isabella, tre caravelle e un cacciaballe" is a satirical comedy that revolves around Christopher Columbus and Queen Isabella of Spain. The historical events it parodies took place at the very end of the 15th century and the beginning of the 16th century.
+Dario Fo's Approach: While Dario Fo was known for his satirical and often anachronistic use of history to comment on contemporary society, his costumes for such plays would still be rooted in the historical period he was depicting. He would draw from actual historical clothing styles to create a recognizable base, which he would then manipulate, exaggerate, or simplify for comedic and political effect.
+Specific Characteristics:
+Female costumes of this era typically featured layered garments: an undergown (chemise), a fitted kirtle or gown, and often an overgown or robe.
+Bodices could be tightly laced, and skirts were full, sometimes gathered or pleated.
+Sleeves varied greatly, from fitted to large and elaborate, sometimes with slashes to reveal the lining or undergarment.
+Headwear was crucial for women, ranging from simple veils and coifs to more elaborate headdresses like the hennin (though more common in the earlier 15th century) or the gabled hood and later French hoods. Spanish fashion, which would be particularly relevant for Queen Isabella, often featured more structured and formal headwear and elaborate brocades.
+Fabrics would typically be rich for courtly figures, such as brocade, velvet, and silk, while commoners would wear wools and linens.
+Therefore, the costume based on Dario Fo's 1963 drawing would have satirically or stylistically referenced the clothing of the Late Gothic to Early Renaissance period (circa 1480s-1520s), particularly as seen in Spain.
+</td>
+      </tr>
+    </tbody>
+  </table>
+    
+<p><strong> 🔷 Few-shot prompt:</strong> Example:
+Sketch: "18th century aristocratic dress design by Luchino Visconti"
+Q: What style does it represent?
+A: Rococo, mid-18th century European fashion.
 
-<p><strong>🔷 Chain-of-thought prompt:</strong> Let’s analyze the style step-by-step. The costume is based on sketches titled "figurini per costumi di scena, femminili (disegno)" by Dario Fo from 1963. Dario Fo often referenced historical styles in his satirical plays. What fashion period or historical clothing style might be reflected in this design? Consider typical theatrical costumes of the time and Fo’s influences. Explain how you came up with answers step-by-step.</p>
+Now:
+Sketch: "figurini per costumi di scena, femminili (disegno)" by Dario Fo, 1963
+Q: What historical style or fashion period does this costume represent?
+A:
+</p>
 
 <table>
-  <thead>
-    <tr>
-      <th>Model</th>
-      <th>Answer</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ChatGPT</td>
-      <td>
-        <strong>Step 1:</strong> Understanding Dario Fo’s theatrical and artistic approach — inspired by historical and folk traditions, especially commedia dell’arte and mystery plays.<br>
-        <strong>Step 2:</strong> 1963 theatrical costumes revived classical and folk styles.<br>
-        <strong>Step 3:</strong> Common historical references: medieval peasant garments, Renaissance attire, commedia dell’arte costumes.<br>
-        <strong>Step 4:</strong> Typical sketch elements: long skirt, fitted bodice, head covering, vivid colors.<br>
-        <strong>Step 5:</strong> Matches 14th to early 16th century Italian dress.<br>
-        <strong>Step 6:</strong> Conclusion — The sketches most likely reflect medieval/early Renaissance Italian peasant clothing stylized for satire and theater.
-      </td>
-    </tr>
-    <tr>
-      <td>LLaMa 2</td>
-      <td>Error: Failed to fetch the chat response.</td>
-    </tr>
-    <tr>
-      <td>Gemini</td>
-      <td>
-        <strong>Step 1:</strong> Fo was influenced by political satire and commedia dell’arte archetypes.<br>
-        <strong>Step 2:</strong> Costumes were symbolic, not realistic.<br>
-        <strong>Step 3:</strong> The play “Isabella...” is set in the 15th century.<br>
-        <strong>Step 4:</strong> Costume likely references Spanish court fashion of late 1400s.<br>
-        <strong>Conclusion:</strong> A hybrid of theatrical exaggeration and historical Spanish/Italian Renaissance attire.
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p>Comparison of all LLMs:</p>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ChatGPT</td>
+        <td>Sketch: "figurini per costumi di scena, femminili (disegno)" by Dario Fo, 1963
+Q: What historical style or fashion period does this costume represent?
+A: Renaissance and commedia dell’arte, late 16th to early 17th century European theatrical fashion.
+</td>
+      </tr>
+      <tr>
+        <td>LLaMa 2</td>
+        <td>Error: Failed to fetch the chat response.</td>
+      </tr>
+      <tr>
+        <td>Gemini</td>
+        <td>A: Late Gothic to Early Renaissance period, specifically the late 15th to early 16th century European fashion, influenced by Spanish court attire.
+</td>
+      </tr>
+    </tbody>
+  </table>
+    
+<p><strong> 🔷 Chain-of-thought prompt:</strong> Let’s analyze the style step-by-step. The costume is based on sketches titled "figurini per costumi di scena, femminili (disegno)" by Dario Fo from 1963. Dario Fo often referenced historical styles in his satirical plays. What fashion period or historical clothing style might be reflected in this design? Consider typical theatrical costumes of the time and Fo’s influences. Explain how you came up with answers step-by-step.</p>
+
+<table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ChatGPT</td>
+        <td>Absolutely! Let’s analyze the style of the 1963 female costume sketches by Dario Fo, step-by-step, focusing on the fashion period or historical clothing style that might be reflected. I’ll break down the reasoning process clearly:
+
+Step 1: Understanding Dario Fo’s theatrical and artistic approach
+Dario Fo was deeply inspired by historical and folk traditions, especially medieval and Renaissance theater forms like commedia dell’arte and mystery plays.
+He frequently used historical and symbolic costumes to connect contemporary satire to past social realities.
+His costumes often combined authentic period details with exaggerated or stylized elements for theatrical effect.
+Step 2: Context of 1963 theatrical costume design
+In the early 1960s, theatrical costumes often reflected a revival or reinterpretation of classical and folk styles rather than contemporary fashion.
+Especially for satirical or political theater, designers used period clothing to evoke timelessness or social allegory.
+Costumes were often handmade, richly textured, and colorful to be visible and expressive on stage.
+Step 3: Common historical clothing references in Fo’s work
+Fo drew inspiration mostly from:
+Medieval peasant and working-class garments — simple tunics, aprons, headscarves, rough fabrics.
+Renaissance attire — particularly for characters of certain social status or symbolic roles.
+Commedia dell’arte costumes — masks, exaggerated features, traditional silhouettes.
+Female costumes often included long skirts, bodices, and head coverings consistent with 14th to 16th century Italian rural or urban dress.
+Step 4: Characteristics of the likely costume design
+Based on typical sketches titled “figurini per costumi di scena, femminili” from Fo’s era:
+Expect a long, flowing skirt with multiple layers or aprons.
+A bodice or fitted vest, possibly with lacing or decorative embroidery.
+A head covering like a kerchief or cap — common in medieval peasant women’s wear.
+Use of earthy or vivid colors to highlight character traits.
+Possibly exaggerated or symbolic elements for satire, like oversized collars or whimsical details.
+Step 5: Matching these to a specific fashion period
+The elements above align best with medieval to early Renaissance peasant or lower-class women’s clothing from roughly 14th to early 16th century Italy.
+This fits Fo’s common use of historical allegory and folk motifs.
+The costume is unlikely to be aristocratic or Baroque, as Fo’s satire usually focused on common people or symbolic archetypes.
+Step 6: Final conclusion on style
+The 1963 female costume sketches by Dario Fo most likely reflect medieval or early Renaissance Italian peasant women’s clothing.
+This style includes long skirts, fitted bodices, aprons, and headscarves typical of the period, stylized for theatrical clarity and satire.
+This aligns with Fo’s use of historical reference to enhance the social and political themes of his plays.</td>
+      </tr>
+      <tr>
+        <td>LLaMa 2</td>
+        <td>Error: Failed to fetch the chat response.</td>
+      </tr>
+      <tr>
+        <td>Gemini</td>
+        <td>Let's analyze the likely fashion period or historical clothing style reflected in Dario Fo's 1963 costume sketches, keeping in mind his theatrical approach and influences.
+
+Step 1: Understand Dario Fo's Core Influences and Theatrical Style
+
+Satirical and Political Theatre: Fo's plays were not about historical accuracy for its own sake. They were vehicles for social and political commentary, often using humor, farce, and exaggeration. This means his costumes would serve the satire, not just a historical period.
+Commedia dell'Arte: This is a major influence. Commedia dell'Arte (16th-18th century Italian improvised comedy) is characterized by stock characters (Arlecchino, Pantalone, Columbina, Il Dottore, etc.) with instantly recognizable, often exaggerated, and symbolic costumes. These costumes were not fashion plates of their time but theatrical archetypes that evolved over centuries.
+Popular Theatre Traditions: Fo also drew from medieval jesters, street performers, and other forms of popular entertainment, which prioritize immediate visual communication and often feature flamboyant, symbolic, or anachronistic attire.
+"Unofficial Leftism" and Critique: His work often critiqued power structures, bourgeois society, and hypocrisy. Costumes could be used to lampoon these targets.
+Step 2: Consider the Context of Theatrical Costumes in the 1960s
+
+Not Strict Historical Reproduction: While some classical theatre might aim for historical accuracy, experimental or satirical theatre in the 1960s (like Fo's) often used historical references more loosely. Costumes were designed for theatrical impact, ease of movement, and to serve the play's message.
+Symbolism Over Realism: The emphasis was often on what the costume communicated about the character or the play's themes, rather than a perfect period recreation.
+Practicality: Stage costumes need to be durable, allow for movement, and sometimes facilitate quick changes.
+Step 3: Connect to Specific Productions if Known (as established in previous steps)
+
+As we've discussed, the most likely play these sketches were for is Isabella, tre caravelle e un cacciaballe (Isabella, Three Caravels and a Charlatan), which premiered in 1963.
+
+Play's Theme: This play is a satirical re-telling of Christopher Columbus's voyage, featuring historical figures like Queen Isabella.
+Implication for Costumes: This means the costumes for female characters (Queen Isabella, court ladies, perhaps indigenous women or allegorical figures) would draw upon the late 15th-early 16th century European fashion of the Age of Exploration.
+Step 4: Synthesize and Identify the Dominant Styles/Periods
+
+Given the above points, we can deduce the most likely fashion periods and styles reflected:
+
+Late 15th to Early 16th Century European (specifically Spanish/Italian Renaissance):
+
+Reasoning: The play Isabella is set during this period. Costumes for figures like Queen Isabella would naturally reference the styles of the time:
+Silhouettes: Often structured bodices, full skirts (sometimes conical or gathered), and elaborate sleeves (e.g., puffed, slashed, or close-fitting with cuffs).
+Headwear: Veils, elaborate caps, or hair nets.
+Fabrics: Rich fabrics (though Fo's theatrical versions might use simpler materials to suggest richness).
+Crucial Caveat: Fo would not have aimed for museum-level accuracy. His interpretation would likely be:
+Exaggerated: To heighten comedic effect or character traits (e.g., larger-than-life sleeves, impossibly wide skirts).
+Simplified: For theatrical practicality and immediate recognition.
+Anachronistic Touches: Potentially blending elements from other periods or contemporary (1960s) touches for satirical purposes, or to make the historical figures relatable to a modern audience.
+Commedia dell'Arte / Theatrical Archetypes (drawing from 16th-18th century Italian theatre traditions):
+
+Reasoning: Even when referencing a specific historical period like the Renaissance, Fo's deep grounding in Commedia dell'Arte means the spirit and function of these traditional theatrical costumes would infuse his designs.
+Characteristics:
+Instant Character Recognition: Costumes designed to immediately communicate the character's role (e.g., a regal queen, a cunning servant, a foolish figure).
+Symbolic Elements: Color, pattern, or exaggerated features conveying personality or satirical commentary.
+Stylized, Not Realist: The costumes would be more about theatre than reality.
+Conclusion:
+
+The "figurini per costumi di scena, femminili (disegno)" by Dario Fo from 1963 most likely reflect a stylized and satirical interpretation of late 15th to early 16th century European fashion, particularly the Spanish/Italian Renaissance, as required for his play Isabella, tre caravelle e un cacciaballe.
+
+However, this historical reference would be heavily filtered through Fo's distinct theatrical lens, incorporating elements of Commedia dell'Arte costume principles such as exaggeration, simplification, and a focus on character archetype and satirical communication, rather than strict historical accuracy. The costumes would serve to lampoon the historical figures and themes within the context of his broader political and social critique.</td>
+      </tr>
+    </tbody>
+  </table>
+
+<p>Comparison of all LLM's: </p>   
 
 <table>
   <thead>
     <tr>
       <th>LLM model</th>
       <th>Question 1:<br>
-        Which theater production or film featured a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?
-      </th>
+        Which theater production or film featured a costume based on "figurini per costumi di scena, femminili (disegno)" by Dario Fo, created in 1963?</th>
       <th>Question 2:<br>
-        What historical clothing style is represented by the costume?
-      </th>
+        What historical clothing style is represented by the costume?</th>
       <th>Result</th>
     </tr>
   </thead>
@@ -456,12 +790,14 @@ Q: What historical style or fashion period does this costume represent?</p>
       <td>very good</td>
       <td>Good, but not specific</td>
     </tr>
+
     <tr>
       <td><strong>LLaMa 2</strong></td>
       <td>Unstable, broken chain of thought</td>
       <td>Not enough data</td>
       <td>❌ Weaker</td>
     </tr>
+
     <tr>
       <td><strong>Gemini</strong></td>
       <td>Clear and confident: "Isabella"</td>
@@ -470,16 +806,16 @@ Q: What historical style or fashion period does this costume represent?</p>
     </tr>
   </tbody>
 </table>
-
+    
 <h3>Enrichment</h3>
 <p>I created <a href="https://en.wikipedia.org/wiki/RDF" target="_blank">RDF triples</a> describing the cultural and stylistic context of the costume:</p>
 <pre style="background-color: #f4f4f4; border: 1px solid #ccc; padding: 10px; border-radius: 6px; overflow-x: auto;">
-@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
-@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix ex: &lt;http://example.org/&gt; .
+@prefix arco: &lt;https://w3id.org/arco/ontology/arco/> .
+@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/> .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: &lt;http://example.org/> .
 
-&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524&gt;
+&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704524>
     a-cd:hasSubject ex:LateRenaissanceStyle ;
     a-cd:hasSubject ex:IsabellaPerformance .
 
@@ -489,51 +825,54 @@ ex:LateRenaissanceStyle
 
 ex:IsabellaPerformance
     a a-cd:Subject ;
-    rdfs:label "Isabella, tre caravelle e un cacciaballe by Dario Fo" .
-</pre>
+    rdfs:label "Isabella, tre caravelle e un cacciaballe by Dario Fo" .</pre>
 
 <h3>File</h3>
 <p>My file is available for downloading:
 <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/costume_0500704524.ttl" target="_blank">costume_0500704524.ttl</a></p>
-
+    
 <h3>Conclusion</h3>
-<p>This project demonstrates how knowledge graphs and language models can work together to enrich cultural heritage data. The costume is not only a visual artifact, but also a narrative element linked to Italian theater and political satire. By combining structured data from ArCo with insights generated through prompting <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">Large Language Models</a>, we were able to uncover its theatrical origin, stylistic influences, and cultural significance.</p>
-<p>In particular, this case highlights how <a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo's</a> figurini are not merely design sketches, but entry points into broader stories of performance, history, and ideology. The costume becomes a lens through which we can view not only a play, but an entire period of social commentary and artistic experimentation.</p>
-<hr>
+<p>This project demonstrates how knowledge graphs and language models can work together to enrich cultural heritage data. The costume is not only a visual artifact, but also a narrative element linked to Italian theater and political satire.By combining structured data from ArCo with insights generated through prompting <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank">Large Language Models</a>, we were able to uncover its theatrical origin, stylistic influences, and cultural significance.
+In particular, this case highlights how <a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo's</a> figurini are not merely design sketches, but entry points into broader stories of performance, history, and ideology. The costume becomes a lens through which we can view not only a play, but an entire period of social commentary and artistic experimentation.</p>
+  <hr>
+
+
 <div id="arina" class="tab-content">
-  <h2>Arina – Arlecchino '600 Costume Analysis</h2>
+<h2>Arina – Arlecchino '600 Costume Analysis</h2>
 
   <h3>Topic</h3>
-  <p>My contribution focused on analyzing the theatrical costume 
+  <p>  My contribution focused on analyzing the theatrical costume 
   <a href="https://en.wikipedia.org/wiki/Harlequin" target="_blank">“Arlecchino '600”</a>, 
   a costume sketch attributed to Dario Fo, Nobel laureate in literature. This costume is cataloged in the ArCo Knowledge Graph as a Historic or Artistic Property and represents the traditional character Arlecchino from 
   <a href="https://en.wikipedia.org/wiki/Commedia_dell%27arte" target="_blank">Commedia dell’Arte</a>.</p>
 
+  <!-- Image -->
   <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino.jpg" alt="Arlecchino Costume Sketch" style="max-width: 400px; display: block; margin: 20px 0;">
 
-  <h3>SPARQL Analysis</h3>
-  <p>
-    Using SPARQL, I queried the ArCo endpoint to explore the metadata for object 
-    <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0500704151.html?utm_source=chatgpt.com" target="_blank">
-      0500704151
-    </a>.
-    The retrieved information includes:
-  </p>
-  <ul>
-    <li><strong>Title:</strong> Arlecchino '600, figurino per costume di scena, maschile</li>
-    <li><strong>Author:</strong> Dario Fo</li>
-    <li><strong>Materials:</strong> Carta (paper), inchiostro (ink)</li>
-    <li><strong>Description:</strong> A costume sketch for the character Arlecchino, rooted in the 17th-century tradition of Italian theatre.</li>
-  </ul>
-  <p>
-    However, symbolic, contextual, and performance-related metadata (such as theatrical company, role in performance, or cultural interpretation) were missing. These gaps were addressed using LLMs and external research tools.
-  </p>
+    <h3>SPARQL Analysis</h3>
+    <p>
+      Using SPARQL, I queried the ArCo endpoint to explore the metadata for object 
+      <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0500704151.html?utm_source=chatgpt.com" target="_blank">
+        0500704151
+      </a>.
+      The retrieved information includes:
+    </p>
+    <ul>
+      <li><strong>Title:</strong> Arlecchino '600, figurino per costume di scena, maschile</li>
+      <li><strong>Author:</strong> Dario Fo</li>
+      <li><strong>Materials:</strong> Carta (paper), inchiostro (ink)</li>
+      <li><strong>Description:</strong> A costume sketch for the character Arlecchino, rooted in the 17th-century tradition of Italian theatre.</li>
+    </ul>
+    <p>
+      However, symbolic, contextual, and performance-related metadata (such as theatrical company, role in performance, or cultural interpretation) were missing. These gaps were addressed using LLMs and external research tools.
+    </p>
+    <section id="llm-prompts" style="padding: 2em;">
+      <h3>LLM Prompts and Responses</h3>
+      <p>To enrich the cultural meaning of the Arlecchino costume, I used three different language models (ChatGPT, Gemini, DeepSeek) and applied various prompting techniques.</p>
 
-  <h3>LLM Prompts and Responses</h3>
-  <p>To enrich the cultural meaning of the Arlecchino costume, I used three different language models (ChatGPT, Gemini, DeepSeek) and applied various prompting techniques.</p>
-
-  <h4>1. Zero-shot Prompt</h4>
+      <h4>1. Zero-shot Prompt</h4>
   <p><strong>Prompt:</strong> What does the use of a mask represent in Arlecchino’s character?</p>
+
   <table>
     <thead>
       <tr>
@@ -563,6 +902,7 @@ ex:IsabellaPerformance
   Il Capitano wears a sword and boots to parody military men.<br>
   Pulcinella carries a hump to exaggerate physical comedy.<br>
   Based on this, what is the function of Arlecchino’s hat and feather accessory?</em></p>
+
   <table>
     <thead>
       <tr>
@@ -585,8 +925,10 @@ ex:IsabellaPerformance
       </tr>
     </tbody>
   </table>
+
   <h4>3. Zero-shot Chain-of-Thought</h4>
   <p><strong>Prompt:</strong> How has the image of Arlecchino evolved from the 17th to the 20th century? Think step by step.</p>
+
   <table>
     <thead>
       <tr>
@@ -620,6 +962,7 @@ ex:IsabellaPerformance
   A: It suggests bravery but is too dramatic, showing he’s a fraud.</em></p>
 
   <p><strong>Now:</strong><br>Q: What do Arlecchino’s movements and behavior say about his role in Italian theatre? Think step by step.</p>
+
   <table>
     <thead>
       <tr>
@@ -642,9 +985,92 @@ ex:IsabellaPerformance
       </tr>
     </tbody>
   </table>
+</section>
+ <style>
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    border: 1px solid #aaa;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .comparison-table th {
+    background-color: #e6e6e6;
+    color: #002060;
+  }
+
+  .comparison-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .model {
+    font-weight: bold;
+    color: #002060;
+  }
+</style>
+
+<h2>Comparison of LLM Responses</h2>
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Criteria</th>
+      <th><span class="model">ChatGPT</span></th>
+      <th><span class="model">Gemini</span></th>
+      <th><span class="model">DeepSeek</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Accuracy</strong></td>
+      <td>Detailed and historically grounded; structured reasoning based on cultural and historical cues.</td>
+      <td>Accurate but less detailed; responses sometimes lack temporal context.</td>
+      <td>Focused and correct, though with less supporting explanation or historical depth.</td>
+    </tr>
+    <tr>
+      <td><strong>Depth of Analysis</strong></td>
+      <td>Includes layered interpretation and symbolic analysis with contextual references.</td>
+      <td>Covers main ideas but not deeply developed.</td>
+      <td>Captures symbolic significance but lacks layered reasoning.</td>
+    </tr>
+    <tr>
+      <td><strong>Answer Style</strong></td>
+      <td>Clear, formal, and well-organized prose; easy to read and structured.</td>
+      <td>Simpler, factual style with shorter explanations.</td>
+      <td>Concise and impactful phrasing; direct and to the point.</td>
+    </tr>
+    <tr>
+      <td><strong>Creativity</strong></td>
+      <td>Balanced creativity within a logical framework; uses interpretive prompts well.</td>
+      <td>Some imaginative ideas but less bold in interpretation.</td>
+      <td>Very imaginative in symbolic interpretation and movement metaphors.</td>
+    </tr>
+    <tr>
+      <td><strong>Topic Coverage</strong></td>
+      <td>Covers history, symbolism, theatrical function, and movement.</td>
+      <td>Focuses on symbolism and general function; light on historical detail.</td>
+      <td>Prioritizes symbolic meaning and movement; less historical breadth.</td>
+    </tr>
+    <tr>
+      <td><strong>Weaknesses</strong></td>
+      <td>Can be overly verbose or too academic at times.</td>
+      <td>Sometimes lacks depth or interpretive richness.</td>
+      <td>Omissions in broader context; limited elaboration.</td>
+    </tr>
+  </tbody>
+</table>
 
   <h3>Enrichment</h3>
   <p>Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:</p>
+
 <pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
 @prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
 @prefix ex: &lt;http://example.org/&gt; .
@@ -661,113 +1087,278 @@ ex:ArlecchinoSymbolism
 </code></pre>
 
   <h3>File</h3>
-  <p>My enrichment file is available here:  
-    <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/arlecchino-600.ttl" target="_blank">arlecchino-600.ttl</a>
+<p>
+  My enrichment file is available here: 
+  <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/arlecchino-600.ttl" target="_blank">arlecchino-600.ttl</a>
+</p>
+<p>
+  <strong>Download RDF File</strong><br>
+  <a href="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino-600.ttl" download>Download TTL File</a>
+</p>
+<section id="conclusion" style="padding: 2em; background-color: #f9f9f9;">
+  <h2>Conclusion</h2>
+  <p>
+    This project explored the cultural and theatrical significance of the <em>Arlecchino '600</em> costume, leveraging the ArCo Knowledge Graph and SPARQL to retrieve structured metadata.
+    By focusing on a historically rich and symbolically layered character like Arlecchino, the analysis highlighted the need for deeper contextualization and interlinking of cultural data.
+    The work demonstrates how knowledge graphs, when combined with external research and semantic enrichment, can preserve and promote Italy’s rich theatrical heritage in the digital age.
   </p>
+</section>
 
-  <section id="conclusion" style="padding: 2em; background-color: #f9f9f9;">
-    <h2>Conclusion</h2>
-    <p>
-      This project explored the cultural and theatrical significance of the <em>Arlecchino '600</em> costume, leveraging the ArCo Knowledge Graph and SPARQL to retrieve structured metadata.
-      By focusing on a historically rich and symbolically layered character like Arlecchino, the analysis highlighted the need for deeper contextualization and interlinking of cultural data.
-      The work demonstrates how knowledge graphs, when combined with external research and semantic enrichment, can preserve and promote Italy’s rich theatrical heritage in the digital age.
-    </p>
-  </section>
+  <hr>
 </div>
+
 <div id="anastasiia" class="tab-content">
-  <h2>Anastasiia – La Fama Costume Analysis</h2>
+<h2>Anastasiia – La Fama Costume Analysis</h2>
 
-  <h3>Topic</h3>
+<h2>🎭 Topic</h2>
   <p>
-    My contribution focused on the theatrical costume <em>La Fama</em>, represented as a winged female figure carrying an eagle and a caduceus, with a red drape decorated with laurel wreaths.
-    This costume is cataloged in the ArCo Knowledge Graph as a Historic or Artistic Property and was used as a stage design drawing.
+    My contribution focused on the theatrical costume <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a> , represented as a female winged figure,
+    carrying an eagle and a caduceus, with a red drape decorated with laurel wreaths.
+    This costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>
+    and was used as a stage design drawing.
   </p>
   <p>
-    The allegorical figure of Fame is deeply rooted in classical and Renaissance iconography and remains a recurring character in Italian visual and performing arts.
-    The drawing captures symbolic elements such as <strong>victory</strong> (laurel), <strong>power</strong> (eagle), and <strong>communication</strong> (caduceus).
+    The allegorical figure of Fame (<a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a>) is deeply rooted in classical and Renaissance iconography
+    and remains a recurring character in Italian visual and performing arts. The drawing, likely part of
+    a theatrical set or costume collection, captures symbolic elements such as <strong>victory</strong> (laurel),
+    <strong>power</strong> (eagle), and <strong>communication</strong> (caduceus), which are strongly associated with
+    both theater and political representation.
   </p>
-  <img src="la-fama.jpg" alt="La Fama Costume Drawing" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;" />
+  <img src="la-fama.jpg" alt="La Fama Costume Drawing" width="300" />
+</section>
 
-  <h3>SPARQL Analysis</h3>
+<hr/>
+
+<section id="sparql-analysis">
+  <h2>🔎 SPARQL Analysis</h2>
   <p>
-    I queried the ArCo SPARQL endpoint using the resource ID <code>0100408590–23</code>. The costume is described in ArCo as a <strong>HistoricOrArtisticProperty</strong>,
-    with the type <strong>SculptureDrawing</strong>, and provides metadata such as:
+    To explore the metadata associated with the <em>“La Fama”</em> costume, I queried the ArCo SPARQL endpoint
+    using the resource ID <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank">
+  <code>0100408590–23</code>
+</a>. The following query was used:
   </p>
-  <ul>
-    <li>Author: Luigi Sapelli (1908)</li>
-    <li>Material: ink and watercolor on ivory paper</li>
-    <li>Title and classification metadata</li>
-  </ul>
-  <p>
-    However, symbolic and cultural elements were missing from the original metadata. These were added through LLM-based enrichment.
-  </p>
+  <pre><code>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
-  <h3>LLM Prompts and Answers</h3>
-  <p>
-    I used GPT-4, Gemini, and DeepSeek to interpret the symbols of the costume, comparing responses across three prompting strategies:
-  </p>
-  <ul>
-    <li><strong>Zero-shot:</strong> Interpreting eagle, caduceus, and laurel without prior context</li>
-    <li><strong>Few-shot:</strong> Using analogy examples to guide symbol interpretation</li>
-    <li><strong>Chain-of-Thought:</strong> Step-by-step breakdown of symbolic elements</li>
-  </ul>
-
-  <h3>RDF Enrichment</h3>
-  <p>I created RDF triples based on the symbolic analysis:</p>
-  <pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
-@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
-@prefix ex: &lt;http://example.org/&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-
-&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23&gt;
-    a-cd:hasSymbolicElement ex:Eagle, ex:Laurel, ex:Caduceus .
-
-ex:Eagle a a-cd:Subject ;
-    rdfs:label "Symbol of authority and power in classical iconography" .
-
-ex:Laurel a a-cd:Subject ;
-    rdfs:label "Symbol of victory and eternal fame" .
-
-ex:Caduceus a a-cd:Subject ;
-    rdfs:label "Symbol of communication and theatrical eloquence" .
+SELECT DISTINCT ?p ?o
+WHERE {
+  &lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23&gt; ?p ?o .
+}
+LIMIT 100
 </code></pre>
-
-  <h3>Conclusion</h3>
   <p>
-    The <em>La Fama</em> costume represents a fusion of classical symbolism and early 20th-century theatrical design. Through SPARQL queries and LLM analysis,
-    I revealed a richer cultural interpretation beyond the original catalog metadata. The RDF enrichment ensures that future users and machines
-    can grasp the deeper meanings embedded in the artwork.
+    🔗 <strong>View the result:</strong> <a href="https://surl.li/jhdouk" target="_blank">https://surl.li/jhdouk</a>
   </p>
+  <p>
+    This query confirmed that the costume is described in ArCo as a <strong>HistoricOrArtisticProperty</strong>,
+    with the type <strong>SculptureDrawing</strong>, and provides standard metadata such as:
+  </p>
+  <ul>
+    <li>Descriptive label and title</li>
+    <li>Author (Sapelli Luigi), date (1908)</li>
+    <li>Material: ink and watercolor on ivory paper</li>
+    <li>Classification and catalogue reference</li>
+  </ul>
+  <p>
+    However, it does <strong>not</strong> contain contextual or symbolic information (e.g. the meaning of the eagle, laurel,
+    or caduceus), nor does it explain the <strong>cultural or theatrical function</strong> of the drawing. This provided
+    a gap for semantic enrichment using language models.
+  </p>
+</section>
+
+<hr/>
+
+<section id="llm-prompts">
+  <h2>🤖 LLM Prompts and Answers</h2>
+ <p>
+  To enrich the metadata, I used three types of prompting strategies and compared answers from 
+  <strong><a href="https://openai.com/gpt-4" target="_blank">GPT-4</a></strong>, 
+  <strong><a href="https://deepmind.google/technologies/gemini/" target="_blank">Gemini</a></strong>, and 
+  <strong><a href="https://deepseek.com/" target="_blank">DeepSeek</a></strong>. 
+  Each strategy focused on the symbolic meanings in "La Fama" and their relevance to Italian culture.
+</p>
+
+  <h3>🧠 Zero-shot Prompt</h3>
+  <p><strong>Prompt:</strong></p>
+  <blockquote>
+    What symbolic meanings are represented in the costume drawing "<a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a>" (1908), featuring a winged female figure with an eagle,
+    laurel wreaths, and a caduceus? How do these symbols connect to Italian theatrical or cultural identity?
+  </blockquote>
+  <h4>✨ GPT-4 Response</h4>
+  <img src="zero-gpt.png" width="600" />
+  <h4>🔷 Gemini Response</h4>
+  <img src="zero-gemini.png" width="600" />
+  <h4>🐉 DeepSeek Response</h4>
+  <img src="zero-deepseek.png" width="600" />
+
+  <h3>🧠 Few-shot Prompt</h3>
+  <p><strong>Prompt with examples:</strong></p>
+  <blockquote>
+    Example 1: The theatrical costume "Justice" is often depicted holding scales and a sword. These symbols represent moral authority.
+    In Italian tradition, such figures reflect social critique and governance. <br/>
+    Example 2: The allegorical figure "Victory" is shown with a laurel wreath and palm branch. These evoke military triumph. In opera,
+    they glorify national superiority. <br/>
+    Now analyze the costume "<a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a>" (1908), which shows a winged female figure with a red drape decorated with laurel wreaths,
+    a caduceus, and an eagle. What symbolic meanings are conveyed here? How do they relate to Italian theatrical or cultural values?
+  </blockquote>
+  <h4>✨ GPT-4 Response</h4>
+  <img src="few-gpt.png" width="600" />
+  <h4>🔷 Gemini Response</h4>
+  <img src="few-gemini.png" width="600" />
+  <h4>🐉 DeepSeek Response</h4>
+  <img src="few-deepseek.png" width="600" />
+
+  <h3>🧠 Chain-of-Thought Prompt</h3>
+  <p><strong>Prompt:</strong></p>
+  <blockquote>
+    I want you to analyze the costume drawing “<a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a>” (1908) in a step-by-step way. First, list and describe the visual elements.
+    Then explain their meaning in Italian and classical iconography. Then show how they form the allegory of "Fame". Finally, explain
+    how this symbolism reflects Italian theatrical values.
+  </blockquote>
+  <h4>✨ GPT-4 Response</h4>
+  <img src="cot-gpt.png" width="600" />
+  <h4>🔷 Gemini Response</h4>
+  <img src="cot-gemini.png" width="600" />
+  <h4>🐉 DeepSeek Response</h4>
+  <img src="cot-deepseek.png" width="600" />
+</section>
+
+<h3>🧾 Comparison of Model Outputs</h3>
+
+<p>Below is a summary of how each language model responded to the three prompting strategies, evaluating clarity, cultural relevance, and interpretive depth:</p>
+
+<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: left;">
+  <thead style="background-color: #f9f9f9;">
+    <tr>
+      <th>Prompt Type</th>
+      <th>GPT-4</th>
+      <th>Gemini</th>
+      <th>DeepSeek</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Zero-shot</strong></td>
+      <td>Most accurate; connected all symbols to Italian theatrical identity effectively.</td>
+      <td>Clear but general; cultural depth was limited.</td>
+      <td>Verbose, abstract; lacked theatrical references.</td>
+    </tr>
+    <tr>
+      <td><strong>Few-shot</strong></td>
+      <td>Excellent analogies; insightful cultural framing using the examples.</td>
+      <td>Improved structure; moderate cultural link.</td>
+      <td>More coherent than before, but still generic.</td>
+    </tr>
+    <tr>
+      <td><strong>Chain-of-Thought</strong></td>
+      <td>Detailed breakdown; ideal structure for RDF enrichment.</td>
+      <td>Well-structured but slightly repetitive.</td>
+      <td>Better flow, but lacked iconographic accuracy.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Selected Model:</strong> Based on this comparison, <strong>GPT-4's Chain-of-Thought</strong> output was chosen for generating the RDF triples, due to its precise symbolic interpretation and cultural relevance.</p>
+
+<h2>🧩 RDF Enrichment</h2>
+
+<p>Based on the Chain-of-Thought response by <strong>GPT-4</strong>, I enriched the ArCo resource <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank">
+  <code>0100408590–23</code>
+</a> with additional symbolic and cultural semantics that were not present in the original metadata.</p>
+<p>View the RDF enrichment file here: <a href="la-fama.ttl" target="_blank">📄 la-fama.ttl</a></p>
+
+<p>This RDF enrichment integrates symbolic interpretation directly into the ArCo model using existing ontology classes such as <code>arco:hasSymbolicElement</code> and <code>arco:hasRepresentation</code>. Each element — the laurel, eagle, and caduceus — is individually described and linked to cultural concepts that were missing from the SPARQL-extracted data. This enhanced representation allows machines (and scholars) to better understand the <em>semantic depth</em> of the costume’s iconography.</p>
+
+<h2>🏁 Conclusion</h2>
+
+<p>This project shows how symbolic artworks like <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a> can benefit from semantic enrichment using large language models and RDF technologies. The original metadata described only physical and catalog data, but through <strong>prompting strategies and model comparison</strong>, I was able to reconstruct the cultural and iconographic meaning embedded in the drawing.</p>
+
+<p>By integrating new triples into the ArCo ontology, this enrichment enhances both <strong>machine readability</strong> and <strong>cultural interpretation</strong>. This case highlights the potential of LLMs as tools for bridging gaps in heritage knowledge graphs, especially in the arts and humanities domain.</p>
+
+    <hr>
 </div>
 
 <div id="danil" class="tab-content">
-  <h2>Danil – Second Accuser Costume Analysis</h2>
+<h2>Danil – Second Accuser Costume Analysis</h2>
 
-  <h3>Topic</h3>
-  <p>
-    My contribution focused on analyzing the costume of the "Second Accuser" from Dario Fo's 1992 Valencian production of <em>Isabella, tre caravelle e un cacciaballe</em>.
-  </p>
-  <img src="second_accuser.jpg" alt="Second Accuser Costume" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;" />
+  <h2>Topic</h2>
+  <p>My contribution focused on analyzing the costume of the "Second Accuser" from Dario Fo's 1992 Valencian production of <em>Isabella, tre caravelle e un cacciaballe</em>. This study combines SPARQL queries of cultural heritage databases with Large Language Model (LLM) inferences to reconstruct the costume's design, materials, and historical influences.</p>
 
-  <h3>SPARQL Analysis</h3>
-  <p>
-    Using SPARQL, I queried the ArCo endpoint for theatrical costumes linked to Dario Fo. No direct match for the 1992 Valencia production was found.
-    The search revealed missing details such as fabric, color, performance linkage, and symbolic interpretation.
-  </p>
+<img src="second_accuser.jpg" alt="second_accuser.jpg" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
+  <h2>SPARQL Analysis</h2>
+  <p>Using SPARQL, I queried the ArCo endpoint to explore the metadata for theatrical costumes linked to Dario Fo:</p>
+  
+  <pre><code>SELECT DISTINCT ?cp 
+WHERE {
+  ?cp a arco:HistoricOrArtisticProperty ; 
+      rdfs:label ?l .
+  FILTER(REGEX(?l, "vestito|teatro|costume|Fo", "i"))
+}
+LIMIT 50</code></pre>
 
-  <h3>LLM Prompts and Interpretation</h3>
+  <p>The retrieved information includes general records on Fo's theatrical costumes but no direct match for the 1992 Valencia production. Key gaps identified:</p>
   <ul>
-    <li><strong>Prompt:</strong> What costume was used for the “Second Accuser” in Fo's 1992 production?</li>
-    <li><strong>Answer:</strong> Burlap and linen robe, garish black/gold coloring, parody of Inquisition authority.</li>
-    <li><strong>Symbolism:</strong> Costume combines <em>commedia dell’arte</em> with religious satire, using oversized rosary, crooked nose, and corrupted symbols.</li>
+    <li><strong>Missing performance link</strong> to the 1992 Valencia production</li>
+    <li><strong>No details</strong> on fabric, color, or construction</li>
+    <li><strong>Unclear historical/artistic parody references</strong></li>
   </ul>
 
-  <h3>RDF Enrichment</h3>
-  <pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
+  <h2>LLM Prompts and Answers</h2>
+  
+  <table>
+    <tr>
+      <th>LLM Model</th>
+      <th>Production Context</th>
+      <th>Materials/Colors</th>
+      <th>Historical Prototypes</th>
+      <th>Overall Sufficiency</th>
+    </tr>
+    <tr>
+      <td><strong>Gemini</strong></td>
+      <td>Identified <em>Isabella...</em> but not Valencia</td>
+      <td>Generic "red/black fabrics"</td>
+      <td>Vague Inquisition/commedia links</td>
+      <td>⚠️ Partial</td>
+    </tr>
+    <tr>
+      <td><strong>ChatGPT</strong></td>
+      <td>Misattributed to 1963 designs</td>
+      <td>"Velvet and brocade" (unsourced)</td>
+      <td>Overly literal Renaissance focus</td>
+      <td>❌ Weak</td>
+    </tr>
+    <tr>
+      <td><strong>DeepSeek-V3</strong></td>
+      <td><strong>Confirmed 1992 Valencia production</strong></td>
+      <td><strong>Burlap/linen, garish gold/black</strong></td>
+      <td><strong>Precise <em>Il Dottore</em> + Inquisition parody</strong></td>
+      <td>✅ <strong>Best</strong></td>
+    </tr>
+  </table>
+
+  <p><strong>Prompt 1:</strong> Which Dario Fo play featured a 'Second Accuser' character in a 1992 Valencia production, and what was the costume's symbolic role?<br>
+  <strong>Answer:</strong> The play is <em>Isabella, tre caravelle e un cacciaballe</em> (1992, Valencia), a satire of Columbus and the Spanish court. The 'Second Accuser' costume likely parodied Inquisition officials or corrupt nobles—exaggerated with tattered luxury (e.g., burlap dyed black/gold) to critique power and dogma.</p>
+
+  <p><strong>Prompt 2:</strong> Describe plausible materials, colors, and accessories for this costume, considering Fo's aesthetic.<br>
+  <strong>Answer:</strong> Materials: Cheap fabrics (burlap, linen) to mock opulence, with visible stitching. Colors: Black (authority/mystique) and gold (greed), deliberately garish. Accessories: Oversized rosary, giant quill, or a <em>commedia</em>-style hooked nose to emphasize hypocrisy.</p>
+
+  <p><strong>Prompt 3:</strong> What historical/clothing styles did Fo distort for this character?<br>
+  <strong>Answer:</strong> Fo blended:
+  <ol>
+    <li><strong>Inquisition robes</strong> (elongated sleeves, black/red)</li>
+    <li><strong>Commedia's Il Dottore</strong> (scholarly pomp via oversized hat)</li>
+    <li><strong>Renaissance doublets</strong> (distorted with asymmetrical patterns)</li>
+  </ol>
+  This fusion underscored the absurdity of dogmatic authority.</p>
+
+  <h3>Enrichment</h3>
+  <p>Based on the new insights, I created RDF triples to enrich the knowledge graph:</p>
+
+<pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
 @prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
 @prefix ex: &lt;http://example.org/&gt; .
 
-&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/xxxxxxx&gt;
+&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/[ID]&gt;
     a-cd:hasSubject ex:SatiricalCostume ;
     a-cd:hasMaterial ex:Burlap, ex:Linen ;
     a-cd:hasColor ex:Black, ex:Gold ;
@@ -782,9 +1373,25 @@ ex:Isabella1992Valencia
     rdfs:label "Isabella, tre caravelle e un cacciaballe (Valencia, 1992)" .
 </code></pre>
 
-  <h3>Conclusion</h3>
-  <p>
-    This costume illustrates how Dario Fo's work critiques institutional power through theatrical exaggeration.
-    LLMs helped reconstruct symbolic meaning and RDF triples made it machine-readable.
-  </p>
+  <h2>File</h2>
+  <p>My enrichment file is available here: <a href="./costume_second_accuser.ttl" download>costume_second_accuser.ttl</a></p>
+
+  <section id="conclusion" style="padding: 2em; background-color: #f9f9f9;">
+    <h2>Conclusion</h2>
+    <p>This project demonstrates how knowledge graphs and language models can work together to enrich cultural heritage data. The "Second Accuser" costume is not merely a theatrical artifact, but a narrative device tied to Dario Fo's political satire and the tradition of <em>commedia dell'arte</em>. By combining structured data from ArCo with insights generated through prompting large language models, we uncovered its role in <em>Isabella, tre caravelle e un cacciaballe</em> (1992, Valencia), its materials (burlap, linen, exaggerated accessories), and its stylistic parody of Inquisition robes and Renaissance power dress.</p>
+    <p>The costume becomes a lens through which we can view Fo's critique of dogma and colonialism—blending historical reference with grotesque theater. This case also underscores the challenges of documenting ephemeral stage designs and the value of LLMs in reconstructing lost context.</p>
+  </section>
+</section>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
+
+    document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+</body>
+</html>
 </div>
