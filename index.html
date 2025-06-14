@@ -838,240 +838,89 @@ In particular, this case highlights how <a href="https://en.wikipedia.org/wiki/D
 
 
 <div id="arina" class="tab-content">
-<h2>Arina – Arlecchino '600 Costume Analysis</h2>
+  <h2>Arina – Arlecchino '600 Costume Analysis</h2>
 
   <h3>Topic</h3>
-  <p>  My contribution focused on analyzing the theatrical costume 
-  <a href="https://en.wikipedia.org/wiki/Harlequin" target="_blank">“Arlecchino '600”</a>, 
-  a costume sketch attributed to Dario Fo, Nobel laureate in literature. This costume is cataloged in the ArCo Knowledge Graph as a Historic or Artistic Property and represents the traditional character Arlecchino from 
-  <a href="https://en.wikipedia.org/wiki/Commedia_dell%27arte" target="_blank">Commedia dell’Arte</a>.</p>
+  <p>
+    My contribution focused on analyzing the theatrical costume 
+    <a href="https://en.wikipedia.org/wiki/Harlequin" target="_blank">“Arlecchino '600”</a>, 
+    a costume sketch attributed to Dario Fo. This costume is cataloged in the ArCo Knowledge Graph as a Historic or Artistic Property and represents the traditional character Arlecchino from 
+    <a href="https://en.wikipedia.org/wiki/Commedia_dell%27arte" target="_blank">Commedia dell’Arte</a>.
+  </p>
 
-  <!-- Image -->
-  <img src="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino.jpg" alt="Arlecchino Costume Sketch" style="max-width: 400px; display: block; margin: 20px 0;">
+  <p><em>[Image of Arlecchino Costume Sketch would appear here]</em></p>
 
-    <h3>SPARQL Analysis</h3>
-    <p>
-      Using SPARQL, I queried the ArCo endpoint to explore the metadata for object 
-      <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0500704151.html?utm_source=chatgpt.com" target="_blank">
-        0500704151
-      </a>.
-      The retrieved information includes:
-    </p>
-    <ul>
-      <li><strong>Title:</strong> Arlecchino '600, figurino per costume di scena, maschile</li>
-      <li><strong>Author:</strong> Dario Fo</li>
-      <li><strong>Materials:</strong> Carta (paper), inchiostro (ink)</li>
-      <li><strong>Description:</strong> A costume sketch for the character Arlecchino, rooted in the 17th-century tradition of Italian theatre.</li>
-    </ul>
-    <p>
-      However, symbolic, contextual, and performance-related metadata (such as theatrical company, role in performance, or cultural interpretation) were missing. These gaps were addressed using LLMs and external research tools.
-    </p>
-    <section id="llm-prompts" style="padding: 2em;">
-      <h3>LLM Prompts and Responses</h3>
-      <p>To enrich the cultural meaning of the Arlecchino costume, I used three different language models (ChatGPT, Gemini, DeepSeek) and applied various prompting techniques.</p>
+  <h3>SPARQL Analysis</h3>
+  <p>
+    I queried the ArCo endpoint for metadata on the object 
+    <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0500704151.html?utm_source=chatgpt.com" target="_blank">
+      0500704151
+    </a>. Key findings:
+  </p>
+  <ul>
+    <li><strong>Title:</strong> Arlecchino '600, figurino per costume di scena, maschile</li>
+    <li><strong>Author:</strong> Dario Fo</li>
+    <li><strong>Materials:</strong> Carta (paper), inchiostro (ink)</li>
+    <li><strong>Description:</strong> A costume sketch for Arlecchino, rooted in 17th-century Italian theatre.</li>
+  </ul>
+  <p>
+    Symbolic and contextual information was missing and was reconstructed using LLM prompts.
+  </p>
 
-      <h4>1. Zero-shot Prompt</h4>
+  <h3>LLM Prompts and Responses</h3>
+  <h4>1. Zero-shot Prompt</h4>
   <p><strong>Prompt:</strong> What does the use of a mask represent in Arlecchino’s character?</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Model</th>
-        <th>Answer</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>ChatGPT</td>
-        <td>The mask makes Arlecchino an archetype. It removes individual identity and enhances exaggerated gestures.</td>
-      </tr>
-      <tr>
-        <td>Gemini</td>
-        <td>It symbolizes theatrical tradition and distance from realism, reinforcing his comic and symbolic nature.</td>
-      </tr>
-      <tr>
-        <td>DeepSeek</td>
-        <td>The mask supports his role as a universal trickster — it hides personality and emphasizes movement.</td>
-      </tr>
-    </tbody>
-  </table>
+  <ul>
+    <li><strong>ChatGPT:</strong> The mask makes Arlecchino an archetype; removes identity, enhances gestures.</li>
+    <li><strong>Gemini:</strong> Symbolizes theatrical tradition and distance from realism.</li>
+    <li><strong>DeepSeek:</strong> Hides personality and emphasizes movement; supports trickster role.</li>
+  </ul>
 
   <h4>2. Few-shot Prompt</h4>
-  <p><strong>Prompt:</strong> Here are some examples of costume accessories in commedia dell’arte:<br>
-  <em>Il Dottore wears a big black hat and robe to show intellectual authority.<br>
-  Il Capitano wears a sword and boots to parody military men.<br>
-  Pulcinella carries a hump to exaggerate physical comedy.<br>
-  Based on this, what is the function of Arlecchino’s hat and feather accessory?</em></p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Model</th>
-        <th>Answer</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>ChatGPT</td>
-        <td>His soft cap and feather add to his acrobatic image. They reinforce his role as a comic and agile trickster.</td>
-      </tr>
-      <tr>
-        <td>Gemini</td>
-        <td>They enhance his playful, almost clown-like identity and highlight his contrast with more serious characters.</td>
-      </tr>
-      <tr>
-        <td>DeepSeek</td>
-        <td>These accessories support his clowning, reflect status, and add physical movement cues to his character.</td>
-      </tr>
-    </tbody>
-  </table>
+  <p><strong>Prompt:</strong> What is the function of Arlecchino’s hat and feather?</p>
+  <ul>
+    <li><strong>ChatGPT:</strong> Emphasizes agility; supports trickster image.</li>
+    <li><strong>Gemini:</strong> Enhances playful identity; contrasts with serious characters.</li>
+    <li><strong>DeepSeek:</strong> Supports clowning; adds physical movement cues.</li>
+  </ul>
 
   <h4>3. Zero-shot Chain-of-Thought</h4>
-  <p><strong>Prompt:</strong> How has the image of Arlecchino evolved from the 17th to the 20th century? Think step by step.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Model</th>
-        <th>Answer</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>ChatGPT</td>
-        <td>Step 1: Origin as comic servant. Step 2: Known for slapstick. Step 3: Dario Fo modernized him → now also political satire.</td>
-      </tr>
-      <tr>
-        <td>Gemini</td>
-        <td>In the 17th century, he was a mischievous servant. Later, he gained depth and became a voice of critique in modern theatre.</td>
-      </tr>
-      <tr>
-        <td>DeepSeek</td>
-        <td>First playful comic → then more satirical → now used to comment on power and society, while keeping comic traits.</td>
-      </tr>
-    </tbody>
-  </table>
+  <p><strong>Prompt:</strong> How has Arlecchino’s image evolved from 17th to 20th century?</p>
+  <ul>
+    <li><strong>ChatGPT:</strong> Comic servant → slapstick → political satire (Dario Fo).</li>
+    <li><strong>Gemini:</strong> From mischievous servant to critical voice in modern theatre.</li>
+    <li><strong>DeepSeek:</strong> From playful comic to social critic, keeping humor.</li>
+  </ul>
 
   <h4>4. Few-shot Chain-of-Thought</h4>
-  <p><strong>Prompt:</strong></p>
-  <p><em>Example 1<br>
-  Q: What does Il Dottore’s costume say about his personality?<br>
-  A: His black robe and hat show authority, but exaggerated size mocks his wisdom.<br><br>
-  Example 2<br>
-  Q: What does Il Capitano’s armor say about him?<br>
-  A: It suggests bravery but is too dramatic, showing he’s a fraud.</em></p>
+  <p><strong>Prompt:</strong> What do Arlecchino’s movements say about his role?</p>
+  <ul>
+    <li><strong>ChatGPT:</strong> Acrobatics show agility → mocks authority → comic servant.</li>
+    <li><strong>Gemini:</strong> Exaggerated motion = comedy; disrupts structure.</li>
+    <li><strong>DeepSeek:</strong> Energetic chaos → mocking norms through humor.</li>
+  </ul>
 
-  <p><strong>Now:</strong><br>Q: What do Arlecchino’s movements and behavior say about his role in Italian theatre? Think step by step.</p>
-
-  <table>
+  <h3>Comparison of LLM Responses</h3>
+  <table class="comparison-table">
     <thead>
       <tr>
-        <th>Model</th>
-        <th>Answer</th>
+        <th>Criteria</th>
+        <th>ChatGPT</th>
+        <th>Gemini</th>
+        <th>DeepSeek</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>ChatGPT</td>
-        <td>Step 1: Arlecchino moves with energy. Step 2: Acrobatics show agility. Step 3: His mischief mocks authority → comic servant.</td>
-      </tr>
-      <tr>
-        <td>Gemini</td>
-        <td>His movement is physical and exaggerated → emphasizes comedy. Step 2: He disrupts structure → symbolic subversion.</td>
-      </tr>
-      <tr>
-        <td>DeepSeek</td>
-        <td>Agile body + fast speech = energetic chaos. This reflects the trickster's role → mocking social norms through humor.</td>
-      </tr>
+      <tr><td><strong>Accuracy</strong></td><td>Very strong</td><td>Accurate but light</td><td>Correct but sparse</td></tr>
+      <tr><td><strong>Depth</strong></td><td>Symbolic & detailed</td><td>Moderate</td><td>Focused on core ideas</td></tr>
+      <tr><td><strong>Creativity</strong></td><td>Interpretive and grounded</td><td>Basic interpretations</td><td>Symbolic metaphors</td></tr>
+      <tr><td><strong>Coverage</strong></td><td>Full: theatre, movement, symbolism</td><td>Mostly symbolism</td><td>Symbolism & movement</td></tr>
+      <tr><td><strong>Weakness</strong></td><td>Too verbose</td><td>Lacks nuance</td><td>Limited context</td></tr>
     </tbody>
   </table>
-</section>
- <style>
-  .comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 2em 0;
-    font-family: Arial, sans-serif;
-  }
 
-  .comparison-table th,
-  .comparison-table td {
-    border: 1px solid #aaa;
-    padding: 12px;
-    text-align: left;
-    vertical-align: top;
-  }
-
-  .comparison-table th {
-    background-color: #e6e6e6;
-    color: #002060;
-  }
-
-  .comparison-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-
-  .model {
-    font-weight: bold;
-    color: #002060;
-  }
-</style>
-
-<h2>Comparison of LLM Responses</h2>
-
-<table class="comparison-table">
-  <thead>
-    <tr>
-      <th>Criteria</th>
-      <th><span class="model">ChatGPT</span></th>
-      <th><span class="model">Gemini</span></th>
-      <th><span class="model">DeepSeek</span></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Accuracy</strong></td>
-      <td>Detailed and historically grounded; structured reasoning based on cultural and historical cues.</td>
-      <td>Accurate but less detailed; responses sometimes lack temporal context.</td>
-      <td>Focused and correct, though with less supporting explanation or historical depth.</td>
-    </tr>
-    <tr>
-      <td><strong>Depth of Analysis</strong></td>
-      <td>Includes layered interpretation and symbolic analysis with contextual references.</td>
-      <td>Covers main ideas but not deeply developed.</td>
-      <td>Captures symbolic significance but lacks layered reasoning.</td>
-    </tr>
-    <tr>
-      <td><strong>Answer Style</strong></td>
-      <td>Clear, formal, and well-organized prose; easy to read and structured.</td>
-      <td>Simpler, factual style with shorter explanations.</td>
-      <td>Concise and impactful phrasing; direct and to the point.</td>
-    </tr>
-    <tr>
-      <td><strong>Creativity</strong></td>
-      <td>Balanced creativity within a logical framework; uses interpretive prompts well.</td>
-      <td>Some imaginative ideas but less bold in interpretation.</td>
-      <td>Very imaginative in symbolic interpretation and movement metaphors.</td>
-    </tr>
-    <tr>
-      <td><strong>Topic Coverage</strong></td>
-      <td>Covers history, symbolism, theatrical function, and movement.</td>
-      <td>Focuses on symbolism and general function; light on historical detail.</td>
-      <td>Prioritizes symbolic meaning and movement; less historical breadth.</td>
-    </tr>
-    <tr>
-      <td><strong>Weaknesses</strong></td>
-      <td>Can be overly verbose or too academic at times.</td>
-      <td>Sometimes lacks depth or interpretive richness.</td>
-      <td>Omissions in broader context; limited elaboration.</td>
-    </tr>
-  </tbody>
-</table>
-
-  <h3>Enrichment</h3>
-  <p>Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:</p>
-
-<pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
+  <h3>RDF Enrichment</h3>
+  <pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
 @prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
 @prefix ex: &lt;http://example.org/&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
@@ -1086,26 +935,16 @@ ex:ArlecchinoSymbolism
     rdfs:label "Symbol of theatrical cleverness, social satire, and comic disorder" .
 </code></pre>
 
-  <h3>File</h3>
-<p>
-  My enrichment file is available here: 
-  <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/arlecchino-600.ttl" target="_blank">arlecchino-600.ttl</a>
-</p>
-<p>
-  <strong>Download RDF File</strong><br>
-  <a href="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino-600.ttl" download>Download TTL File</a>
-</p>
-<section id="conclusion" style="padding: 2em; background-color: #f9f9f9;">
+  <p><strong>Download TTL:</strong> 
+    <a href="https://raw.githubusercontent.com/Ltvmur/costume-heritage-project/main/arlecchino-600.ttl" download>Download RDF File</a>
+  </p>
+
   <h2>Conclusion</h2>
   <p>
-    This project explored the cultural and theatrical significance of the <em>Arlecchino '600</em> costume, leveraging the ArCo Knowledge Graph and SPARQL to retrieve structured metadata.
-    By focusing on a historically rich and symbolically layered character like Arlecchino, the analysis highlighted the need for deeper contextualization and interlinking of cultural data.
-    The work demonstrates how knowledge graphs, when combined with external research and semantic enrichment, can preserve and promote Italy’s rich theatrical heritage in the digital age.
+    This project highlighted how semantic tools and language models can reveal hidden symbolism in theatrical sketches. The Arlecchino '600 costume becomes not only a visual object, but a window into performance history, critique, and cultural satire.
   </p>
-</section>
-
-  <hr>
 </div>
+
 
 <div id="anastasiia" class="tab-content">
   <h2>Anastasiia – La Fama Costume Analysis</h2>
@@ -1197,15 +1036,14 @@ ex:FameSymbolism
   </p>
 </div>
 
-
-
 <div id="danil" class="tab-content">
-<h2>Danil – Second Accuser Costume Analysis</h2>
+  <h2>Danil – Second Accuser Costume Analysis</h2>
 
   <h2>Topic</h2>
   <p>My contribution focused on analyzing the costume of the "Second Accuser" from Dario Fo's 1992 Valencian production of <em>Isabella, tre caravelle e un cacciaballe</em>. This study combines SPARQL queries of cultural heritage databases with Large Language Model (LLM) inferences to reconstruct the costume's design, materials, and historical influences.</p>
 
-<img src="second_accuser.jpg" alt="second_accuser.jpg" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
+  <img src="second_accuser.jpg" alt="second_accuser.jpg" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
+  
   <h2>SPARQL Analysis</h2>
   <p>Using SPARQL, I queried the ArCo endpoint to explore the metadata for theatrical costumes linked to Dario Fo:</p>
   
@@ -1275,7 +1113,7 @@ LIMIT 50</code></pre>
   <h3>Enrichment</h3>
   <p>Based on the new insights, I created RDF triples to enrich the knowledge graph:</p>
 
-<pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
+  <pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
 @prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
 @prefix ex: &lt;http://example.org/&gt; .
 
@@ -1302,17 +1140,14 @@ ex:Isabella1992Valencia
     <p>This project demonstrates how knowledge graphs and language models can work together to enrich cultural heritage data. The "Second Accuser" costume is not merely a theatrical artifact, but a narrative device tied to Dario Fo's political satire and the tradition of <em>commedia dell'arte</em>. By combining structured data from ArCo with insights generated through prompting large language models, we uncovered its role in <em>Isabella, tre caravelle e un cacciaballe</em> (1992, Valencia), its materials (burlap, linen, exaggerated accessories), and its stylistic parody of Inquisition robes and Renaissance power dress.</p>
     <p>The costume becomes a lens through which we can view Fo's critique of dogma and colonialism—blending historical reference with grotesque theater. This case also underscores the challenges of documenting ephemeral stage designs and the value of LLMs in reconstructing lost context.</p>
   </section>
-</section>
-
+</div>
 <script>
   function showTab(id) {
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
-
     document.querySelector(`[onclick="showTab('${id}')"]`).classList.add('active');
     document.getElementById(id).classList.add('active');
   }
 </script>
 </body>
 </html>
-</div>
