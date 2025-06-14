@@ -1110,33 +1110,31 @@ ex:ArlecchinoSymbolism
 <div id="anastasiia" class="tab-content">
   <h2>Anastasiia – La Fama Costume Analysis</h2>
 
-  <h2>🎭 Topic</h2>
+  <h3>🎭 Topic</h3>
   <p>
-    My contribution focused on the theatrical costume <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a>, represented as a female winged figure,
-    carrying an eagle and a caduceus, with a red drape decorated with laurel wreaths.
-    This costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>
-    and was used as a stage design drawing.
+    My contribution focused on the theatrical costume 
+    <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a>,
+    represented as a winged female figure with an eagle and a caduceus, wearing a red drape with laurel wreaths.
+    The costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>.
   </p>
   <p>
-    The allegorical figure of Fame (<a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a>) is deeply rooted in classical and Renaissance iconography
-    and remains a recurring character in Italian visual and performing arts. The drawing, likely part of
-    a theatrical set or costume collection, captures symbolic elements such as <strong>victory</strong> (laurel),
-    <strong>power</strong> (eagle), and <strong>communication</strong> (caduceus), which are strongly associated with
-    both theater and political representation.
+    The allegorical figure of Fame is deeply rooted in classical and Renaissance iconography. The drawing symbolizes 
+    <strong>victory</strong> (laurel), <strong>power</strong> (eagle), and <strong>communication</strong> (caduceus), 
+    associated with theater and politics.
   </p>
-  <img src="la-fama.jpg" alt="La Fama Costume Drawing" width="300" />
+  <img src="la-fama.jpg" alt="La Fama Costume Drawing" width="300" style="margin: 20px 0;" />
 
-  <hr />
+  <hr/>
 
-  <div id="sparql-analysis">
-    <h2>🔎 SPARQL Analysis</h2>
-    <p>
-      To explore the metadata associated with the <em>“La Fama”</em> costume, I queried the ArCo SPARQL endpoint
-      using the resource ID <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank">
-        <code>0100408590–23</code>
-      </a>. The following query was used:
-    </p>
-    <pre><code>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
+  <h3>🔎 SPARQL Analysis</h3>
+  <p>
+    Using the ArCo SPARQL endpoint, I explored metadata for 
+    <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html" target="_blank">resource 0100408590–23</a>.
+    The query returned author (Sapelli Luigi), date (1908), and material (ink and watercolor on ivory paper), 
+    but lacked symbolic or contextual info.
+  </p>
+
+  <pre><code>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;
 PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
 
 SELECT DISTINCT ?p ?o
@@ -1145,105 +1143,60 @@ WHERE {
 }
 LIMIT 100
 </code></pre>
-    <p>
-      🔗 <strong>View the result:</strong> <a href="https://surl.li/jhdouk" target="_blank">https://surl.li/jhdouk</a>
-    </p>
-    <ul>
-      <li>Descriptive label and title</li>
-      <li>Author (Sapelli Luigi), date (1908)</li>
-      <li>Material: ink and watercolor on ivory paper</li>
-      <li>Classification and catalogue reference</li>
-    </ul>
-    <p>
-      However, it does <strong>not</strong> contain contextual or symbolic information (e.g. the meaning of the eagle, laurel,
-      or caduceus), nor does it explain the <strong>cultural or theatrical function</strong> of the drawing. This provided
-      a gap for semantic enrichment using language models.
-    </p>
-  </div>
 
-  <hr />
+  <hr/>
 
-  <div id="llm-prompts">
-    <h2>🤖 LLM Prompts and Answers</h2>
-    <p>
-      To enrich the metadata, I used three types of prompting strategies and compared answers from 
-      <strong><a href="https://openai.com/gpt-4" target="_blank">GPT-4</a></strong>, 
-      <strong><a href="https://deepmind.google/technologies/gemini/" target="_blank">Gemini</a></strong>, and 
-      <strong><a href="https://deepseek.com/" target="_blank">DeepSeek</a></strong>. 
-    </p>
+  <h3>🤖 LLM Prompting and Answers</h3>
+  <p>To enrich the metadata, I used GPT-4, Gemini, and DeepSeek-V3 with several prompting strategies.</p>
 
-    <h3>🧠 Zero-shot Prompt</h3>
-    <p><strong>Prompt:</strong></p>
-    <blockquote>… (оставь как есть)</blockquote>
-    <img src="zero-gpt.png" width="600" />
-    <img src="zero-gemini.png" width="600" />
-    <img src="zero-deepseek.png" width="600" />
+  <h4>Zero-shot Prompt:</h4>
+  <blockquote>
+    What symbolic meanings are represented in the costume drawing “La Fama” (1908), featuring a winged female figure 
+    with an eagle, laurel wreaths, and a caduceus?
+  </blockquote>
+  <ul>
+    <li><strong>GPT-4:</strong> Victory, divine inspiration, and political propaganda.</li>
+    <li><strong>Gemini:</strong> Fame as a communication figure in theater, echoing Italian national values.</li>
+    <li><strong>DeepSeek:</strong> Represents triumph, honor, and classical ideals in performance art.</li>
+  </ul>
 
-    <h3>🧠 Few-shot Prompt</h3>
-    <blockquote>…</blockquote>
-    <img src="few-gpt.png" width="600" />
-    <img src="few-gemini.png" width="600" />
-    <img src="few-deepseek.png" width="600" />
+  <h4>Few-shot Prompt:</h4>
+  <p>Based on allegorical costume examples (e.g., Justice, Victory), models were asked to interpret “La Fama”.</p>
+  <ul>
+    <li><strong>All three models:</strong> Linked laurel wreaths to glory, eagle to Rome, caduceus to influence or diplomacy.</li>
+  </ul>
 
-    <h3>🧠 Chain-of-Thought Prompt</h3>
-    <blockquote>…</blockquote>
-    <img src="cot-gpt.png" width="600" />
-    <img src="cot-gemini.png" width="600" />
-    <img src="cot-deepseek.png" width="600" />
-  </div>
+  <h4>Chain-of-Thought Prompt:</h4>
+  <p>Step-by-step breakdown of the costume’s components and their symbolic meaning in Italian iconography.</p>
+  <p><strong>GPT-4:</strong> Most complete, with historical and cultural framing; selected for RDF generation.</p>
 
-  <h3>🧾 Comparison of Model Outputs</h3>
-<p>Below is a summary of how each language model responded to the three prompting strategies, evaluating clarity, cultural relevance, and interpretive depth:</p>
+  <hr/>
 
-<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: left;">
-  <thead style="background-color: #f9f9f9;">
-    <tr>
-      <th>Prompt Type</th>
-      <th>GPT-4</th>
-      <th>Gemini</th>
-      <th>DeepSeek</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Zero-shot</strong></td>
-      <td>Most accurate; connected all symbols to Italian theatrical identity effectively.</td>
-      <td>Clear but general; cultural depth was limited.</td>
-      <td>Verbose, abstract; lacked theatrical references.</td>
-    </tr>
-    <tr>
-      <td><strong>Few-shot</strong></td>
-      <td>Excellent analogies; insightful cultural framing using the examples.</td>
-      <td>Improved structure; moderate cultural link.</td>
-      <td>More coherent than before, but still generic.</td>
-    </tr>
-    <tr>
-      <td><strong>Chain-of-Thought</strong></td>
-      <td>Detailed breakdown; ideal structure for RDF enrichment.</td>
-      <td>Well-structured but slightly repetitive.</td>
-      <td>Better flow, but lacked iconographic accuracy.</td>
-    </tr>
-  </tbody>
-</table>
+  <h3>📄 RDF Enrichment</h3>
+  <pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
+@prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
+@prefix ex: &lt;http://example.org/&gt; .
 
-<p><strong>Selected Model:</strong> Based on this comparison, <strong>GPT-4's Chain-of-Thought</strong> output was chosen for generating the RDF triples, due to its precise symbolic interpretation and cultural relevance.</p>
+&lt;https://w3id.org/arco/resource/HistoricOrArtisticProperty/0100408590-23&gt;
+  arco:material "ink and watercolor on ivory paper" ;
+  a-cd:hasSubject ex:FameSymbolism .
 
+ex:FameSymbolism
+  a a-cd:Subject ;
+  rdfs:label "Symbol of fame, power, and theatrical expression" .
+</code></pre>
 
-  <h2>🧩 RDF Enrichment</h2>
-  <p>Based on the Chain-of-Thought response by <strong>GPT-4</strong>, I enriched the ArCo resource <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank">
-  <code>0100408590–23</code>
-</a> with additional symbolic and cultural semantics that were not present in the original metadata.</p>
-<p>View the RDF enrichment file here: <a href="la-fama.ttl" target="_blank">📄 la-fama.ttl</a></p>
+  <p>TTL file: <a href="la-fama.ttl" target="_blank">Download here</a></p>
 
-<p>This RDF enrichment integrates symbolic interpretation directly into the ArCo model using existing ontology classes such as <code>arco:hasSymbolicElement</code> and <code>arco:hasRepresentation</code>. Each element — the laurel, eagle, and caduceus — is individually described and linked to cultural concepts that were missing from the SPARQL-extracted data. This enhanced representation allows machines (and scholars) to better understand the <em>semantic depth</em> of the costume’s iconography.</p>
+  <hr/>
 
-
-  <h2>🏁 Conclusion</h2>
-  <p>This project shows how symbolic artworks like <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100408590-23.html?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer"><em>La Fama</em></a> can benefit from semantic enrichment using large language models and RDF technologies. The original metadata described only physical and catalog data, but through <strong>prompting strategies and model comparison</strong>, I was able to reconstruct the cultural and iconographic meaning embedded in the drawing.</p>
-
-<p>By integrating new triples into the ArCo ontology, this enrichment enhances both <strong>machine readability</strong> and <strong>cultural interpretation</strong>. This case highlights the potential of LLMs as tools for bridging gaps in heritage knowledge graphs, especially in the arts and humanities domain.</p>
-
+  <h3>🏁 Conclusion</h3>
+  <p>
+    This costume sketch illustrates how allegory was used in theatrical visual language. By combining RDF, SPARQL, 
+    and prompting, I restored the symbolic and cultural meaning of the costume and extended the ArCo graph with rich, machine-readable data.
+  </p>
 </div>
+
 
 
 <div id="danil" class="tab-content">
