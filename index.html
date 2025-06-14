@@ -210,109 +210,108 @@ body {
   <button class="tab-button" onclick="showTab('danil')">Danil</button>
 </div>
 
+<div class="container">
+  <h1>Italian Cinema and Cultural Heritage: Costumes as Cultural Artifacts</h1>
 
-  <div class="container">
-<h1>Italian Cinema and Cultural Heritage: Costumes as Cultural Artifacts</h1>
+  <h2>About the Project</h2>
+  <p>This project explores how theatrical costumes can be understood as part of Italy’s cultural heritage using the ArCo knowledge graph and Large Language Models.</p>
 
-<h2>About the Project</h2>
-<p>This project explores how theatrical costumes can be understood as part of Italy’s cultural heritage using the ArCo knowledge graph and Large Language Models.</p>
+  <section id="methodology" style="padding: 2em; background-color: #f9f9f9;">
+    <h2>Methodology</h2>
+    <p>This project explores how theatrical costumes function as cultural heritage objects, using structured data from the ArCo Knowledge Graph and insights from large language models (LLMs). Our goal was to combine semantic technologies, human interpretation, and visual presentation to enrich and represent costume artifacts from Italian cinema and theatre.</p>
 
-<section id="methodology" style="padding: 2em; background-color: #f9f9f9;">
-  <h2>Methodology</h2>
-  <p>This project explores how theatrical costumes function as cultural heritage objects, using structured data from the ArCo Knowledge Graph and insights from large language models (LLMs). Our goal was to combine semantic technologies, human interpretation, and visual presentation to enrich and represent costume artifacts from Italian cinema and theatre.</p>
+    <p>Each team member selected a specific costume or costume sketch and followed a shared methodology consisting of five main steps:</p>
 
-  <p>Each team member selected a specific costume or costume sketch and followed a shared methodology consisting of five main steps:</p>
+    <h3>1. Object Selection via SPARQL</h3>
+    <ul>
+      <li>Used the SPARQL endpoint of the ArCo Knowledge Graph</li>
+      <li>Searched for cultural heritage objects using keywords</li>
+      <li>Identified objects cataloged as Historic or Artistic Properties related to Italian theatre or cinema</li>
+    </ul>
 
-  <h3>1. Object Selection via SPARQL</h3>
-  <ul>
-    <li>Used the SPARQL endpoint of the ArCo Knowledge Graph</li>
-    <li>Searched for cultural heritage objects using keywords</li>
-    <li>Identified objects cataloged as Historic or Artistic Properties related to Italian theatre or cinema</li>
-  </ul>
+    <h3>2. Object-Specific Analysis</h3>
+    <p>Each participant selected one object and retrieved its metadata:</p>
+    <ul>
+      <li><strong>Anna:</strong> Regina Isabella Costume Enrichment</li>
+      <li><strong>Mariam:</strong> Theatrical Costume 1963 by Dario Fo</li>
+      <li><strong>Arina:</strong> Arlecchino '600 sketch by Dario Fo</li>
+      <li><strong>Anastasia:</strong> Theatrical Costume “La Fama”</li>
+      <li><strong>Daniil:</strong> "Second Accuser" by Dario Fo</li>
+    </ul>
+    <p>Each participant noted what metadata was available (e.g., material, author) and what was missing (e.g., symbolic meaning, historical context).</p>
 
-  <h3>2. Object-Specific Analysis</h3>
-  <p>Each participant selected one object and retrieved its metadata:</p>
-  <ul>
-    <li><strong>Anna:</strong> Regina Isabella Costume Enrichment</li>
-    <li><strong>Mariam:</strong> Theatrical Costume 1963 by Dario Fo</li>
-    <li><strong>Arina:</strong> Arlecchino '600 sketch by Dario Fo</li>
-    <li><strong>Anastasia:</strong> Theatrical Costume “La Fama”</li>
-    <li><strong>Daniil:</strong> "Second Accuser" by Dario Fo</li>
-  </ul>
-  <p>Each participant noted what metadata was available (e.g., material, author) and what was missing (e.g., symbolic meaning, historical context).</p>
+    <h3>3. Contextual Enrichment with LLMs</h3>
+    <p>
+      To bridge the gap between technical metadata and cultural meaning, participants used different language models: 
+      <a href="https://chat.openai.com/" target="_blank"><strong>ChatGPT</strong></a>, 
+      <a href="https://gemini.google.com/" target="_blank"><strong>Gemini</strong></a>, and 
+      <a href="https://huggingface.co/deepseek-ai/DeepSeek-V3" target="_blank"><strong>DeepSeek-V3</strong></a>.
+    </p>
 
-<h3>3. Contextual Enrichment with LLMs</h3>
-<p>
-  To bridge the gap between technical metadata and cultural meaning, participants used different language models: 
-  <a href="https://chat.openai.com/" target="_blank"><strong>ChatGPT</strong></a>, 
-  <a href="https://gemini.google.com/" target="_blank"><strong>Gemini</strong></a>, and 
-  <a href="https://huggingface.co/deepseek-ai/DeepSeek-V3" target="_blank"><strong>DeepSeek-V3</strong></a>.
-</p>
+    <h3>4. RDF Triple Generation</h3>
+    <p>Using the ArCo ontology and newly enriched information, each member generated RDF triples describing material, technique, symbolism, or cultural references. These were saved in <code>.ttl</code> files and uploaded to GitHub.</p>
 
-  <h3>4. RDF Triple Generation</h3>
-  <p>Using the ArCo ontology and newly enriched information, each member generated RDF triples describing material, technique, symbolism, or cultural references. These were saved in <code>.ttl</code> files and uploaded to GitHub.</p>
+    <h3>5. HTML Publication and GitHub Integration</h3>
+    <p>Each participant documented their contribution on a separate HTML page hosted via GitHub Pages. Each page includes:</p>
+    <ul>
+      <li>A summary of the selected object</li>
+      <li>SPARQL queries and results</li>
+      <li>Prompts and LLM answers</li>
+      <li>RDF triples</li>
+      <li>A downloadable TTL file</li>
+      <li>An image of the costume</li>
+    </ul>
+    <p>From the homepage, each name links to a dedicated page with this structured content.</p>
 
-  <h3>5. HTML Publication and GitHub Integration</h3>
-  <p>Each participant documented their contribution on a separate HTML page hosted via GitHub Pages. Each page includes:</p>
-  <ul>
-    <li>A summary of the selected object</li>
-    <li>SPARQL queries and results</li>
-    <li>Prompts and LLM answers</li>
-    <li>RDF triples</li>
-    <li>A downloadable TTL file</li>
-    <li>An image of the costume</li>
-  </ul>
-  <p>From the homepage, each name links to a dedicated page with this structured content.</p>
-
-  <p>This methodology combines SPARQL-based data retrieval, AI-supported semantic enrichment, RDF modeling, and web publishing to build meaningful digital representations of theatrical costumes. The result is a project that merges cultural heritage and technology to bring Italy’s performance history into the linked data space.</p>
-</section>
+    <p>This methodology combines SPARQL-based data retrieval, AI-supported semantic enrichment, RDF modeling, and web publishing to build meaningful digital representations of theatrical costumes. The result is a project that merges cultural heritage and technology to bring Italy’s performance history into the linked data space.</p>
+  </section>
+</div>
 
 <div id="anna" class="tab-content active">
   <h2>Anna – Regina Isabella Costume Analysis</h2>
 
-<h3>Topic</h3>
-<p>
-My contribution focused on analyzing the theatrical costume <strong>“Regina Isabella”</strong>, created in 1992 by <strong>Dario Fo</strong> and <strong>Miguel Carbonell</strong>. This costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>.
-</p>
+  <h3>Topic</h3>
+  <p>
+    My contribution focused on analyzing the theatrical costume <strong>“Regina Isabella”</strong>, created in 1992 by <strong>Dario Fo</strong> and <strong>Miguel Carbonell</strong>. This costume is cataloged in the ArCo Knowledge Graph as a <em>Historic or Artistic Property</em>.
+  </p>
 
-<img src="regina-isabella.png" alt="Costume sketch of Regina Isabella" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
+  <img src="regina-isabella.png" alt="Costume sketch of Regina Isabella" style="max-width: 400px; border: 1px solid #ccc; margin: 10px 0;">
 
-<h3>SPARQL Analysis</h3>
-<p>
-Using SPARQL, I explored the ArCo endpoint and retrieved the properties of the object 
-<a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704575" target="_blank">0500704575</a>. I found that the object already includes metadata such as title, authorship, and description. However, it lacked symbolic, material, and contextual information.
-</p>
+  <h3>SPARQL Analysis</h3>
+  <p>
+    Using SPARQL, I explored the ArCo endpoint and retrieved the properties of the object 
+    <a href="https://w3id.org/arco/resource/HistoricOrArtisticProperty/0500704575" target="_blank">0500704575</a>. I found that the object already includes metadata such as title, authorship, and description. However, it lacked symbolic, material, and contextual information.
+  </p>
 
-<h3>LLM Prompting Techniques</h3>
+  <h3>LLM Prompting Techniques</h3>
 
-<h4>1. Zero-shot Prompt</h4>
-<p><strong>Prompt:</strong> What does the theatrical costume “Regina Isabella” represent in terms of cultural or symbolic meaning?</p>
-<p><strong>Answer:</strong> It represents royal authority, feminine power, and Renaissance nobility, reflecting the image of a queen from the 16th century.</p>
+  <h4>1. Zero-shot Prompt</h4>
+  <p><strong>Prompt:</strong> What does the theatrical costume “Regina Isabella” represent in terms of cultural or symbolic meaning?</p>
+  <p><strong>Answer:</strong> It represents royal authority, feminine power, and Renaissance nobility, reflecting the image of a queen from the 16th century.</p>
 
-<h4>2. Few-shot Prompt</h4>
-<p><strong>Prompt:</strong></p>
-<p>Example 1: Napoleon Bonaparte — Symbolizes power and nationalism.<br>
-Example 2: Cleopatra — Represents feminine authority and exoticism.<br>
-Now describe “Regina Isabella”.</p>
-<p><strong>Answer:</strong> Regina Isabella symbolizes dignity, regal presence, and traditional Italian theatrical depictions of female power and historical prestige.</p>
+  <h4>2. Few-shot Prompt</h4>
+  <p><strong>Prompt:</strong></p>
+  <p>Example 1: Napoleon Bonaparte — Symbolizes power and nationalism.<br>
+  Example 2: Cleopatra — Represents feminine authority and exoticism.<br>
+  Now describe “Regina Isabella”.</p>
+  <p><strong>Answer:</strong> Regina Isabella symbolizes dignity, regal presence, and traditional Italian theatrical depictions of female power and historical prestige.</p>
 
-<h4>3. Chain-of-thought Prompt</h4>
-<p><strong>Prompt:</strong></p>
-<ol>
-  <li>What historical context does the name “Regina Isabella” refer to?</li>
-  <li>What do the materials — red velvet and gold embroidery — traditionally symbolize?</li>
-  <li>How are queens typically portrayed in Italian theater and cultural heritage?</li>
-</ol>
-<p><strong>Based on this reasoning, what does the costume most likely represent?</strong></p>
-<p><strong>Answer:</strong> The name refers to a Renaissance queen, evoking images of female monarchy and historical authority. Red velvet and gold embroidery symbolize luxury, power, and theatrical grandeur. Queens in Italian culture are often portrayed as dignified, commanding, and elegant. Therefore, the costume most likely represents royal status, feminine strength, and the cultural ideal of noble womanhood on stage.</p>
+  <h4>3. Chain-of-thought Prompt</h4>
+  <p><strong>Prompt:</strong></p>
+  <ol>
+    <li>What historical context does the name “Regina Isabella” refer to?</li>
+    <li>What do the materials — red velvet and gold embroidery — traditionally symbolize?</li>
+    <li>How are queens typically portrayed in Italian theater and cultural heritage?</li>
+  </ol>
+  <p><strong>Based on this reasoning, what does the costume most likely represent?</strong></p>
+  <p><strong>Answer:</strong> The name refers to a Renaissance queen, evoking images of female monarchy and historical authority. Red velvet and gold embroidery symbolize luxury, power, and theatrical grandeur. Queens in Italian culture are often portrayed as dignified, commanding, and elegant. Therefore, the costume most likely represents royal status, feminine strength, and the cultural ideal of noble womanhood on stage.</p>
 
+  <h3>Enrichment</h3>
+  <p>
+    Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:
+  </p>
 
-<h3>Enrichment</h3>
-<p>
-Based on the new insights, I created RDF triples to enrich the knowledge graph, adding material, technique, and symbolic subject:
-</p>
-
-<pre>
+  <pre>
 @prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
 @prefix a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; .
 @prefix ex: &lt;http://example.org/&gt; .
@@ -326,13 +325,31 @@ Based on the new insights, I created RDF triples to enrich the knowledge graph, 
 ex:QueenAuthority
     a a-cd:Subject ;
     rdfs:label "Symbol of royal authority and female power" .
-</pre>
+  </pre>
 
-<h3>File</h3>
-<p>
-My enrichment file is available here:  
-<a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/regina-isabella.ttl" target="_blank">regina-isabella.ttl</a>
-</p>
+  <h3>File</h3>
+  <p>
+    My enrichment file is available here:  
+    <a href="https://github.com/Ltvmur/costume-heritage-project/blob/main/regina-isabella.ttl" target="_blank">regina-isabella.ttl</a>
+  </p>
+</div>
+
+<!-- JavaScript for tab switching -->
+<script>
+  function showTab(id) {
+    const tabs = document.querySelectorAll(".tab-content");
+    const buttons = document.querySelectorAll(".tab-button");
+
+    tabs.forEach((tab) => tab.classList.remove("active"));
+    buttons.forEach((btn) => btn.classList.remove("active"));
+
+    document.getElementById(id).classList.add("active");
+    document
+      .querySelector(`.tab-button[onclick="showTab('${id}')"]`)
+      .classList.add("active");
+  }
+</script>
+
 
   <hr>
 <div id="mariam" class="tab-content">
@@ -835,8 +852,7 @@ ex:IsabellaPerformance
 In particular, this case highlights how <a href="https://en.wikipedia.org/wiki/Dario_Fo" target="_blank">Dario Fo's</a> figurini are not merely design sketches, but entry points into broader stories of performance, history, and ideology. The costume becomes a lens through which we can view not only a play, but an entire period of social commentary and artistic experimentation.</p>
   <hr>
 
-</body>
-</html>
+
 <section class="contribution">
 <div id="arina" class="tab-content">
   <h2>Arina – Arlecchino '600 Costume Analysis</h2>
