@@ -202,34 +202,65 @@ body {
   <div class="logo">Costume Project</div>
 </nav>
 
-<div style="display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
-  <button class="tab-button active" onclick="showTab('anna')" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
-    <img src="Anna.jpeg" alt="Anna" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 5px;">
+<style>
+  .tab-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    background: #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tab-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background: #f8f8f8;
+  }
+
+  .tab-button img {
+    max-width: 60px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 8px;
+  }
+</style>
+
+<div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
+  <button class="tab-button active" onclick="showTab('anna')">
+    <img src="Anna.jpeg" alt="Anna">
     <span>Anna</span>
   </button>
 
-  <button class="tab-button" onclick="showTab('mariam')" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
-    <img src="Mariam.jpeg" alt="Mariam" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 5px;">
+  <button class="tab-button" onclick="showTab('mariam')">
+    <img src="Mariam.jpeg" alt="Mariam">
     <span>Mariam</span>
   </button>
 
-  <button class="tab-button" onclick="showTab('arina')" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
-    <img src="Arina.jpeg" alt="Arina" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 5px;">
+  <button class="tab-button" onclick="showTab('arina')">
+    <img src="Arina.jpeg" alt="Arina">
     <span>Arina</span>
   </button>
 
-  <button class="tab-button" onclick="showTab('anastasiia')" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
-    <img src="Anastasia.jpeg" alt="Anastasiia" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 5px;">
+  <button class="tab-button" onclick="showTab('anastasiia')">
+    <img src="Anastasia.jpeg" alt="Anastasiia">
     <span>Anastasiia</span>
   </button>
 
-  <button class="tab-button" onclick="showTab('danil')" style="display: flex; flex-direction: column; align-items: center; padding: 10px;">
-    <img src="Daniil.jpeg" alt="Danil" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 5px;">
+  <button class="tab-button" onclick="showTab('danil')">
+    <img src="Daniil.jpeg" alt="Danil">
     <span>Danil</span>
   </button>
 </div>
 
 
+
+  
 
 <div class="container">
   <h1>Italian Cinema and Cultural Heritage: Costumes as Cultural Artifacts</h1>
