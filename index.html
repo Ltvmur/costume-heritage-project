@@ -927,56 +927,95 @@ In particular, this case highlights how <a href="https://en.wikipedia.org/wiki/D
   </p>
 
   <h3>LLM Prompts and Responses</h3>
-  <h4>1. Zero-shot Prompt</h4>
-  <p><strong>Prompt:</strong> What does the use of a mask represent in Arlecchino’s character?</p>
+  <h3 style="color: #444;">Zero-Shot Prompting</h3>
+  <p><strong>Prompt:</strong> Who is Arlecchino in commedia dell’arte?</p>
   <ul>
-    <li><strong>ChatGPT:</strong> The mask makes Arlecchino an archetype; removes identity, enhances gestures.</li>
-    <li><strong>Gemini:</strong> Symbolizes theatrical tradition and distance from realism.</li>
-    <li><strong>DeepSeek:</strong> Hides personality and emphasizes movement; supports trickster role.</li>
+    <li><strong>ChatGPT:</strong> Arlecchino is one of the most iconic characters in commedia dell’arte, originating in 16th-century Italy. He is a comic servant, known for his agility, mischief, and clever tricks. Traditionally, he wears a multicolored diamond-patterned costume and a black mask. His role often involves physical comedy, improvisation, and outsmarting his masters.</li>
+    <li><strong>Gemini:</strong> Arlecchino is the most famous comic servant (Zanni) in commedia dell'arte. He's known for his patched costume, acrobatics, wit, and constant hunger. He often tries to outsmart his master, Pantalone, and is linked to the character of Colombina. His origin likely ties to medieval French demonic figures.</li>
   </ul>
 
-  <h4>2. Few-shot Prompt</h4>
-  <p><strong>Prompt:</strong> What is the function of Arlecchino’s hat and feather?</p>
+  <h3 style="color: #444;">Few-Shot Prompting</h3>
+  <p><strong>Task:</strong> Describe the costume symbolism for Arlecchino in commedia dell’arte.</p>
+  <pre style="background: #f5f5f5; padding: 1em; border: 1px solid #ddd;">
+Character: Pantalone
+Costume: Long red robes, black mask
+Symbolism: Wealth, greed, and authority
+Era: 16th century Venice
+
+Character: Pulcinella
+Costume: White loose shirt and pants, humpback, black half-mask
+Symbolism: Servitude, laziness, satire of lower class
+Era: 17th century Naples
+  </pre>
   <ul>
-    <li><strong>ChatGPT:</strong> Emphasizes agility; supports trickster image.</li>
-    <li><strong>Gemini:</strong> Enhances playful identity; contrasts with serious characters.</li>
-    <li><strong>DeepSeek:</strong> Supports clowning; adds physical movement cues.</li>
+    <li><strong>ChatGPT:</strong> Character: Arlecchino<br>
+    Costume: Tight-fitting suit with multicolored diamond patches, black mask, soft cap with feather<br>
+    Symbolism: Playfulness, agility, poverty, and clever subversion of authority<br>
+    Era: 17th century Italy</li>
+
+    <li><strong>Gemini:</strong> Character: Arlecchino<br>
+    Costume: Multi-colored diamond or triangle patches, sometimes with a black half-mask and a wooden slapstick.<br>
+    Symbolism: Poverty (represented by the patches of discarded fabric), playfulness, trickery, and the chaos of the lower class.<br>
+    Era: 16th century, originating in Bergamo.</li>
   </ul>
 
-  <h4>3. Zero-shot Chain-of-Thought</h4>
-  <p><strong>Prompt:</strong> How has Arlecchino’s image evolved from 17th to 20th century?</p>
+  <h3 style="color: #444;">Chain-of-Thought Prompting</h3>
+  <p><strong>Prompt:</strong> Why is Arlecchino’s mask important? Think step by step.</p>
   <ul>
-    <li><strong>ChatGPT:</strong> Comic servant → slapstick → political satire (Dario Fo).</li>
-    <li><strong>Gemini:</strong> From mischievous servant to critical voice in modern theatre.</li>
-    <li><strong>DeepSeek:</strong> From playful comic to social critic, keeping humor.</li>
+    <li><strong>ChatGPT:</strong>
+      <ul>
+        <li>Step 1: The mask hides Arlecchino’s individual identity, turning him into a theatrical archetype.</li>
+        <li>Step 2: This allows the audience to focus on his exaggerated physical movements and gestures.</li>
+        <li>Step 3: The mask enhances his comic role by emphasizing expression through the body rather than the face.</li>
+        <li>Step 4: It also connects him to the traditional roots of commedia dell’arte, where masks symbolize fixed social roles.</li>
+      </ul>
+    </li>
+    <li><strong>Gemini:</strong> 
+      <ol>
+        <li><strong>Character Archetype:</strong> Masks define stock characters. Arlecchino's mask marks him as a specific Zanni (servant): playful, simple, acrobatic.</li>
+        <li><strong>Physicality and Expression:</strong> Masks required actors to rely on gestures and movement. Arlecchino's mask, with cat-like features, amplifies his actions.</li>
+        <li><strong>Symbolism:</strong>
+          <ul>
+            <li><strong>Animalistic Qualities:</strong> Mask features hint at primal instincts: hunger, agility, mischief.</li>
+            <li><strong>Demonic Origins:</strong> Dark colors and horn-like shapes tie to folklore ("Hellequin").</li>
+            <li><strong>Lower Class:</strong> The mask, like the costume, reflects poverty and base humor.</li>
+          </ul>
+        </li>
+        <li><strong>Concealment and Transformation:</strong> The mask lets actors transform into character fully.</li>
+        <li><strong>Focus on the Body:</strong> Without facial cues, actors rely fully on posture and exaggerated movement.</li>
+      </ol>
+    </li>
   </ul>
 
-  <h4>4. Few-shot Chain-of-Thought</h4>
-  <p><strong>Prompt:</strong> What do Arlecchino’s movements say about his role?</p>
-  <ul>
-    <li><strong>ChatGPT:</strong> Acrobatics show agility → mocks authority → comic servant.</li>
-    <li><strong>Gemini:</strong> Exaggerated motion = comedy; disrupts structure.</li>
-    <li><strong>DeepSeek:</strong> Energetic chaos → mocking norms through humor.</li>
-  </ul>
-
-  <h3>Comparison of LLM Responses</h3>
-  <table class="comparison-table">
-    <thead>
+  <h3 style="color: #444;">Comparison Summary</h3>
+  <table style="width:100%; border-collapse: collapse; font-size: 0.95em; margin-top: 1em;">
+    <thead style="background-color: #f0f0f0;">
       <tr>
-        <th>Criteria</th>
-        <th>ChatGPT</th>
-        <th>Gemini</th>
-        <th>DeepSeek</th>
+        <th style="border: 1px solid #ccc; padding: 8px;">Prompt Type</th>
+        <th style="border: 1px solid #ccc; padding: 8px;">Best LLM</th>
+        <th style="border: 1px solid #ccc; padding: 8px;">Why?</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td><strong>Accuracy</strong></td><td>Very strong</td><td>Accurate but light</td><td>Correct but sparse</td></tr>
-      <tr><td><strong>Depth</strong></td><td>Symbolic & detailed</td><td>Moderate</td><td>Focused on core ideas</td></tr>
-      <tr><td><strong>Creativity</strong></td><td>Interpretive and grounded</td><td>Basic interpretations</td><td>Symbolic metaphors</td></tr>
-      <tr><td><strong>Coverage</strong></td><td>Full: theatre, movement, symbolism</td><td>Mostly symbolism</td><td>Symbolism & movement</td></tr>
-      <tr><td><strong>Weakness</strong></td><td>Too verbose</td><td>Lacks nuance</td><td>Limited context</td></tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 8px;">Zero-Shot</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">ChatGPT</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">More structured and complete overview of Arlecchino's role and features.</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 8px;">Few-Shot</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">Gemini</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">Gave richer symbolic analysis, including props and origins.</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 8px;">Chain-of-Thought</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">Gemini</td>
+        <td style="border: 1px solid #ccc; padding: 8px;">Deep, multi-layered explanation covering archetype, history, and theatrical performance.</td>
+      </tr>
     </tbody>
   </table>
+</section>
+
 
   <h3>RDF Enrichment</h3>
   <pre><code>@prefix arco: &lt;https://w3id.org/arco/ontology/arco/&gt; .
