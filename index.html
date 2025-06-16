@@ -926,12 +926,15 @@ In particular, this case highlights how <a href="https://en.wikipedia.org/wiki/D
     Symbolic and contextual information was missing and was reconstructed using LLM prompts.
   </p>
 
-  <h3>LLM Prompts and Responses</h3>
+
+<section class="section" id="llm-prompts">
+  <div class="container content">
+    <h2 class="title">LLM Prompts and Responses</h2>
 
     <h3>Zero-Shot Prompting</h3>
     <p><strong>Prompt:</strong> Who is Arlecchino in commedia dell’arte?</p>
-    <p><strong>ChatGPT -</strong> Arlecchino is one of the most iconic characters in commedia dell’arte, originating in 16th-century Italy. He is a comic servant, known for his agility, mischief, and clever tricks. Traditionally, he wears a multicolored diamond-patterned costume and a black mask. His role often involves physical comedy, improvisation, and outsmarting his masters.</p>
-    <p><strong>Gemini -</strong> Arlecchino is the most famous comic servant (Zanni) in commedia dell'arte. He's known for his patched costume, acrobatics, wit, and constant hunger. He often tries to outsmart his master, Pantalone, and is linked to the character of Colombina. His origin likely ties to medieval French demonic figures.</p>
+    <p><strong>ChatGPT:</strong> Arlecchino is one of the most iconic characters in commedia dell’arte, originating in 16th-century Italy. He is a comic servant, known for his agility, mischief, and clever tricks. Traditionally, he wears a multicolored diamond-patterned costume and a black mask. His role often involves physical comedy, improvisation, and outsmarting his masters.</p>
+    <p><strong>Gemini:</strong> Arlecchino is the most famous comic servant (Zanni) in commedia dell'arte. He's known for his patched costume, acrobatics, wit, and constant hunger. He often tries to outsmart his master, Pantalone, and is linked to the character of Colombina. His origin likely ties to medieval French demonic figures.</p>
 
     <h3>Few-Shot Prompting</h3>
     <p><strong>Task:</strong> Describe the costume symbolism for Arlecchino in commedia dell’arte.</p>
@@ -945,55 +948,62 @@ In particular, this case highlights how <a href="https://en.wikipedia.org/wiki/D
     <strong>Symbolism:</strong> Servitude, laziness, satire of lower class<br>
     <strong>Era:</strong> 17th century Naples</p>
 
-    <p><strong>ChatGPT -</strong> Character: Arlecchino<br>
+    <p><strong>ChatGPT:</strong><br>
+    Character: Arlecchino<br>
     Costume: Tight-fitting suit with multicolored diamond patches, black mask, soft cap with feather<br>
     Symbolism: Playfulness, agility, poverty, and clever subversion of authority<br>
     Era: 17th century Italy</p>
 
-    <p><strong>Gemini -</strong> Character: Arlecchino Costume: Multi-colored diamond or triangle patches, sometimes with a black half-mask and a wooden slapstick. Symbolism: Poverty (represented by the patches of discarded fabric), playfulness, trickery, and the chaos of the lower class. Era: 16th century, originating in Bergamo.</p>
+    <p><strong>Gemini:</strong><br>
+    Character: Arlecchino<br>
+    Costume: Multi-colored diamond or triangle patches, sometimes with a black half-mask and a wooden slapstick<br>
+    Symbolism: Poverty (represented by the patches of discarded fabric), playfulness, trickery, and the chaos of the lower class<br>
+    Era: 16th century, originating in Bergamo</p>
 
     <h3>Chain-of-Thought (CoT) Prompting</h3>
     <p><strong>Prompt:</strong> Why is Arlecchino’s mask important? Think step by step.</p>
 
-    <p><strong>ChatGPT -</strong> Step 1: The mask hides Arlecchino’s individual identity, turning him into a theatrical archetype.<br>
+    <p><strong>ChatGPT:</strong><br>
+    Step 1: The mask hides Arlecchino’s individual identity, turning him into a theatrical archetype.<br>
     Step 2: This allows the audience to focus on his exaggerated physical movements and gestures.<br>
     Step 3: The mask enhances his comic role by emphasizing expression through the body rather than the face.<br>
     Step 4: It also connects him to the traditional roots of commedia dell’arte, where masks symbolize fixed social roles.</p>
 
-    <p><strong>Gemini -</strong> Arlecchino's mask is important for several reasons, think of it step-by-step:<br>
+    <p><strong>Gemini:</strong><br>
+    Arlecchino's mask is important for several reasons, think of it step-by-step:<br>
     1. Character Archetype: In Commedia dell'arte, masks are fundamental to defining the stock characters (archetypes). Arlecchino's mask instantly identifies him as the specific Zanni (servant) type: the playful, often simple, yet acrobatic trickster.<br>
     2. Physicality and Expression: Since the actors improvised much of the dialogue, the mask forced them to rely heavily on physical comedy, gestures, and vocalizations to convey emotion. Arlecchino's half-mask, with its often exaggerated features (like a prominent forehead bump or cat-like slyness), amplifies his movements and makes his reactions clear to the audience, even from a distance.<br>
     3. Symbolism:<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;* Animalistic Qualities: The mask often has feline or ape-like features (small eyes, snub nose, arched eyebrows), highlighting Arlecchino's more primal instincts: his hunger, agility, and sometimes mischievous, unpredictable nature.<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;* Demonic Origins: The mask's black color and occasional horn-like protuberance on the forehead allude to his medieval French folklore origins as "Hellequin" or a devilish figure. This adds a layer of mischievousness and sometimes a hint of trickery to his character.<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;* Lower Class: While his patched costume directly symbolizes poverty, the mask, by emphasizing his more "base" or animalistic traits, further connects him to the lower social strata he represents.<br>
+    - Animalistic Qualities: The mask often has feline or ape-like features (small eyes, snub nose, arched eyebrows), highlighting Arlecchino's more primal instincts: his hunger, agility, and sometimes mischievous, unpredictable nature.<br>
+    - Demonic Origins: The mask's black color and occasional horn-like protuberance on the forehead allude to his medieval French folklore origins as "Hellequin" or a devilish figure. This adds a layer of mischievousness and sometimes a hint of trickery to his character.<br>
+    - Lower Class: While his patched costume directly symbolizes poverty, the mask, by emphasizing his more "base" or animalistic traits, further connects him to the lower social strata he represents.<br>
     4. Concealment and Transformation: The mask conceals the actor's individual identity, allowing for a complete transformation into the character. This allows the actor to embody Arlecchino's specific personality and perform actions that might be out of character for themselves.<br>
-    5. Focus on the Body: By covering facial expressions, the mask compels the actor to communicate entirely through their body language, posture, and exaggerated movements. This is central to commedia dell’arte's highly physical comedic style.</p>
+    5. Focus on the Body: By covering facial expressions, the mask compels the actor to communicate entirely through their body language, posture, and exaggerated movements. This is central to commedia dell'arte's highly physical comedic style.</p>
 
-    <h3>Comparison Table</h3>
+    <h3>Comparison Table: Which Response is Better?</h3>
     <table>
       <thead>
         <tr>
           <th>Prompt Type</th>
-          <th>ChatGPT</th>
-          <th>Gemini</th>
+          <th>Better Answer</th>
+          <th>Reason</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Zero-Shot</td>
-          <td>Arlecchino is one of the most iconic characters in commedia dell’arte, originating in 16th-century Italy. He is a comic servant, known for his agility, mischief, and clever tricks. Traditionally, he wears a multicolored diamond-patterned costume and a black mask. His role often involves physical comedy, improvisation, and outsmarting his masters.</td>
-          <td>Arlecchino is the most famous comic servant (Zanni) in commedia dell'arte. He's known for his patched costume, acrobatics, wit, and constant hunger. He often tries to outsmart his master, Pantalone, and is linked to the character of Colombina. His origin likely ties to medieval French demonic figures.</td>
+          <td><strong>ChatGPT</strong></td>
+          <td>More structured, comprehensive, and clear historical grounding; easier for a general audience.</td>
         </tr>
         <tr>
           <td>Few-Shot</td>
-          <td>Character: Arlecchino Costume: Tight-fitting suit with multicolored diamond patches, black mask, soft cap with feather Symbolism: Playfulness, agility, poverty, and clever subversion of authority Era: 17th century Italy</td>
-          <td>Character: Arlecchino Costume: Multi-colored diamond or triangle patches, sometimes with a black half-mask and a wooden slapstick. Symbolism: Poverty (represented by the patches of discarded fabric), playfulness, trickery, and the chaos of the lower class. Era: 16th century, originating in Bergamo.</td>
+          <td><strong>Gemini</strong></td>
+          <td>More specific about symbolic meanings (e.g., patchwork = poverty); includes slapstick detail.</td>
         </tr>
         <tr>
           <td>Chain-of-Thought</td>
-          <td>Step 1: The mask hides Arlecchino’s individual identity, turning him into a theatrical archetype. Step 2: This allows the audience to focus on his exaggerated physical movements and gestures. Step 3: The mask enhances his comic role by emphasizing expression through the body rather than the face. Step 4: It also connects him to the traditional roots of commedia dell’arte, where masks symbolize fixed social roles.</td>
-          <td>Arlecchino's mask is important for several reasons, think of it step-by-step: 1. Character Archetype: In Commedia dell'arte, masks are fundamental to defining the stock characters (archetypes). Arlecchino's mask instantly identifies him as the specific Zanni (servant) type: the playful, often simple, yet acrobatic trickster. 2. Physicality and Expression: Since the actors improvised much of the dialogue, the mask forced them to rely heavily on physical comedy, gestures, and vocalizations to convey emotion. Arlecchino's half-mask, with its often exaggerated features (like a prominent forehead bump or cat-like slyness), amplifies his movements and makes his reactions clear to the audience, even from a distance. 3. Symbolism: * Animalistic Qualities: The mask often has feline or ape-like features (small eyes, snub nose, arched eyebrows), highlighting Arlecchino's more primal instincts: his hunger, agility, and sometimes mischievous, unpredictable nature. * Demonic Origins: The mask's black color and occasional horn-like protuberance on the forehead allude to his medieval French folklore origins as "Hellequin" or a devilish figure. This adds a layer of mischievousness and sometimes a hint of trickery to his character. * Lower Class: While his patched costume directly symbolizes poverty, the mask, by emphasizing his more "base" or animalistic traits, further connects him to the lower social strata he represents. 4. Concealment and Transformation: The mask conceals the actor's individual identity, allowing for a complete transformation into the character. This allows the actor to embody Arlecchino's specific personality and perform actions that might be out of character for themselves. 5. Focus on the Body: By covering facial expressions, the mask compels the actor to communicate entirely through their body language, posture, and exaggerated movements. This is central to commedia dell’arte's highly physical comedic style.</td>
+          <td><strong>Gemini</strong></td>
+          <td>Thorough, step-by-step breakdown with cultural, symbolic, and performance insights; more nuanced.</td>
         </tr>
       </tbody>
     </table>
